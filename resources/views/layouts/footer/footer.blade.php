@@ -37,13 +37,7 @@
                         </a>
                     </div>
                     <div class="footer__widget-content">
-                        <p>Lorem ipsum dolor amet consetetur
-                            adi pisicing elit sed eiusm tempor in
-                            cididunt ut labore dolore magna aliqua
-                            enim ad minim venitam
-                        </p>
-                        <p>Quis nostrud exercita laboris nisi ut
-                            aliquip commodo exercita.
+                        <p>{{ Str::limit($data->description,150)}}
                         </p>
                     </div>
                 </div>
@@ -60,7 +54,7 @@
                     </div>
                     <div class="footer__widget-content">
                         <ul class="footer__widget-list">
-                            <li><a href="about-us.html"><i class="fa-solid fa-angle-right"></i> About Us</a>
+                            <li><a href="{{ route('about.index') }}"><i class="fa-solid fa-angle-right"></i> A Propos de nous</a>
                             </li>
                             <li><a href="donate-us.html"><i class="fa-solid fa-angle-right"></i>
                                     Donate Us</a>
@@ -128,18 +122,16 @@
                     </div>
                     <div class="footer__widget-content">
                         <ul class="footer__contact-list">
-                            <li><a href="https://www.google.com/maps/place/Kentucky,+USA/@37.8172108,-87.087054,8z/data=!3m1!4b1!4m6!3m5!1s0x8842734c8b1953c9:0x771f6f4ec5ccdffc!8m2!3d37.8393332!4d-84.2700179!16zL20vMDQ5OHk?entry=ttu"
-                                    target="_blank"><i class="fa-solid fa-location-dot"></i>Flat 20,
-                                    Reynolds
-                                    Neck,
-                                    North Helenaville, FV77 8WS
+                            <li><a href="https://www.google.com/maps?q=0.337907,29.748384"
+                                    target="_blank"><i class="fa-solid fa-location-dot"></i>
+                                    {{ $data->address}}
                                 </a>
                             </li>
-                            <li><a href="tel:2305-587-3407"><i class="fa-solid fa-phone-flip"></i>+2(305)
-                                    587-3407</a>
+                            <li><a href="tel:{{ $data->phone}}"><i class="fa-solid fa-phone-flip"></i>
+                                    {{ $data->phone}}</a>
                             </li>
-                            <li><a href="mailto:info@example.com"><i
-                                        class="fa-regular fa-envelope"></i>info@example.com</a></li>
+                            <li><a href="mailto:{{ $data->email}}"><i
+                                        class="fa-regular fa-envelope"></i>{{ $data->email}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -168,21 +160,25 @@
                             <div class="col-12 col-lg-5">
                                 <div class="footer__bottom-right">
                                     <div class="social justify-content-center justify-content-lg-end">
-                                        <a href="https://www.facebook.com/" target="_blank"
+                                        <a href="{{ $data->facebook }}" target="_blank"
                                             aria-label="share us on facebook" title="facebook">
                                             <i class="fa-brands fa-facebook-f"></i>
                                         </a>
-                                        <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo"
+                                        <a href="{{ $data->instagram }}" target="_blank" aria-label="share us on vimeo"
                                             title="vimeo">
-                                            <i class="fa-brands fa-vimeo-v"></i>
+                                            <i class="fa-brands fa-instagram"></i>
                                         </a>
-                                        <a href="https://x.com/" target="_blank" aria-label="share us on twitter"
+                                        <a href="{{ $data->twitter }}" target="_blank" aria-label="share us on twitter"
                                             title="twitter">
                                             <i class="fa-brands fa-twitter"></i>
                                         </a>
-                                        <a href="https://www.linkedin.com/" target="_blank"
+                                        <a href="{{ $data->linkedin }}" target="_blank"
                                             aria-label="share us on linkedin" title="linkedin">
                                             <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="{{ $data->youtube}" target="blank"
+                                            aria-label="share us on youtubetitle="outube
+                                            <i class="fa-brands fa-youtube"></i>
                                         </a>
                                     </div>
                                 </div>

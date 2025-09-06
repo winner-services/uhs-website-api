@@ -41,7 +41,7 @@ class AboutController extends Controller
     /**
      * @OA\Post(
      *     path="/api/about.store",
-     *     operationId="create",
+     *     operationId="store",
      *     summary="Créer un nouvel About",
      *     tags={"About"},
      *     @OA\RequestBody(
@@ -80,7 +80,7 @@ class AboutController extends Controller
      *     @OA\Response(response=422, description="Données invalides")
      * )
      */
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',

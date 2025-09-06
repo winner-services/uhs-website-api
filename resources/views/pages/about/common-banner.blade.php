@@ -19,7 +19,7 @@
          </ol>
      </nav>
      <div class="banner-bg">
-         <img src="assets/images/banner/banner-bg.jpg" alt="Image">
+         <img src="{{ asset('storage/' . $data->bannier_image) }}" alt="Image">
      </div>
      <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
          <img src="assets/images/sprade-base.png" alt="Image" class="base-img">

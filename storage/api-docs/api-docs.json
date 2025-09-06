@@ -29,7 +29,7 @@
                     "About"
                 ],
                 "summary": "Créer un nouvel About",
-                "operationId": "create",
+                "operationId": "store",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -231,6 +231,260 @@
                     }
                 }
             }
+        },
+        "/api/team.index": {
+            "get": {
+                "tags": [
+                    "Team"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "team",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/team.store": {
+            "post": {
+                "tags": [
+                    "Team"
+                ],
+                "summary": "Créer un nouveau membre de l'équipe",
+                "operationId": "storeTeam",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "title"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Jean Dupont"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Développeur"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+243970000000"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "jean.dupont@example.com"
+                                    },
+                                    "twitter": {
+                                        "type": "string",
+                                        "example": "@jeandupont"
+                                    },
+                                    "facebook": {
+                                        "type": "string",
+                                        "example": "facebook.com/jeandupont"
+                                    },
+                                    "whatsapp": {
+                                        "type": "string",
+                                        "example": "+243970000000"
+                                    },
+                                    "image": {
+                                        "description": "Image du membre",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Membre créé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 201
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                }
+            }
+        },
+        "/api/team.update/{id}": {
+            "post": {
+                "tags": [
+                    "Team"
+                ],
+                "summary": "Modifier un membre de l'équipe",
+                "operationId": "updateTeam",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID du membre de l'équipe",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Jean Dupont"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Développeur Senior"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+243970000000"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "jean.dupont@example.com"
+                                    },
+                                    "twitter": {
+                                        "type": "string",
+                                        "example": "@jeandupont"
+                                    },
+                                    "facebook": {
+                                        "type": "string",
+                                        "example": "facebook.com/jeandupont"
+                                    },
+                                    "whatsapp": {
+                                        "type": "string",
+                                        "example": "+243970000000"
+                                    },
+                                    "image": {
+                                        "description": "Nouvelle image du membre (optionnelle)",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Membre mis à jour avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Membre introuvable"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                }
+            }
+        },
+        "/api/team.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Team"
+                ],
+                "summary": "Supprimer un membre de l'équipe",
+                "operationId": "destroyTeam",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID du membre de l'équipe",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Membre supprimé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Membre supprimé avec succès"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Membre introuvable"
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -248,6 +502,10 @@
         {
             "name": "About",
             "description": "About"
+        },
+        {
+            "name": "Team",
+            "description": "Team"
         }
     ]
 }
