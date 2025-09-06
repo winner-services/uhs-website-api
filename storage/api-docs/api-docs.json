@@ -1,0 +1,253 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Website UHS RDC API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/about.index": {
+            "get": {
+                "tags": [
+                    "About"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "index",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/about.store": {
+            "post": {
+                "tags": [
+                    "About"
+                ],
+                "summary": "Créer un nouvel About",
+                "operationId": "create",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "objective",
+                                    "phone",
+                                    "email",
+                                    "experience"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Qui sommes-nous ?"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Notre entreprise existe depuis..."
+                                    },
+                                    "objective": {
+                                        "type": "string",
+                                        "example": "Fournir un service de qualité"
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "example": "Kinshasa, RDC"
+                                    },
+                                    "instagram": {
+                                        "type": "string",
+                                        "example": "https://instagram.com/entreprise"
+                                    },
+                                    "facebook": {
+                                        "type": "string",
+                                        "example": "https://facebook.com/entreprise"
+                                    },
+                                    "twitter": {
+                                        "type": "string",
+                                        "example": "https://twitter.com/entreprise"
+                                    },
+                                    "linkedin": {
+                                        "type": "string",
+                                        "example": "https://linkedin.com/company/entreprise"
+                                    },
+                                    "youtube": {
+                                        "type": "string",
+                                        "example": "https://youtube.com/entreprise"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "+243 999 888 777"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "contact@example.com"
+                                    },
+                                    "experience": {
+                                        "type": "string",
+                                        "example": "10 ans d'expérience"
+                                    },
+                                    "image1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "bannier_image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Création réussie",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 201
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Données invalides"
+                    }
+                }
+            }
+        },
+        "/api/about.update/{id}": {
+            "post": {
+                "tags": [
+                    "About"
+                ],
+                "summary": "Mettre à jour un About",
+                "operationId": "update",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de l'élément à modifier",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "objective": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "instagram": {
+                                        "type": "string"
+                                    },
+                                    "facebook": {
+                                        "type": "string"
+                                    },
+                                    "twitter": {
+                                        "type": "string"
+                                    },
+                                    "linkedin": {
+                                        "type": "string"
+                                    },
+                                    "youtube": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "experience": {
+                                        "type": "string"
+                                    },
+                                    "image1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "bannier_image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Mise à jour réussie"
+                    },
+                    "404": {
+                        "description": "Ressource introuvable"
+                    },
+                    "422": {
+                        "description": "Données invalides"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "Authorization",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "Bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "About",
+            "description": "About"
+        }
+    ]
+}
