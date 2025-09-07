@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->text('description');
-            $table->text('objective');
-            $table->text('address');
+            $table->text('objective')->nullable();
+            $table->text('assignment')->nullable();
+            $table->text('vision')->nullable();
+            $table->text('address')->nullable();
             $table->text('facebook')->nullable();
             $table->text('instagram')->nullable();
             $table->text('twitter')->nullable();

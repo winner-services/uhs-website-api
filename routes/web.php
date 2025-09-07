@@ -21,4 +21,5 @@ Route::controller(homeController::class)->group(function () {
 
 Route::controller(AboutController::class)->group(function () {
     Route::get('/about-index', 'index')->name('about.index');
+    Route::get('/about-details','details')->name('about.details');
 });

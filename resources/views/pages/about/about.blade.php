@@ -9,7 +9,7 @@
                 <div class="col-12 col-lg-5 col-xl-6">
                     <div class="about__thumb">
                         <div class="about__thumb-big">
-                            <img src="{{ asset('storage/' . $data->image1) }}" alt="Image" data-aos="fade-right"
+                            <img src="{{ asset('storage/' . optional($data)->image1) }}" alt="Image" data-aos="fade-right"
                                 data-aos-duration="1000">
                             <div class="video-btn-wrapper">
                                 <a href="https://www.youtube.com/watch?v=RvreULjnzFo" target="_blank" title="video Player"
@@ -19,7 +19,7 @@
                             </div>
                         </div>
                         <div class="about__thumb-sm">
-                            <img src="{{ asset('storage/' . $data->image2) }}" alt="Image" data-aos="fade-left"
+                            <img src="{{ asset('storage/' . optional($data)->image2) }}" alt="Image" data-aos="fade-left"
                                 data-aos-duration="1000" data-aos-delay="100">
                             <div class="about__thumb-sm__content" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-delay="200">
@@ -75,7 +75,7 @@
                     <div class="difference-two__thumb-wrapper">
                         <div class="difference-two__thumb">
                             <div class="thumb-lg" data-aos="fade-right" data-aos-duration="1000">
-                                <img src="{{ asset('storage/' . $data->image1) }}" alt="Image">
+                                <img src="{{ asset('storage/' . optional($data)->image1) }}" alt="Image">
                                 <div class="grid-line">
                                     <img src="assets/images/help/grid.png" alt="Image" class="base-img">
                                 </div>
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <div class="thumb-sm" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                                <img src="{{ asset('storage/' . $data->image2) }}" alt="Image">
+                                <img src="{{ asset('storage/' . optional($data)->image2) }}" alt="Image">
                             </div>
                         </div>
                     </div>
@@ -96,24 +96,24 @@
                     <div class="difference-two__content">
                         <div class="section__header mb-20" data-aos="fade-up" data-aos-duration="1000">
                             <span class="sub-title">Soutenir notre cause ensemble</span>
-                            <h2 class="title-animation">{{ $data->title }}
+                            <h2 class="title-animation">{{ optional($data)->title }}
                             </h2>
                         </div>
-                        <p>{{ Str::limit($data->description, 300) }}
+                        <p>{{ Str::limit(optional($data)->description, 300) }}
                         </p>
                         <div class="about__content-inner__cta mt-40" data-aos="fade-up" data-aos-duration="1000">
-                                <div class="about__content-inner__btn">
-                                    <a href="{{ route('about.index') }}" class="btn--secondary"
-                                        data-text="En savoir plus"><span>En savoir plus
-                                            </span></a>
-                                </div>
+                            <div class="about__content-inner__btn">
+                                <a href="{{ route('about.details') }}" class="btn--secondary"
+                                    data-text="En savoir plus"><span>En savoir plus
+                                    </span></a>
                             </div>
+                        </div>
                         <div class="difference-two__inner cta mt-40">
                             <div class="difference-two__inner-content">
                                 <div class="difference-two__tab">
                                     <div class="difference-two__tab-btns">
                                         <button class="difference-two__tab-btn active" data-target="#mission"
-                                            aria-label="mission" title="mission">Objectif</button>
+                                            aria-label="mission" title="mission">Objectif global</button>
                                         <button class="difference-two__tab-btn" data-target="#vision" aria-label="vision"
                                             title="vision">Mission </button>
                                         <button class="difference-two__tab-btn" data-target="#excellence"
@@ -121,37 +121,15 @@
                                     </div>
                                     <div class="difference-two__tab-content">
                                         <div class="difference-two__content-single" id="mission">
-                                            <ul>
-                                                <li><i class="fa-solid fa-check"></i>We help companies develop
-                                                    powerful corporate social
-                                                </li>
-                                                <li><i class="fa-solid fa-check"></i>Helped fund 3,265 Project
-                                                    powerful corporate poor
-                                                </li>
-                                                <li><i class="fa-solid fa-check"></i>Dedicated Tech Services</li>
-                                            </ul>
+
+                                            <p>{{ optional($data)->objective }}</p>
+
                                         </div>
                                         <div class="difference-two__content-single" id="vision">
-                                            <ul>
-                                                <li><i class="fa-solid fa-check"></i>We help companies develop
-                                                    powerful corporate social
-                                                </li>
-                                                <li><i class="fa-solid fa-check"></i>Helped fund 3,265 Project
-                                                    powerful corporate poor
-                                                </li>
-                                                <li><i class="fa-solid fa-check"></i>Dedicated Tech Services</li>
-                                            </ul>
+                                            <p>{{ optional($data)->assignment }}</p>
                                         </div>
                                         <div class="difference-two__content-single" id="excellence">
-                                            <ul>
-                                                <li><i class="fa-solid fa-check"></i>We help companies develop
-                                                    powerful corporate social
-                                                </li>
-                                                <li><i class="fa-solid fa-check"></i>Helped fund 3,265 Project
-                                                    powerful corporate poor
-                                                </li>
-                                                <li><i class="fa-solid fa-check"></i>Dedicated Tech Services</li>
-                                            </ul>
+                                            <p>{{ optional($data)->vision }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -286,8 +264,9 @@
                                             <div class="content">
                                                 <span>{{ $item->title }}</span>
                                                 <h6><a href="team-details.html">{{ $item->name }}</a></h4>
-                                                <p><a href="tel:{{ $item->phone }}"><i class="ph ph-phone-call"></i> Tel: {{ $item->phone }}</a>
-                                                </p>
+                                                    <p><a href="tel:{{ $item->phone }}"><i class="ph ph-phone-call"></i>
+                                                            Tel: {{ $item->phone }}</a>
+                                                    </p>
                                             </div>
                                         </div>
                                     </div>

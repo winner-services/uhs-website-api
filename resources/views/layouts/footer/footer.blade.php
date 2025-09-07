@@ -37,7 +37,7 @@
                         </a>
                     </div>
                     <div class="footer__widget-content">
-                        <p>{{ Str::limit($data->description,150)}}
+                        <p>{{ Str::limit(optional($data)->description,150)}}
                         </p>
                     </div>
                 </div>
@@ -124,14 +124,14 @@
                         <ul class="footer__contact-list">
                             <li><a href="https://www.google.com/maps?q=0.337907,29.748384"
                                     target="_blank"><i class="fa-solid fa-location-dot"></i>
-                                    {{ $data->address}}
+                                    {{ optional($data)->address}}
                                 </a>
                             </li>
-                            <li><a href="tel:{{ $data->phone}}"><i class="fa-solid fa-phone-flip"></i>
-                                    {{ $data->phone}}</a>
+                            <li><a href="tel:{{ optional($data)->phone}}"><i class="fa-solid fa-phone-flip"></i>
+                                    {{ optional($data)->phone}}</a>
                             </li>
-                            <li><a href="mailto:{{ $data->email}}"><i
-                                        class="fa-regular fa-envelope"></i>{{ $data->email}}</a></li>
+                            <li><a href="mailto:{{ optional($data)->email}}"><i
+                                        class="fa-regular fa-envelope"></i>{{ optional($data)->email}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -160,23 +160,23 @@
                             <div class="col-12 col-lg-5">
                                 <div class="footer__bottom-right">
                                     <div class="social justify-content-center justify-content-lg-end">
-                                        <a href="{{ $data->facebook }}" target="_blank"
+                                        <a href="{{ optional($data)->facebook }}" target="_blank"
                                             aria-label="share us on facebook" title="facebook">
                                             <i class="fa-brands fa-facebook-f"></i>
                                         </a>
-                                        <a href="{{ $data->instagram }}" target="_blank" aria-label="share us on vimeo"
+                                        <a href="{{ optional($data)->instagram }}" target="_blank" aria-label="share us on vimeo"
                                             title="vimeo">
                                             <i class="fa-brands fa-instagram"></i>
                                         </a>
-                                        <a href="{{ $data->twitter }}" target="_blank" aria-label="share us on twitter"
+                                        <a href="{{ optional($data)->twitter }}" target="_blank" aria-label="share us on twitter"
                                             title="twitter">
                                             <i class="fa-brands fa-twitter"></i>
                                         </a>
-                                        <a href="{{ $data->linkedin }}" target="_blank"
+                                        <a href="{{ optional($data)->linkedin }}" target="_blank"
                                             aria-label="share us on linkedin" title="linkedin">
                                             <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
-                                        <a href="{{ $data->youtube}" target="blank"
+                                        <a href="{{ optional($data)->youtube}" target="blank"
                                             aria-label="share us on youtubetitle="outube
                                             <i class="fa-brands fa-youtube"></i>
                                         </a>

@@ -12134,8 +12134,8 @@ div {
   border-radius: 20px;
 }
 .cm-details .cm-details__poster img {
-  width: 100%;
-  min-height: 300px;
+  width: 70%;
+  min-height: 70%;
   border-radius: 20px;
 }
 .cm-details .cm-details-meta {

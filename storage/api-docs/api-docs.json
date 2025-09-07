@@ -56,6 +56,14 @@
                                         "type": "string",
                                         "example": "Fournir un service de qualité"
                                     },
+                                    "assignment": {
+                                        "type": "string",
+                                        "example": "Fournir un service de qualité"
+                                    },
+                                    "vision": {
+                                        "type": "string",
+                                        "example": "Fournir un service de qualité"
+                                    },
                                     "address": {
                                         "type": "string",
                                         "example": "Kinshasa, RDC"
@@ -172,6 +180,12 @@
                                         "type": "string"
                                     },
                                     "objective": {
+                                        "type": "string"
+                                    },
+                                    "assignment": {
+                                        "type": "string"
+                                    },
+                                    "vision": {
                                         "type": "string"
                                     },
                                     "address": {

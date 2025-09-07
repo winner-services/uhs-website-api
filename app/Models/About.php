@@ -10,6 +10,8 @@ class About extends Model
         'title',
         'description',
         'objective',
+        'assignment',
+        'vision',
         'address',
         'instagram',
         'facebook',
