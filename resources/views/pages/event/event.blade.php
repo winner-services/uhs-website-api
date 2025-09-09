@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="common-banner__content text-center">
-                        <h2 class="title-animation">Notre Equipe</h2>
+                        <h2 class="title-animation">Événements</h2>
                     </div>
                 </div>
             </div>
@@ -16,20 +16,20 @@
                     <a href="{{ '/' }}">Acceuil</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    Notre Equipe
+                    Événements et Actualités
                 </li>
             </ol>
         </nav>
         @include('pages.bannier.bannier')
     </section>
 
-    <section class="team-area-two pt-120 pb-120">
+    <section class="explore-area pt-120 pb-120">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 col-xl-5">
-                    <div class="section__header text-center mb-60" data-aos="fade-up" data-aos-duration="1000">
-                        <span>Soutenir notre cause ensemble</span>
-                        <h2 class="title-animation">Rencontrez les membres de notre équipe dévouée</h2>
+                    <div class="section__header text-center mb-55" data-aos="fade-up" data-aos-duration="1000">
+                        <span>Rejoignez-nous pour des expériences passionnantes</span>
+                        <h2 class="title-animation">Événements et activités</h2>
                         <div class="icon-thumb justify-content-center">
                             <div class="icon-thumb-single">
                                 <span></span>
@@ -44,45 +44,29 @@
                     </div>
                 </div>
             </div>
-            <div class="row gutter-40">
-                @foreach ($team as $item)
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        <div class="team__single" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="thumb-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="explore__wrapper">
+                        @foreach ($event as $item)
+                            <div class="explore__single" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="thumb">
-                                    <a href="#">
+                                    <a href="{{ route('event.details', ['id' => $item->id]) }}">
                                         <img src="{{ asset('storage/' . $item->image) }}" alt="Image">
                                     </a>
                                 </div>
-                                <div class="social">
-                                    @if ($item->facebook)
-                                        <a href="{{ $item->facebook }}" target="_blank"><i
-                                                class="fa-brands fa-facebook-f"></i></a>
-                                    @endif
-                                    @if ($item->twitter)
-                                        <a href="{{ $item->twitter }}" target="_blank"><i
-                                                class="fa-brands fa-twitter"></i></a>
-                                    @endif
-                                    @if ($item->linkedin)
-                                        <a href="{{ $item->linkedin }}" target="_blank"><i
-                                                class="fa-brands fa-linkedin-in"></i></a>
-                                    @endif
+                                <a href="{{ route('event.details', ['id' => $item->id]) }}" class="arr">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </a>
+                                <div class="content">
+                                    <p>{{ $item->date }}</p>
+                                    <h5><a href="{{ route('event.details', ['id' => $item->id]) }}">{{ $item->title }}</a>
+                                    </h5>
                                 </div>
                             </div>
-                            <div class="content">
-                                <span>{{ $item->title }}</span>
-                                <h5>{{ $item->name }}</h5>
-                                <p>
-                                    <a href="tel:{{ $item->phone }}">
-                                        <i class="fa-solid fa-phone-volume"></i> {{ $item->phone }}
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
-
             {{-- Pagination --}}
             <div class="row">
                 <div class="col-12">
@@ -90,35 +74,31 @@
                         <ul class="pagination main-pagination">
 
                             {{-- Lien vers la page précédente --}}
-                            @if ($team->onFirstPage())
+                            @if ($event->onFirstPage())
                                 <li class="disabled"><button><i class="fa-solid fa-angles-left"></i></button></li>
                             @else
-                                <li><a href="{{ $team->previousPageUrl() }}"><i class="fa-solid fa-angles-left"></i></a>
+                                <li><a href="{{ $event->previousPageUrl() }}"><i class="fa-solid fa-angles-left"></i></a>
                                 </li>
                             @endif
 
                             {{-- Les numéros de pages --}}
-                            @foreach ($team->getUrlRange(1, $team->lastPage()) as $page => $url)
-                                @if ($page == $team->currentPage())
+                            @foreach ($event->getUrlRange(1, $event->lastPage()) as $page => $url)
+                                @if ($page == $event->currentPage())
                                     <li><a href="{{ $url }}" class="active">{{ $page }}</a></li>
                                 @else
                                     <li><a href="{{ $url }}">{{ $page }}</a></li>
                                 @endif
                             @endforeach
                             {{-- Lien vers la page suivante --}}
-                            @if ($team->hasMorePages())
-                                <li><a href="{{ $team->nextPageUrl() }}"><i class="fa-solid fa-angles-right"></i></a></li>
+                            @if ($event->hasMorePages())
+                                <li><a href="{{ $event->nextPageUrl() }}"><i class="fa-solid fa-angles-right"></i></a></li>
                             @else
                                 <li class="disabled"><button><i class="fa-solid fa-angles-right"></i></button></li>
                             @endif
-
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="spade">
-            <img src="{{ asset('assets/images/sprade-green.png') }}" alt="Image">
         </div>
     </section>
 @endsection

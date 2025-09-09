@@ -58,10 +58,10 @@
                             <li><a href="{{ route('domaine.index') }}"><i class="fa-solid fa-angle-right"></i>
                                     Nos domaines</a>
                             </li>
-                            <li><a href="our-causes.html"><i class="fa-solid fa-angle-right"></i>
+                            <li><a href="{{ route('project.index') }}"><i class="fa-solid fa-angle-right"></i>
                                     Nos projets</a>
                             </li>
-                            <li><a href="shop.html"><i class="fa-solid fa-angle-right"></i>
+                            <li><a href="{{ route('event.index') }}"><i class="fa-solid fa-angle-right"></i>
                                     Nos Evénnements</a>
                             </li>
                             <li><a href="{{ route('team.index') }}"><i class="fa-solid fa-angle-right"></i>Notre Equipe</a>
@@ -73,7 +73,7 @@
             <div class="col-12 col-md-6 col-xl-3">
                 <div class="footer__widget" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
                     <div class="footer__widget-intro">
-                        <h5>Top News</h5>
+                        <h5>dernières actualités</h5>
                         <div class="line">
                             <span class="large-line"></span>
                             <span class="small-line"></span>
@@ -81,31 +81,20 @@
                         </div>
                     </div>
                     <div class="footer__widget-content">
-                        <div class="footer__blog-single">
+                        @foreach ($twoEvents as $items)
+                            <div class="footer__blog-single">
                             <div class="thumb">
-                                <a href="blog-details.html">
-                                    <img src="{{ asset('assets/images/blog/footer-one.png') }}" alt="Image">
+                                <a href="{{ route('event.details', ['id' => $items->id]) }}">
+                                    <img src="{{ asset('storage/' . $items->image) }}" alt="Image">
                                 </a>
                             </div>
                             <div class="content">
-                                <h6><a href="blog-details.html">Unity in Giving Community
-                                        Charity</a>
+                                <h6><a href="{{ route('event.details', ['id' => $items->id]) }}">{{ $items->title }}</a>
                                 </h6>
-                                <p>Aug 25, 2024</p>
+                                <p>{{ $items->date }}</p>
                             </div>
                         </div>
-                        <div class="footer__blog-single">
-                            <div class="thumb">
-                                <a href="blog-details.html">
-                                    <img src="{{ asset('assets/images/blog/footer-two.png') }}" alt="Image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h6><a href="blog-details.html">Poverty Not Only Money It Can</a>
-                                </h6>
-                                <p>Aug 25, 2024</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

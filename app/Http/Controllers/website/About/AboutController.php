@@ -4,6 +4,7 @@ namespace App\Http\Controllers\website\About;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Message;
 use App\Models\objective;
@@ -18,13 +19,15 @@ class AboutController extends Controller
         $data = About::first();
         $team = Team::all();
         $gallery = Gallery::latest()->paginate(4);
-        return view('pages.about.about', compact('data', 'team','gallery','countTeam','countMessage'));
+        $twoEvents = Event::latest()->take(2)->get();
+        return view('pages.about.about', compact('data', 'team','gallery','countTeam','countMessage','twoEvents'));
     }
 
     public function details(){
         $team = Team::inRandomOrder()->take(3)->get();
         $data = About::first();
         $objectives = objective::all();
-        return view('pages.about.aboutDetails',compact('data','team','objectives'));
+        $twoEvents = Event::latest()->take(2)->get();
+        return view('pages.about.aboutDetails',compact('data','team','objectives','twoEvents'));
     }
 }

@@ -21,36 +21,21 @@
                                     <a href="{{ route('domaine.index') }}">Nos domaines</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('about.index') }}">Nos projets</a>
-                                </li>
-                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('about.index') }}">Événements</a>
-                                </li>
-                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('team.index') }}">Notre Équipe</a>
+                                    <a href="{{ route('project.index') }}">Nos projets</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="contact-us.html">Contact</a>
+                                    <a href="{{ route('event.index') }}">Événements</a>
+                                </li>
+                                <li class="navbar__item nav-fade">
+                                    <a href="{{ route('team.index') }}">Notre Équipe</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="navbar__options">
                             <div class="navbar__mobile-options ">
-                                <div class="search-box">
-                                    <button class="open-search" aria-label="search products" title="open search box">
-                                        <i class="ph ph-magnifying-glass"></i>
-                                    </button>
-                                </div>
-                                <span class="divider"></span>
-                                <div class="cart-box">
-                                    <button class="open-cart cart" aria-label="cart" title="open cart">
-                                        <i class="ph ph-shopping-cart-simple"></i>
-                                        <span>02</span>
-                                    </button>
-                                </div>
+
                                 <a href="donate-us.html" class="btn--secondary d-none d-md-flex"
-                                    data-text="Donate Now"><span>Donate
-                                        Now</span></a>
+                                    data-text="Contactez-nous"><span>Contactez-nous</span></a>
                             </div>
                             <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
                                 title="open offcanvas menu">
