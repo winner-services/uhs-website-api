@@ -4,22 +4,27 @@ namespace App\Http\Controllers\website\About;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Gallery;
+use App\Models\Message;
+use App\Models\objective;
 use App\Models\Team;
-use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
     public function index()
     {
+        $countTeam = Team::count();
+        $countMessage = Message::count();
         $data = About::first();
         $team = Team::all();
-
-        return view('pages.about.about', compact('data', 'team'));
+        $gallery = Gallery::latest()->paginate(4);
+        return view('pages.about.about', compact('data', 'team','gallery','countTeam','countMessage'));
     }
 
     public function details(){
         $team = Team::inRandomOrder()->take(3)->get();
         $data = About::first();
-        return view('pages.about.aboutDetails',compact('data','team'));
+        $objectives = objective::all();
+        return view('pages.about.aboutDetails',compact('data','team','objectives'));
     }
 }

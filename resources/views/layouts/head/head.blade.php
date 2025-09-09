@@ -7,7 +7,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon">
     <!-- #title -->
-    <title>UHS Asbl</title>
+    <title>UHS-Asbl</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- #keywords -->
     <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
     <!-- #description -->

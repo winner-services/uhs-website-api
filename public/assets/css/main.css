@@ -7862,6 +7862,13 @@ div {
   -webkit-animation: pulse 4s infinite ease-in-out;
           animation: pulse 4s infinite ease-in-out;
 }
+.blog__single-thumb img {
+    width: 100%;
+    height: 250px; /* adapte la hauteur à ce que tu veux */
+    object-fit: cover; /* recadre l’image sans la déformer */
+    border-radius: 8px; /* optionnel, pour arrondir comme ton exemple */
+}
+
 .blog .blog__single-thumb {
   position: relative;
   margin-bottom: 30px;

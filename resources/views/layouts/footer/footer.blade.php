@@ -1,22 +1,21 @@
-<!-- ==== footer start ==== -->
+
 <footer class="footer footer-two pt-120">
     <div class="container">
         <div class="row align-items-center gutter-30">
             <div class="col-12 col-lg-7 col-xxl-6">
                 <div class="footer__newsletter-content">
                     <h3 class="title-animation">
-                        Subscribe to Our Newsletter
+                        Abonnez-vous à notre newsletter
                     </h3>
-                    <p>Regular inspections and feedback mechanisms</p>
                 </div>
             </div>
             <div class="col-12 col-lg-5 col-xxl-5 offset-xxl-1">
                 <div class="footer__newsletter-form">
                     <form action="#" method="post">
                         <input type="email" required name="subscribe-email" id="subscribeEmail"
-                            placeholder="Enter Email">
-                        <button type="submit" aria-label="subscribe to our newsletter"
-                            title="subscribe to our newsletter" class="btn--tertiary"> <i
+                            placeholder="Entrer Email">
+                        <button type="submit" aria-label="Abonnez-vous à notre newsletter"
+                            title="Abonnez-vous à notre newsletter" class="btn--tertiary"> <i
                                 class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
@@ -33,7 +32,7 @@
                 <div class="footer__widget" data-aos="fade-up" data-aos-duration="1200">
                     <div class="footer__logo">
                         <a href="{{ '/' }}">
-                            <img src="assets/images/logo.png" alt="Image">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="Image">
                         </a>
                     </div>
                     <div class="footer__widget-content">
@@ -45,7 +44,7 @@
             <div class="col-12 col-md-6 col-xl-2">
                 <div class="footer__widget" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                     <div class="footer__widget-intro">
-                        <h5>Quick Links</h5>
+                        <h5>Liens rapides</h5>
                         <div class="line">
                             <span class="large-line"></span>
                             <span class="small-line"></span>
@@ -56,16 +55,16 @@
                         <ul class="footer__widget-list">
                             <li><a href="{{ route('about.index') }}"><i class="fa-solid fa-angle-right"></i> A Propos de nous</a>
                             </li>
-                            <li><a href="donate-us.html"><i class="fa-solid fa-angle-right"></i>
-                                    Donate Us</a>
+                            <li><a href="{{ route('domaine.index') }}"><i class="fa-solid fa-angle-right"></i>
+                                    Nos domaines</a>
                             </li>
-                            <li><a href="our-causes.html"><i class="fa-solid fa-angle-right"></i>Our
-                                    Causes</a>
+                            <li><a href="our-causes.html"><i class="fa-solid fa-angle-right"></i>
+                                    Nos projets</a>
                             </li>
-                            <li><a href="shop.html"><i class="fa-solid fa-angle-right"></i> Our
-                                    Shop</a>
+                            <li><a href="shop.html"><i class="fa-solid fa-angle-right"></i>
+                                    Nos Evénnements</a>
                             </li>
-                            <li><a href="events.html"><i class="fa-solid fa-angle-right"></i>Events</a>
+                            <li><a href="{{ route('team.index') }}"><i class="fa-solid fa-angle-right"></i>Notre Equipe</a>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +84,7 @@
                         <div class="footer__blog-single">
                             <div class="thumb">
                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/footer-one.png" alt="Image">
+                                    <img src="{{ asset('assets/images/blog/footer-one.png') }}" alt="Image">
                                 </a>
                             </div>
                             <div class="content">
@@ -98,7 +97,7 @@
                         <div class="footer__blog-single">
                             <div class="thumb">
                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/footer-two.png" alt="Image">
+                                    <img src="{{ asset('assets/images/blog/footer-two.png') }}" alt="Image">
                                 </a>
                             </div>
                             <div class="content">
@@ -113,7 +112,7 @@
             <div class="col-12 col-md-6 col-xl-3">
                 <div class="footer__widget" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
                     <div class="footer__widget-intro">
-                        <h5>Get In Touch</h5>
+                        <h5>Contactez-nous</h5>
                         <div class="line">
                             <span class="large-line"></span>
                             <span class="small-line"></span>
@@ -176,7 +175,7 @@
                                             aria-label="share us on linkedin" title="linkedin">
                                             <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
-                                        <a href="{{ optional($data)->youtube}" target="blank"
+                                        <a href="{{ optional($data)->youtube}}" target="blank"
                                             aria-label="share us on youtubetitle="outube
                                             <i class="fa-brands fa-youtube"></i>
                                         </a>
@@ -190,13 +189,13 @@
         </div>
     </div>
     <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
-        <img src="assets/images/sprade.png" alt="Image" class="base-img">
+        <img src="{{ asset('assets/images/sprade.png') }}" alt="Image" class="base-img">
     </div>
     <div class="sprade-light" data-aos="zoom-in" data-aos-duration="1000">
-        <img src="assets/images/sprade-light.png" alt="Image">
+        <img src="{{ asset('assets/images/sprade-light.png') }}" alt="Image">
     </div>
     <div class="footer__thumb-right" data-aos="fade-left" data-aos-duration="1000">
-        <img src="assets/images/mask/footer-right.png" alt="Image">
+        <img src="{{ asset('assets/images/mask/footer-right.png') }}" alt="Image">
     </div>
 </footer>
-<!-- ==== / footer end ==== -->
+

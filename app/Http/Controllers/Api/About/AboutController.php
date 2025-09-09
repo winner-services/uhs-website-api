@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api\About;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Message;
+use App\Models\objective;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -244,6 +246,131 @@ class AboutController extends Controller
 
         return response()->json([
             'message' => 'Mise à jour réussie',
+            'success' => true,
+            'status' => 200
+        ], 200);
+    }
+
+    /**
+     * @OA\Post(
+     * path="/api/objective.store",
+     * summary="Create",
+     * description="Creation",
+     * security={{ "bearerAuth":{ }}},
+     * operationId="createObjective",
+     * tags={"Objectifs"},
+     * @OA\RequestBody(
+     *    required=true,
+     *    description="Enregistrer",
+     *    @OA\JsonContent(
+     *       required={"designation"},
+     *       @OA\Property(property="designation", type="string", format="text",example="rdc"),
+     *    ),
+     * ),
+     * @OA\Response(
+     *    response=201,
+     *    description="success",
+     *     ),
+     * @OA\Response(
+     *    response=401,
+     *    description="ysteme",
+     *     )
+     * )
+     */
+
+    public function createObjective(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'designation' => 'required|string'
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Les données envoyées ne sont pas valides.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        $data = new objective();
+        $data->designation = $request->designation;
+        $data->save();
+        return response()->json([
+            'message' => 'success',
+            'success' => true,
+            'status' => 201
+        ]);
+    }
+
+    /**
+     * @OA\Get(
+     *      path="/api/message.index",
+     *      operationId="messageIndex",
+     *      tags={"Message"},
+     *      summary="Get",
+     *      description="Returns list",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful",
+     * *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *       ),
+     *     )
+     */
+    public function messageIndex()
+    {
+        $data = Message::latest()->get();
+        $result = [
+            'message' => "success",
+            'success' => true,
+            'status' => 200,
+            'data' => $data
+        ];
+        return response()->json($result);
+    }
+
+    /**
+     * @OA\Delete(
+     *     path="/api/message.delete/{id}",
+     *     operationId="destroyMessage",
+     *     summary="Supprimer un message",
+     *     tags={"Message"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="supprimé avec succès",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="supprimé avec succès"),
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(property="status", type="integer", example=200)
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="introuvable"
+     *     )
+     * )
+     */
+    public function destroyMessage($id)
+    {
+        $message = Message::find($id);
+
+        if (!$message) {
+            return response()->json([
+                'message' => 'non trouvé',
+                'success' => false,
+                'status' => 404
+            ], 404);
+        }
+        $message->delete();
+
+        return response()->json([
+            'message' => 'supprimé avec succès',
             'success' => true,
             'status' => 200
         ], 200);

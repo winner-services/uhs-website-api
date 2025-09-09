@@ -246,6 +246,477 @@
                 }
             }
         },
+        "/api/objective.store": {
+            "post": {
+                "tags": [
+                    "Objectifs"
+                ],
+                "summary": "Create",
+                "description": "Creation",
+                "operationId": "createObjective",
+                "requestBody": {
+                    "description": "Enregistrer",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "designation"
+                                ],
+                                "properties": {
+                                    "designation": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "rdc"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    },
+                    "401": {
+                        "description": "ysteme"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/message.index": {
+            "get": {
+                "tags": [
+                    "Message"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "messageIndex",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/message.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Message"
+                ],
+                "summary": "Supprimer un message",
+                "operationId": "destroyMessage",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "supprimé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "supprimé avec succès"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "introuvable"
+                    }
+                }
+            }
+        },
+        "/api/domaine.index": {
+            "get": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "indexDomaine",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/category.index": {
+            "get": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "indexCategories",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/category.store": {
+            "post": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Create",
+                "description": "Creation",
+                "operationId": "storeCategorie",
+                "requestBody": {
+                    "description": "Enregistrer",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "designation"
+                                ],
+                                "properties": {
+                                    "designation": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "rdc"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    },
+                    "401": {
+                        "description": "ysteme"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/domaine.store": {
+            "post": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Créer un nouveau",
+                "operationId": "storeDomaine",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "category_id"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Jean Dupont"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Développeur"
+                                    },
+                                    "category_id": {
+                                        "type": "integer",
+                                        "example": "+243970000000"
+                                    },
+                                    "image": {
+                                        "description": "Image",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Membre créé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 201
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                }
+            }
+        },
+        "/api/domaine.update/{id}": {
+            "post": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Modifier un domaine existant",
+                "operationId": "updateDomaine",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID du domaine à modifier",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "category_id"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Jean Mis à jour"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Développeur senior"
+                                    },
+                                    "category_id": {
+                                        "type": "integer",
+                                        "example": "2"
+                                    },
+                                    "image": {
+                                        "description": "Nouvelle image (facultatif)",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Domaine mis à jour avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Domaine introuvable"
+                    }
+                }
+            }
+        },
+        "/api/domaine.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Supprimer un domaine",
+                "operationId": "deleteDomaine",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID du domaine à supprimer",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Domaine supprimé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Domaine supprimé avec succès"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Domaine introuvable"
+                    }
+                }
+            }
+        },
+        "/api/gallery.index": {
+            "get": {
+                "tags": [
+                    "Gallery"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "galleryIndex",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/gallery.store": {
+            "post": {
+                "tags": [
+                    "Gallery"
+                ],
+                "summary": "Créer une nouvelle",
+                "operationId": "createGallery",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Création réussie",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 201
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Données invalides"
+                    }
+                }
+            }
+        },
         "/api/team.index": {
             "get": {
                 "tags": [
@@ -516,6 +987,22 @@
         {
             "name": "About",
             "description": "About"
+        },
+        {
+            "name": "Objectifs",
+            "description": "Objectifs"
+        },
+        {
+            "name": "Message",
+            "description": "Message"
+        },
+        {
+            "name": "Domaine",
+            "description": "Domaine"
+        },
+        {
+            "name": "Gallery",
+            "description": "Gallery"
         },
         {
             "name": "Team",
