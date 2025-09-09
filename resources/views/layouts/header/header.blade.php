@@ -34,7 +34,7 @@
                         <div class="navbar__options">
                             <div class="navbar__mobile-options ">
 
-                                <a href="donate-us.html" class="btn--secondary d-none d-md-flex"
+                                <a href="{{ route('contact.index') }}" class="btn--secondary d-none d-md-flex"
                                     data-text="Contactez-nous"><span>Contactez-nous</span></a>
                             </div>
                             <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
