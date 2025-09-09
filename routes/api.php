@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\About\AboutController;
 use App\Http\Controllers\Api\Domaine\DomaineController;
 use App\Http\Controllers\Api\Event\EventController;
 use App\Http\Controllers\Api\Gallery\GalleryController;
+use App\Http\Controllers\Api\Slide\SlideController;
 use App\Http\Controllers\Api\Team\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,13 @@ Route::controller(DomaineController::class)->group(function () {
 Route::controller(EventController::class)->group(function () {
     Route::get('/event.index', 'getEventData');
     Route::post('/event.store', 'createEvent');
-    Route::post('/event.update/{id}','updateEvent');
-    Route::delete('/event.delete/{id}','deleteEvent');
+    Route::post('/event.update/{id}', 'updateEvent');
+    Route::delete('/event.delete/{id}', 'deleteEvent');
+});
+
+Route::controller(SlideController::class)->group(function () {
+    Route::get('/slide.index', 'slideIndex');
+    Route::post('/slide.store', 'storeSlide');
+    Route::post('/slide.update/{id}', 'updateSlide');
+    Route::delete('/slide.delete/{id}', 'deleteSlide');
 });

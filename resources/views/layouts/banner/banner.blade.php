@@ -125,13 +125,13 @@
          </button>
      </div>
      <div class="shape-left" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
-         <img src="assets/images/banner/banner-two-shape.png" alt="Image" class="base-img">
+         <img src="{{ asset('assets/images/banner/banner-two-shape.png') }}" alt="Image" class="base-img">
      </div>
      <div class="sprade-shape">
-         <img src="assets/images/sprade-base.png" alt="Image" class="base-img" data-aos="zoom-in"
+         <img src="{{ asset('assets/images/sprade-base.png') }}" alt="Image" class="base-img" data-aos="zoom-in"
              data-aos-duration="1000">
      </div>
      <div class="unity">
-         <img src="assets/images/unity.png" alt="Image">
+         <img src="{{ asset('assets/images/unity.png') }}" alt="Image">
      </div>
  </section>
