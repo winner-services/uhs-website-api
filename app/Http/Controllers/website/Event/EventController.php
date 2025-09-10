@@ -6,13 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Event;
 use App\Models\Gallery;
-use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function eventIndex(){
         $data = About::first();
-        $event = Event::latest()->paginate(3);
+        $event = Event::latest()->paginate(6);
         $twoEvents = Event::latest()->take(2)->get();
         return view('pages.event.event', compact('data','event','twoEvents'));
     }

@@ -8,6 +8,7 @@ use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Message;
 use App\Models\objective;
+use App\Models\Parternaire;
 use App\Models\Team;
 
 class AboutController extends Controller
@@ -15,12 +16,13 @@ class AboutController extends Controller
     public function index()
     {
         $countTeam = Team::count();
+        $countPartner = Parternaire::count();
         $countMessage = Message::count();
         $data = About::first();
         $team = Team::all();
         $gallery = Gallery::latest()->paginate(4);
         $twoEvents = Event::latest()->take(2)->get();
-        return view('pages.about.about', compact('data', 'team','gallery','countTeam','countMessage','twoEvents'));
+        return view('pages.about.about', compact('data', 'team','gallery','countTeam','countMessage','twoEvents','countPartner'));
     }
 
     public function details(){

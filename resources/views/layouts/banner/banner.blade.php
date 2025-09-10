@@ -1,118 +1,29 @@
  <section class="banner-two">
      <div class="banner-two__slider swiper">
          <div class="swiper-wrapper">
-             <div class="swiper-slide">
-                 <div class="banner-two__slider-single">
-                     <div class="banner-two__slider-bg" data-background="assets/images/banner/banner-two-bg.jpg">
-                     </div>
-                     <div class="container">
-                         <div class="row">
-                             <div class="col-12 col-md-9 col-lg-7 col-xxl-7">
-                                 <div class="banner-two__slider-content">
-                                     <span class="sub-title">Start donating poor
-                                         people</span>
-                                     <h1>Giving help <br>
-                                         To Those <span class="bottom-line">peoples</span>
-                                         Who Need It.
-                                     </h1>
-                                     <div class="banner__content-cta mt-40">
-                                         <a href="our-causes.html" aria-label="about us" title="about us"
-                                             class="btn--primary">Discover
-                                             More</a>
-                                         <a href="contact-us.html" aria-label="contact us" title="contact us"
-                                             data-text="Get A Quote" class="btn--secondary"><span>Get A
-                                                 Quote</span></a>
+             @foreach ($slides as $items)
+                 <div class="swiper-slide">
+                     <div class="banner-two__slider-single">
+                         <div class="banner-two__slider-bg" data-background="{{ asset('storage/' . $items->image) }}">
+                         </div>
+                         <div class="container">
+                             <div class="row">
+                                 <div class="col-12 col-md-9  col-lg-7 col-xxl-7">
+                                     <div class="banner-two__slider-content">
+                                         <h1>{{ $items->title }}
+                                         </h1>
+                                         <div class="banner__content-cta mt-40">
+                                             <a href="{{ route('about.index') }}" aria-label="about us" title="about us"
+                                                 class="btn--primary">A Propos de nous
+                                                 </a>
+                                         </div>
                                      </div>
                                  </div>
                              </div>
                          </div>
                      </div>
                  </div>
-             </div>
-             <div class="swiper-slide">
-                 <div class="banner-two__slider-single">
-                     <div class="banner-two__slider-bg" data-background="assets/images/banner/banner-one-bg.jpg">
-                     </div>
-                     <div class="container">
-                         <div class="row">
-                             <div class="col-12 col-md-9  col-lg-7 col-xxl-7">
-                                 <div class="banner-two__slider-content">
-                                     <span class="sub-title">Start donating poor
-                                         people</span>
-                                     <h1>Giving help <br>
-                                         To Those <span class="bottom-line">peoples</span>
-                                         Who Need It.
-                                     </h1>
-                                     <div class="banner__content-cta mt-40">
-                                         <a href="our-causes.html" aria-label="about us" title="about us"
-                                             class="btn--primary">Discover
-                                             More</a>
-                                         <a href="contact-us.html" aria-label="contact us" title="contact us"
-                                             data-text="Get A Quote" class="btn--secondary"><span>Get A
-                                                 Quote</span></a>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="swiper-slide">
-                 <div class="banner-two__slider-single">
-                     <div class="banner-two__slider-bg" data-background="assets/images/banner/banner-three-bg.jpg">
-                     </div>
-                     <div class="container">
-                         <div class="row">
-                             <div class="col-12 col-md-9 col-lg-7 col-xxl-7">
-                                 <div class="banner-two__slider-content">
-                                     <span class="sub-title">Start donating poor
-                                         people</span>
-                                     <h1>Giving help <br>
-                                         To Those <span class="bottom-line">peoples</span>
-                                         Who Need It.
-                                     </h1>
-                                     <div class="banner__content-cta mt-40">
-                                         <a href="our-causes.html" aria-label="about us" title="about us"
-                                             class="btn--primary">Discover
-                                             More</a>
-                                         <a href="contact-us.html" aria-label="contact us" title="contact us"
-                                             data-text="Get A Quote" class="btn--secondary"><span>Get A
-                                                 Quote</span></a>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="swiper-slide">
-                 <div class="banner-two__slider-single">
-                     <div class="banner-two__slider-bg" data-background="assets/images/banner/banner-four-bg.jpg">
-                     </div>
-                     <div class="container">
-                         <div class="row">
-                             <div class="col-12 col-md-9 col-lg-7 col-xxl-7">
-                                 <div class="banner-two__slider-content">
-                                     <span class="sub-title">Start donating poor
-                                         people</span>
-                                     <h1>Giving help <br>
-                                         To Those <span class="bottom-line">peoples</span>
-                                         Who Need It.
-                                     </h1>
-                                     <div class="banner__content-cta mt-40">
-                                         <a href="our-causes.html" aria-label="about us" title="about us"
-                                             class="btn--primary">Discover
-                                             More</a>
-                                         <a href="contact-us.html" aria-label="contact us" title="contact us"
-                                             data-text="Get A Quote" class="btn--secondary"><span>Get A
-                                                 Quote</span></a>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+             @endforeach
          </div>
      </div>
      <div class="slider-navigation d-none d-md-flex">

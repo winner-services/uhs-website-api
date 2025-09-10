@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="spade">
-            <img src="assets/images/spade-green-two.png" alt="Image">
+            <img src="{{ asset('assets/images/spade-green-two.png') }}" alt="Image">
         </div>
     </section>
 
@@ -119,12 +119,12 @@
                         <div class="divider"></div>
                         <div class="counter__single">
                             <div class="thumb">
-                                <i class="icon-award"></i>
+                                <i class="icon-support-hand"></i>
                             </div>
                             <div class="counter__content">
-                                <h2><span class="odometer" data-odometer-final="40"></span>K<span class="prefix">+</span>
+                                <h2><span class="odometer" data-odometer-final="{{ $countPartner }}"></span>
                                 </h2>
-                                <h5>Winning award</h5>
+                                <h5>Partenaires</h5>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                 <div class="col-12 col-lg-10 col-xl-5">
                     <div class="section__header text-center mb-60" data-aos="fade-up" data-aos-duration="1000">
                         <span>Soutenir notre cause ensemble</span>
-                        <h2 class="title-animation">Rencontrez les membres de notre équipe dévouée</h2>
+                        <h2 class="title-animation">Les membres de notre équipe dévouée</h2>
                         <div class="icon-thumb justify-content-center">
                             <div class="icon-thumb-single">
                                 <span></span>

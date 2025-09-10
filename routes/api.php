@@ -4,8 +4,11 @@ use App\Http\Controllers\Api\About\AboutController;
 use App\Http\Controllers\Api\Domaine\DomaineController;
 use App\Http\Controllers\Api\Event\EventController;
 use App\Http\Controllers\Api\Gallery\GalleryController;
+use App\Http\Controllers\Api\Partenaire\PartenaireController;
+use App\Http\Controllers\Api\Project\ProjectController;
 use App\Http\Controllers\Api\Slide\SlideController;
 use App\Http\Controllers\Api\Team\TeamController;
+use App\Http\Controllers\Api\Temoignage\TemoignageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -51,9 +54,30 @@ Route::controller(EventController::class)->group(function () {
     Route::delete('/event.delete/{id}', 'deleteEvent');
 });
 
+Route::controller(ProjectController::class)->group(function () {
+    Route::get('/project.index', 'getProjectData');
+    Route::post('/project.store', 'createProject');
+    Route::post('/project.update/{id}', 'updateProject');
+    Route::delete('/project.delete/{id}', 'deleteProject');
+});
+
 Route::controller(SlideController::class)->group(function () {
     Route::get('/slide.index', 'slideIndex');
     Route::post('/slide.store', 'storeSlide');
     Route::post('/slide.update/{id}', 'updateSlide');
     Route::delete('/slide.delete/{id}', 'deleteSlide');
+});
+
+Route::controller(PartenaireController::class)->group(function () {
+    Route::get('/partner.index', 'partenaireIndex');
+    Route::post('/partner.store', 'createPartenaire');
+    Route::post('/partner.update/{id}', 'updatePartenaire');
+    Route::delete('/partner.delete/{id}', 'deletePartenaire');
+});
+
+Route::controller(TemoignageController::class)->group(function () {
+    Route::get('/temoignage.index', 'getTemoignage');
+    Route::post('/temoignage.store', 'storeTemoignage');
+    Route::put('/temoignage.update/{id}', 'updateTemoignage');
+    Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
 });
