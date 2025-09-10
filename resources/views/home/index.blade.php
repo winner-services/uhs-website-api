@@ -530,7 +530,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 col-xl-5">
                     <div class="section__header text-center mb-60" data-aos="fade-up" data-aos-duration="1000">
-                        <h2 class="title-animation">Nos projets en cours et terminés</h2>
+                        <h2 class="title-animation">Nos projets</h2>
                         <div class="icon-thumb justify-content-center">
                             <div class="icon-thumb-single">
                                 <span></span>
@@ -550,17 +550,17 @@
                     <div class="col-12 col-md-6 col-xl-4">
                         <div class="blog__single" data-aos="fade-up" data-aos-duration="1000">
                             <div class="blog__single-thumb">
-                                <a href="blog-details.html">
+                                <a href="#">
                                     <img src="{{ asset('storage/' . $project->image) }}" alt="Image">
                                 </a>
                             </div>
                             <div class="blog__single-content" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-delay="200">
                                 <div class="tag">
-                                    <a href="blog.html">{{ $project->date }}</a>
+                                    <a href="#">{{ $project->date }}</a>
                                 </div>
                                 <div class="blog__single-title">
-                                    <h5><a href="blog-details.html">{{ $project->title }}</a>
+                                    <h5><a href="#">{{ $project->title }}</a>
                                     </h5>
                                 </div>
                             </div>

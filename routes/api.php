@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\About\AboutController;
+use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Domaine\DomaineController;
 use App\Http\Controllers\Api\Event\EventController;
 use App\Http\Controllers\Api\Gallery\GalleryController;
@@ -9,12 +10,27 @@ use App\Http\Controllers\Api\Project\ProjectController;
 use App\Http\Controllers\Api\Slide\SlideController;
 use App\Http\Controllers\Api\Team\TeamController;
 use App\Http\Controllers\Api\Temoignage\TemoignageController;
+use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::post('/user.store', 'storeUser');
+    Route::put('/user.update/{id}', 'updateUser');
+    Route::delete('/update.delete/{id}', 'deleteUser');
+    Route::get('/user.index', 'getUsers');
+});
+
+Route::prefix('auth')->group(function () {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::get('/logout', [AuthController::class, 'logout']);
+    });
 });
 
 Route::controller(AboutController::class)->group(function () {
