@@ -10,9 +10,9 @@
     <title>UHS-Asbl</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- #keywords -->
-    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <meta name="keywords" content="charity">
     <!-- #description -->
-    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <meta name="description" content="site web UHS-Asbl">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

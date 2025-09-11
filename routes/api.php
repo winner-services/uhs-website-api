@@ -38,6 +38,9 @@ Route::controller(AboutController::class)->group(function () {
     Route::post('/about.store', 'store');
     Route::post('/about.update/{id}', 'update');
     Route::post('/objective.store', 'createObjective');
+    Route::put('/objective.update/{id}','updateObjective');
+    Route::get('/objective.index','objectiveIndex');
+    Route::delete('/objective.delete/{id}','destroyObjective');
     Route::get('/message.index', 'messageIndex');
     Route::delete('/message.delete/{id}', 'destroyMessage');
 });

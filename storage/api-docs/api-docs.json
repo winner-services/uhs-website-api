@@ -290,6 +290,132 @@
                 ]
             }
         },
+        "/api/objective.update/{id}": {
+            "put": {
+                "tags": [
+                    "Objectifs"
+                ],
+                "summary": "Update",
+                "description": "Modification d’un objectif",
+                "operationId": "updateObjective",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de l’objectif",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Données à modifier",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "designation"
+                                ],
+                                "properties": {
+                                    "designation": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Nouvelle valeur"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Mise à jour réussie"
+                    },
+                    "404": {
+                        "description": "Objectif non trouvé"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/objective.index": {
+            "get": {
+                "tags": [
+                    "Objectifs"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "objectiveIndex",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/objective.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Objectifs"
+                ],
+                "summary": "Supprimer",
+                "operationId": "destroyObjective",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "supprimé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "supprimé avec succès"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "introuvable"
+                    }
+                }
+            }
+        },
         "/api/message.index": {
             "get": {
                 "tags": [

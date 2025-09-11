@@ -31,7 +31,7 @@ class PartenaireController extends Controller
         return response()->json([
             'status' => 200,
             'success' => true,
-            'gallery' => $patner
+            'data' => $patner
         ]);
     }
 

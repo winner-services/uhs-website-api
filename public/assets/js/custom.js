@@ -1,11 +1,7 @@
 /* ==============
  ========= js documentation ==========================
 
- * template name: Charitia
- * version: 1.0
- * description: Nonprofit NGO Fundraising HTML5 Template
- * author: webnextpro
- * author-url: https://themeforest.net/user/webnextpro
+
 
     ==================================================
 
@@ -403,10 +399,10 @@
       });
       $(".total-price").text(totalPrice.toFixed(2));
     }
-    
+
     $(".cart-item-single").each(function () {
       var quantity = parseInt($(this).find(".item-quantity").text(), 10);
-    
+
       $(this)
         .on('click', '.quantity-increase', function () {
           if (quantity < 20) {
@@ -1044,7 +1040,7 @@
         var valPercent =
           (el.valueAsNumber - parseInt(el.min, 10)) /
           (parseInt(el.max, 10) - parseInt(el.min, 10));
-    
+
         var style =
           "background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" +
           valPercent +
@@ -1055,7 +1051,7 @@
       };
       el.oninput();
     });
-    
+
 
     /**
      * ======================================

@@ -301,6 +301,152 @@ class AboutController extends Controller
     }
 
     /**
+     * @OA\Put(
+     * path="/api/objective.update/{id}",
+     * summary="Update",
+     * description="Modification d’un objectif",
+     * security={{ "bearerAuth":{ }}},
+     * operationId="updateObjective",
+     * tags={"Objectifs"},
+     * @OA\Parameter(
+     *    name="id",
+     *    in="path",
+     *    required=true,
+     *    description="ID de l’objectif",
+     *    @OA\Schema(type="integer")
+     * ),
+     * @OA\RequestBody(
+     *    required=true,
+     *    description="Données à modifier",
+     *    @OA\JsonContent(
+     *       required={"designation"},
+     *       @OA\Property(property="designation", type="string", format="text", example="Nouvelle valeur"),
+     *    ),
+     * ),
+     * @OA\Response(
+     *    response=200,
+     *    description="Mise à jour réussie",
+     * ),
+     * @OA\Response(
+     *    response=404,
+     *    description="Objectif non trouvé",
+     * ),
+     * @OA\Response(
+     *    response=422,
+     *    description="Erreur de validation",
+     * )
+     * )
+     */
+    public function updateObjective(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'designation' => 'required|string'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Les données envoyées ne sont pas valides.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        $objective = Objective::find($id);
+        if (!$objective) {
+            return response()->json([
+                'message' => 'Objectif non trouvé.',
+                'success' => false,
+                'status' => 404
+            ], 404);
+        }
+
+        $objective->designation = $request->designation;
+        $objective->save();
+
+        return response()->json([
+            'message' => 'Mise à jour réussie.',
+            'success' => true,
+            'status' => 200,
+            'data' => $objective
+        ], 200);
+    }
+
+    /**
+     * @OA\Get(
+     *      path="/api/objective.index",
+     *      operationId="objectiveIndex",
+     *      tags={"Objectifs"},
+     *      summary="Get",
+     *      description="Returns list",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful",
+     * *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *       ),
+     *     )
+     */
+    public function objectiveIndex()
+    {
+        $data = objective::latest()->get();
+        $result = [
+            'message' => "success",
+            'success' => true,
+            'status' => 200,
+            'data' => $data
+        ];
+        return response()->json($result);
+    }
+
+    /**
+     * @OA\Delete(
+     *     path="/api/objective.delete/{id}",
+     *     operationId="destroyObjective",
+     *     summary="Supprimer",
+     *     tags={"Objectifs"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="supprimé avec succès",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="supprimé avec succès"),
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(property="status", type="integer", example=200)
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="introuvable"
+     *     )
+     * )
+     */
+    public function destroyObjective($id)
+    {
+        $message = objective::find($id);
+
+        if (!$message) {
+            return response()->json([
+                'message' => 'non trouvé',
+                'success' => false,
+                'status' => 404
+            ], 404);
+        }
+        $message->delete();
+
+        return response()->json([
+            'message' => 'supprimé avec succès',
+            'success' => true,
+            'status' => 200
+        ], 200);
+    }
+
+    /**
      * @OA\Get(
      *      path="/api/message.index",
      *      operationId="messageIndex",

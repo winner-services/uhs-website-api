@@ -1,11 +1,6 @@
 /* ==============
  ========= css table of contents =========
 
- * template name: Charitia
- * version: 1.0
- * description: Nonprofit NGO Fundraising HTML5 Template
- * author: webnextpro
- * author-url: https://themeforest.net/user/webnextpro
 
  01. abstracts
      1.01 --> mixins
@@ -5157,9 +5152,9 @@ div {
 }
 .gallery-img {
     width: 100%;
-    height: 250px; /* fixe la hauteur (ajuste selon ton design) */
-    object-fit: cover; /* recadre l’image sans la déformer */
-    border-radius: 8px; /* optionnel : arrondir les coins */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 .img-partner {
     width: 50%;
