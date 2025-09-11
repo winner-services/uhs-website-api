@@ -28,7 +28,6 @@
                          <div class="position-relative">
                              <img src="{{ asset('storage/' . $item->image) }}"
                                  class="card-img-top img-fluid rounded gallery-img" alt="Image">
-
                              <!-- Bouton zoom -->
                              <button class="btn btn-light btn-sm position-absolute top-50 start-50 translate-middle"
                                  data-bs-toggle="modal" data-bs-target="#galleryModal"

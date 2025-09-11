@@ -8,16 +8,10 @@
                                 @foreach ($partner as $item)
                                     <div class="swiper-slide">
                                         <div class="partner__slider-single">
-                                            <img src="assets/images/sponsor/one.png" alt="Image">
+                                            <img src="{{ asset('storage/'. $item->image) }}" alt="Image" class="img-partner">
                                         </div>
                                     </div>
                                 @endforeach
-
-                                <div class="swiper-slide">
-                                    <div class="partner__slider-single">
-                                        <img src="assets/images/sponsor/five.png" alt="Image">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
