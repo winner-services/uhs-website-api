@@ -8,7 +8,7 @@
                                 @foreach ($partner as $item)
                                     <div class="swiper-slide">
                                         <div class="partner__slider-single">
-                                            <img src="{{ asset('storage/'. $item->image) }}" alt="Image" class="img-partner">
+                                            <img src="{{ asset('storage/'. $item->image) }}" alt="Image" class="img-partner" style="width: 50%;">
                                         </div>
                                     </div>
                                 @endforeach
