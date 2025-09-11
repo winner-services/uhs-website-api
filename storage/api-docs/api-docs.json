@@ -651,6 +651,95 @@
                 ]
             }
         },
+        "/api/category.update/{id}": {
+            "put": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Update",
+                "description": "Mise à jour d'une catégorie",
+                "operationId": "updateCategorie",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la catégorie",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Mise à jour",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "designation"
+                                ],
+                                "properties": {
+                                    "designation": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Congo"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "404": {
+                        "description": "Catégorie non trouvée"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/category.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Domaine"
+                ],
+                "summary": "Delete",
+                "description": "Suppression d'une catégorie",
+                "operationId": "deleteCategorie",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la catégorie",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Suppression réussie"
+                    },
+                    "404": {
+                        "description": "Catégorie non trouvée"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/domaine.store": {
             "post": {
                 "tags": [

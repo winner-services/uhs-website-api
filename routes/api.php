@@ -61,7 +61,9 @@ Route::controller(DomaineController::class)->group(function () {
     Route::get('/category.index', 'indexCategories');
     Route::get('/domaine.index', 'indexDomaine');
     Route::post('/category.store', 'storeCategorie');
-    Route::post('/domaine.store', 'storeDomaine');
+    Route::post('/category.store', 'storeCategorie');
+    Route::put('/category.update', 'updateCategorie');
+    Route::delete('/domaine.delete', 'deleteCategorie');
     Route::post('/domaine.update/{id}', 'updateDomaine');
     Route::delete('/domaine.delete/{id}', 'deleteDomaine');
 });

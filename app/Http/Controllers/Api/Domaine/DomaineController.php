@@ -116,6 +116,112 @@ class DomaineController extends Controller
     }
 
     /**
+     * @OA\Put(
+     * path="/api/category.update/{id}",
+     * summary="Update",
+     * description="Mise à jour d'une catégorie",
+     * security={{ "bearerAuth":{ }}},
+     * operationId="updateCategorie",
+     * tags={"Domaine"},
+     * @OA\Parameter(
+     *    name="id",
+     *    in="path",
+     *    required=true,
+     *    description="ID de la catégorie",
+     *    @OA\Schema(type="integer")
+     * ),
+     * @OA\RequestBody(
+     *    required=true,
+     *    description="Mise à jour",
+     *    @OA\JsonContent(
+     *       required={"designation"},
+     *       @OA\Property(property="designation", type="string", format="text", example="Congo"),
+     *    ),
+     * ),
+     * @OA\Response(
+     *    response=200,
+     *    description="success",
+     * ),
+     * @OA\Response(
+     *    response=404,
+     *    description="Catégorie non trouvée",
+     * )
+     * )
+     */
+    public function updateCategorie(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'designation' => 'required|string|max:255'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Les données envoyées ne sont pas valides.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        $data = Category::find($id);
+        if (!$data) {
+            return response()->json([
+                'message' => 'Catégorie non trouvée.'
+            ], 404);
+        }
+
+        $data->designation = $request->designation;
+        $data->save();
+
+        return response()->json([
+            'message' => 'success',
+            'success' => true,
+            'status' => 200
+        ]);
+    }
+
+    /**
+     * @OA\Delete(
+     * path="/api/category.delete/{id}",
+     * summary="Delete",
+     * description="Suppression d'une catégorie",
+     * security={{ "bearerAuth":{ }}},
+     * operationId="deleteCategorie",
+     * tags={"Domaine"},
+     * @OA\Parameter(
+     *    name="id",
+     *    in="path",
+     *    required=true,
+     *    description="ID de la catégorie",
+     *    @OA\Schema(type="integer")
+     * ),
+     * @OA\Response(
+     *    response=200,
+     *    description="Suppression réussie",
+     * ),
+     * @OA\Response(
+     *    response=404,
+     *    description="Catégorie non trouvée",
+     * )
+     * )
+     */
+    public function deleteCategorie($id)
+    {
+        $data = Category::find($id);
+        if (!$data) {
+            return response()->json([
+                'message' => 'Catégorie non trouvée.'
+            ], 404);
+        }
+
+        $data->delete();
+
+        return response()->json([
+            'message' => 'Suppression réussie',
+            'success' => true,
+            'status' => 200
+        ]);
+    }
+
+    /**
      * @OA\Post(
      *     path="/api/domaine.store",
      *     operationId="storeDomaine",
