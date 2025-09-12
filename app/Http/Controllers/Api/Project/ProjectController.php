@@ -152,19 +152,19 @@ class ProjectController extends Controller
      */
     public function updateProject(Request $request, $id)
     {
-        $event = Project::find($id);
-        if (!$event) {
+        $project = Project::find($id);
+        if (!$project) {
             return response()->json([
-                'message' => 'introuvable',
+                'message' => 'Projet introuvable',
                 'success' => false,
                 'status' => 404
             ], 404);
         }
 
         $validator = Validator::make($request->all(), [
-            'title' => 'sometimes|required',
-            'date' => 'nullable',
-            'description' => 'sometimes|required',
+            'title' => 'sometimes|required|string|max:255',
+            'date' => 'nullable|date',
+            'description' => 'sometimes|required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -177,22 +177,25 @@ class ProjectController extends Controller
 
         $data = $validator->validated();
 
+        // ✅ Gestion de l'image
         if ($request->hasFile('image')) {
-            // supprimer l'ancienne image si existe
-            if ($event->image && Storage::disk('public')->exists($event->image)) {
-                Storage::disk('public')->delete($event->image);
+            if ($project->image && Storage::disk('public')->exists($project->image)) {
+                Storage::disk('public')->delete($project->image);
             }
             $data['image'] = $request->file('image')->store('project', 'public');
+        } else {
+            unset($data['image']); // conserver l’ancienne image
         }
 
-        $event->update($data);
+        $project->update($data);
 
         return response()->json([
-            'message' => 'success',
+            'message' => 'Mise à jour réussie',
             'success' => true,
             'status' => 200
         ]);
     }
+
     /**
      * @OA\Delete(
      *     path="/api/project.delete/{id}",

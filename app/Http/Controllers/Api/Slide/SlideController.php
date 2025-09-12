@@ -141,7 +141,7 @@ class SlideController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'title' => 'sometimes|required|string',
+            'title' => 'sometimes|required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -154,18 +154,20 @@ class SlideController extends Controller
 
         $data = $validator->validated();
 
+        // ✅ Gestion de l'image
         if ($request->hasFile('image')) {
-            // supprimer l'ancienne image si elle existe
             if ($slide->image && Storage::disk('public')->exists($slide->image)) {
                 Storage::disk('public')->delete($slide->image);
             }
             $data['image'] = $request->file('image')->store('slide', 'public');
+        } else {
+            unset($data['image']); // conserver l’ancienne image
         }
 
         $slide->update($data);
 
         return response()->json([
-            'message' => 'success',
+            'message' => 'Mise à jour réussie',
             'success' => true,
             'status' => 200
         ]);

@@ -219,7 +219,7 @@ class AboutController extends Controller
             }
             $data['image1'] = $request->file('image1')->store('about', 'public');
         } else {
-            $data['image1'] = $about->image1; // garder l’ancienne
+            unset($data['image1']); // on garde l’ancienne automatiquement
         }
 
         // ✅ Image2
@@ -229,7 +229,7 @@ class AboutController extends Controller
             }
             $data['image2'] = $request->file('image2')->store('about', 'public');
         } else {
-            $data['image2'] = $about->image2;
+            unset($data['image2']);
         }
 
         // ✅ Bannier
@@ -239,7 +239,7 @@ class AboutController extends Controller
             }
             $data['bannier_image'] = $request->file('bannier_image')->store('bannier_about', 'public');
         } else {
-            $data['bannier_image'] = $about->bannier_image;
+            unset($data['bannier_image']);
         }
 
         $about->update($data);

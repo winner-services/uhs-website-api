@@ -203,17 +203,24 @@ class TeamController extends Controller
 
         $data = $validator->validated();
 
+        // ✅ Gestion de l'image
         if ($request->hasFile('image')) {
+            // supprimer l'ancienne image si elle existe
+            if ($team->image && Storage::disk('public')->exists($team->image)) {
+                Storage::disk('public')->delete($team->image);
+            }
             $data['image'] = $request->file('image')->store('team', 'public');
+        } else {
+            unset($data['image']); // conserver l’ancienne image
         }
 
         $team->update($data);
 
         return response()->json([
-            'message' => 'success',
+            'message' => 'Mise à jour réussie',
             'success' => true,
             'status' => 200
-        ], 200);
+        ]);
     }
 
     /**

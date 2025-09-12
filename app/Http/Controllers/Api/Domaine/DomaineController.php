@@ -363,24 +363,27 @@ class DomaineController extends Controller
             ], 422);
         }
 
+        $validated = $validator->validated();
+
+        // ✅ Gestion de l'image
         if ($request->hasFile('image')) {
             if ($data->image && Storage::disk('public')->exists($data->image)) {
                 Storage::disk('public')->delete($data->image);
             }
-            $data->image = $request->file('image')->store('domaine', 'public');
+            $validated['image'] = $request->file('image')->store('domaine', 'public');
+        } else {
+            unset($validated['image']); // on garde l’ancienne image
         }
 
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $data->category_id = $request->category_id;
-        $data->save();
+        $data->update($validated);
 
         return response()->json([
-            'message' => 'success',
+            'message' => 'Mise à jour réussie',
             'success' => true,
             'status' => 200
         ]);
     }
+
     /**
      * @OA\Delete(
      *     path="/api/domaine.delete/{id}",

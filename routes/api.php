@@ -55,6 +55,8 @@ Route::controller(TeamController::class)->group(function () {
 Route::controller(GalleryController::class)->group(function () {
     Route::get('/gallery.index', 'galleryIndex');
     Route::post('/gallery.store', 'createGallery');
+    Route::post('/gallery.update/{id}','updateGallery');
+    Route::delete('/gallery.delete/{id}','deleteGallery');
 });
 
 Route::controller(DomaineController::class)->group(function () {

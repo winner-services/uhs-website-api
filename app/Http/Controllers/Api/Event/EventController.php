@@ -162,9 +162,9 @@ class EventController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'title' => 'sometimes|required',
+            'title' => 'sometimes|required|string|max:255',
             'date' => 'nullable|date',
-            'description' => 'sometimes|required',
+            'description' => 'sometimes|required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -177,18 +177,20 @@ class EventController extends Controller
 
         $data = $validator->validated();
 
+        // ✅ Gestion de l'image
         if ($request->hasFile('image')) {
-            // supprimer l'ancienne image si existe
             if ($event->image && Storage::disk('public')->exists($event->image)) {
                 Storage::disk('public')->delete($event->image);
             }
             $data['image'] = $request->file('image')->store('event', 'public');
+        } else {
+            unset($data['image']); // on garde l’ancienne image
         }
 
         $event->update($data);
 
         return response()->json([
-            'message' => 'success',
+            'message' => 'Mise à jour réussie',
             'success' => true,
             'status' => 200
         ]);
