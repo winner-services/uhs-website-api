@@ -19,7 +19,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // 'allowed_origins' => ['*'],
+    'allowed_origins' => [
+        'http://localhost:5173',   // ton front React en local
+        'http://127.0.0.1:5173'    // selon comment tu lances React
+    ],
 
     'allowed_origins_patterns' => [],
 
@@ -29,6 +33,7 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
+    // 'allowed_headers' => ['Content-Type', 'X-Requested-With', 'Authorization'],
 ];
