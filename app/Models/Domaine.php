@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Domaine extends Model
 {
     use HasFactory;
+    protected $fillable = ['name','description','category_id','image'];
 }
