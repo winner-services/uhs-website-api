@@ -29,9 +29,17 @@ class DomaineController extends Controller
      */
     public function indexDomaine()
     {
-        $data = Domaine::join('categories', 'domaines.category_id', 'categories.id')
-            ->select('domaines.*', 'categories.designation as category')
+        $data = Domaine::join('categories', 'domaines.category_id', '=', 'categories.id')
+            ->select(
+                'domaines.id',
+                'domaines.title',
+                'domaines.description',
+                'domaines.image',
+                'domaines.category_id',
+                'categories.designation as category'
+            )
             ->get();
+
         return response()->json([
             'message' => 'success',
             'success' => true,
