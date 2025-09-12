@@ -12,8 +12,15 @@ class DomaineController extends Controller
     public function domaineIndex()
     {
         $data = About::first();
-        $domaine = Domaine::join('categories', 'domaines.category_id', 'categories.id')
-            ->select('domaines.*', 'categories.designation as category')
+        $domaine = Domaine::join('categories', 'domaines.category_id', '=', 'categories.id')
+            ->select(
+                'domaines.id',
+                'domaines.title',
+                'domaines.description',
+                'domaines.image',
+                'domaines.category_id',
+                'categories.designation as category'
+            )
             ->get();
         $twoEvents = Event::latest()->take(2)->get();
         return view('pages.domaines.domaines', compact('data', 'domaine', 'twoEvents'));
