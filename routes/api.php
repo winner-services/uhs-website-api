@@ -38,9 +38,9 @@ Route::controller(AboutController::class)->group(function () {
     Route::post('/about.store', 'store');
     Route::post('/about.update/{id}', 'update');
     Route::post('/objective.store', 'createObjective');
-    Route::put('/objective.update/{id}','updateObjective');
-    Route::get('/objective.index','objectiveIndex');
-    Route::delete('/objective.delete/{id}','destroyObjective');
+    Route::put('/objective.update/{id}', 'updateObjective');
+    Route::get('/objective.index', 'objectiveIndex');
+    Route::delete('/objective.delete/{id}', 'destroyObjective');
     Route::get('/message.index', 'messageIndex');
     Route::delete('/message.delete/{id}', 'destroyMessage');
 });
@@ -59,11 +59,11 @@ Route::controller(GalleryController::class)->group(function () {
 
 Route::controller(DomaineController::class)->group(function () {
     Route::get('/category.index', 'indexCategories');
+    Route::post('/category.store', 'storeCategorie');
+    Route::put('/category.update/{id}', 'updateCategorie');
+    Route::delete('/category.delete/{id}', 'deleteCategorie');
     Route::get('/domaine.index', 'indexDomaine');
-    Route::post('/category.store', 'storeCategorie');
-    Route::post('/category.store', 'storeCategorie');
-    Route::put('/category.update', 'updateCategorie');
-    Route::delete('/domaine.delete', 'deleteCategorie');
+    Route::delete('/domaine.store', 'storeDomaine');
     Route::post('/domaine.update/{id}', 'updateDomaine');
     Route::delete('/domaine.delete/{id}', 'deleteDomaine');
 });
