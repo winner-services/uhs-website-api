@@ -1347,7 +1347,7 @@
         "/api/count.index": {
             "get": {
                 "tags": [
-                    "Events"
+                    "Dashboard"
                 ],
                 "summary": "Get",
                 "description": "Returns list",
@@ -2634,6 +2634,10 @@
         {
             "name": "Gallery",
             "description": "Gallery"
+        },
+        {
+            "name": "Dashboard",
+            "description": "Dashboard"
         },
         {
             "name": "Partenaire",

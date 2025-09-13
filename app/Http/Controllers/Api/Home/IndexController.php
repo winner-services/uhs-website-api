@@ -15,7 +15,7 @@ class IndexController extends Controller
      * @OA\Get(
      *      path="/api/count.index",
      *      operationId="count",
-     *      tags={"Events"},
+     *      tags={"Dashboard"},
      *      summary="Get",
      *      description="Returns list",
      *      @OA\Response(
