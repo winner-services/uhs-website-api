@@ -38,76 +38,78 @@ Route::prefix('auth')->group(function () {
     });
 });
 
-Route::controller(AboutController::class)->group(function () {
-    Route::get('/about.index', 'index');
-    Route::post('/about.store', 'store');
-    Route::post('/about.update/{id}', 'update');
-    Route::post('/objective.store', 'createObjective');
-    Route::put('/objective.update/{id}', 'updateObjective');
-    Route::get('/objective.index', 'objectiveIndex');
-    Route::delete('/objective.delete/{id}', 'destroyObjective');
-    Route::get('/message.index', 'messageIndex');
-    Route::delete('/message.delete/{id}', 'destroyMessage');
-});
+Route::middleware('auth:sanctum')->group(function () {
+    Route::controller(AboutController::class)->group(function () {
+        Route::get('/about.index', 'index');
+        Route::post('/about.store', 'store');
+        Route::post('/about.update/{id}', 'update');
+        Route::post('/objective.store', 'createObjective');
+        Route::put('/objective.update/{id}', 'updateObjective');
+        Route::get('/objective.index', 'objectiveIndex');
+        Route::delete('/objective.delete/{id}', 'destroyObjective');
+        Route::get('/message.index', 'messageIndex');
+        Route::delete('/message.delete/{id}', 'destroyMessage');
+    });
 
-Route::controller(TeamController::class)->group(function () {
-    Route::get('/team.index', 'team');
-    Route::post('/team.store', 'storeTeam');
-    Route::post('/team.update/{id}', 'updateTeam');
-    Route::delete('/team.delete/{id}', 'destroyTeam');
-});
+    Route::controller(TeamController::class)->group(function () {
+        Route::get('/team.index', 'team');
+        Route::post('/team.store', 'storeTeam');
+        Route::post('/team.update/{id}', 'updateTeam');
+        Route::delete('/team.delete/{id}', 'destroyTeam');
+    });
 
-Route::controller(GalleryController::class)->group(function () {
-    Route::get('/gallery.index', 'galleryIndex');
-    Route::post('/gallery.store', 'createGallery');
-    Route::post('/gallery.update/{id}','updateGallery');
-    Route::delete('/gallery.delete/{id}','deleteGallery');
-});
+    Route::controller(GalleryController::class)->group(function () {
+        Route::get('/gallery.index', 'galleryIndex');
+        Route::post('/gallery.store', 'createGallery');
+        Route::post('/gallery.update/{id}', 'updateGallery');
+        Route::delete('/gallery.delete/{id}', 'deleteGallery');
+    });
 
-Route::controller(DomaineController::class)->group(function () {
-    Route::get('/category.index', 'indexCategories');
-    Route::post('/category.store', 'storeCategorie');
-    Route::put('/category.update/{id}', 'updateCategorie');
-    Route::delete('/category.delete/{id}', 'deleteCategorie');
-    Route::get('/domaine.index', 'indexDomaine');
-    Route::post('/domaine.store', 'storeDomaine');
-    Route::post('/domaine.update/{id}', 'updateDomaine');
-    Route::delete('/domaine.delete/{id}', 'deleteDomaine');
-});
+    Route::controller(DomaineController::class)->group(function () {
+        Route::get('/category.index', 'indexCategories');
+        Route::post('/category.store', 'storeCategorie');
+        Route::put('/category.update/{id}', 'updateCategorie');
+        Route::delete('/category.delete/{id}', 'deleteCategorie');
+        Route::get('/domaine.index', 'indexDomaine');
+        Route::post('/domaine.store', 'storeDomaine');
+        Route::post('/domaine.update/{id}', 'updateDomaine');
+        Route::delete('/domaine.delete/{id}', 'deleteDomaine');
+    });
 
-Route::controller(EventController::class)->group(function () {
-    Route::get('/event.index', 'getEventData');
-    Route::post('/event.store', 'createEvent');
-    Route::post('/event.update/{id}', 'updateEvent');
-    Route::delete('/event.delete/{id}', 'deleteEvent');
-});
+    Route::controller(EventController::class)->group(function () {
+        Route::get('/event.index', 'getEventData');
+        Route::post('/event.store', 'createEvent');
+        Route::post('/event.update/{id}', 'updateEvent');
+        Route::delete('/event.delete/{id}', 'deleteEvent');
+    });
 
-Route::controller(ProjectController::class)->group(function () {
-    Route::get('/project.index', 'getProjectData');
-    Route::post('/project.store', 'createProject');
-    Route::post('/project.update/{id}', 'updateProject');
-    Route::delete('/project.delete/{id}', 'deleteProject');
-});
+    Route::controller(ProjectController::class)->group(function () {
+        Route::get('/project.index', 'getProjectData');
+        Route::post('/project.store', 'createProject');
+        Route::post('/project.update/{id}', 'updateProject');
+        Route::delete('/project.delete/{id}', 'deleteProject');
+    });
 
-Route::controller(SlideController::class)->group(function () {
-    Route::get('/slide.index', 'slideIndex');
-    Route::post('/slide.store', 'storeSlide');
-    Route::post('/slide.update/{id}', 'updateSlide');
-    Route::delete('/slide.delete/{id}', 'deleteSlide');
-});
+    Route::controller(SlideController::class)->group(function () {
+        Route::get('/slide.index', 'slideIndex');
+        Route::post('/slide.store', 'storeSlide');
+        Route::post('/slide.update/{id}', 'updateSlide');
+        Route::delete('/slide.delete/{id}', 'deleteSlide');
+    });
 
-Route::controller(PartenaireController::class)->group(function () {
-    Route::get('/partner.index', 'partenaireIndex');
-    Route::post('/partner.store', 'createPartenaire');
-    Route::post('/partner.update/{id}', 'updatePartenaire');
-    Route::delete('/partner.delete/{id}', 'deletePartenaire');
-});
+    Route::controller(PartenaireController::class)->group(function () {
+        Route::get('/partner.index', 'partenaireIndex');
+        Route::post('/partner.store', 'createPartenaire');
+        Route::post('/partner.update/{id}', 'updatePartenaire');
+        Route::delete('/partner.delete/{id}', 'deletePartenaire');
+    });
 
-Route::controller(TemoignageController::class)->group(function () {
-    Route::get('/temoignage.index', 'getTemoignage');
-    Route::post('/temoignage.store', 'storeTemoignage');
-    Route::put('/temoignage.update/{id}', 'updateTemoignage');
-    Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
-});
+    Route::controller(TemoignageController::class)->group(function () {
+        Route::get('/temoignage.index', 'getTemoignage');
+        Route::post('/temoignage.store', 'storeTemoignage');
+        Route::put('/temoignage.update/{id}', 'updateTemoignage');
+        Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
+    });
 
-Route::get('/count.index',[IndexController::class, 'count']);
+    Route::get('/count.index', [IndexController::class, 'count']);
+});
