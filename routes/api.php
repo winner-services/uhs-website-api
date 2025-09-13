@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/check-auth', function (Request $request
 Route::controller(UserController::class)->group(function () {
     Route::post('/user.store', 'storeUser');
     Route::put('/user.update/{id}', 'updateUser');
-    Route::delete('/update.delete/{id}', 'deleteUser');
+    Route::delete('/user.delete/{id}', 'deleteUser');
     Route::get('/user.index', 'getUsers');
 });
 

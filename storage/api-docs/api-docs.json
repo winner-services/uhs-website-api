@@ -2522,7 +2522,7 @@
                 ]
             }
         },
-        "/api/update.delete/{id}": {
+        "/api/user.delete/{id}": {
             "delete": {
                 "tags": [
                     "User"

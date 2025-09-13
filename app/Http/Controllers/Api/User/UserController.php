@@ -152,7 +152,7 @@ class UserController extends Controller
 
     /**
      * @OA\Delete(
-     * path="/api/update.delete/{id}",
+     * path="/api/user.delete/{id}",
      * summary="Delete",
      * description="Suppression",
      * security={{ "bearerAuth":{ }}},
