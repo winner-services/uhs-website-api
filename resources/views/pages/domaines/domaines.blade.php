@@ -46,8 +46,7 @@
                                         </h5>
                                     </div>
                                     <div class="blog__single-meta">
-                                        {{-- <p>{{ Str::limit($data->description, 80) }}</p> --}}
-                                        <p>{{ $data->description }}</p>
+                                        <p>{{ Str::limit($item->description, 80) }}</p>
                                     </div>
                                     <div class="blog__single-cta">
                                         <a href="{{ route('domaine.details', ['id' => $item->id]) }}"
