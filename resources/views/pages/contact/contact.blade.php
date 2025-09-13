@@ -93,7 +93,34 @@
                             <h4 class="title-animation">Remplissez le formulaire</h4>
                             <p>Votre adresse e-mail ne sera pas publiée. Les champs obligatoires sont marqués *</p>
                         </div>
-                        <form action="{{ route('contact.store') }}" method="post" class="mt-60">
+                        <form action="{{ route('message.store') }}" method="post" class="mt-60">
+                            @csrf
+                            <div class="input-single">
+                                <input type="text" name="name" id="fullName" placeholder="votre nom..." required>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="input-single">
+                                <input type="email" name="email" id="cEmail" placeholder="votre email..." required>
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="input-single">
+                                <input type="text" name="phone" id="phoneNumber" placeholder="votre phone..." required>
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="input-single">
+                                <input type="text" name="address" id="contactAddress" placeholder="votre adresse...">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="input-single alter-input">
+                                <textarea name="message" id="contactMessage" placeholder="Votre Message..."></textarea>
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <div class="form-cta">
+                                <button type="submit" aria-label="submit message" title="submit message"
+                                    class="btn--secondary" data-text="Envoyer"><span>Envoyer</span></button>
+                            </div>
+                        </form>
+                        {{-- <form action="{{ route('contact.store') }}" method="post" class="mt-60">
                             @csrf
                             <div class="input-single">
                                 <input type="text" name="name" id="fullName" placeholder="Entrer nom" required>
@@ -115,7 +142,7 @@
                                 <button type="submit" aria-label="submit message" title="submit message"
                                     class="btn--secondary" data-text="Envoyer"><span>Envoyer</span></button>
                             </div>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>
