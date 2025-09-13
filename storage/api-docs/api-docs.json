@@ -1344,6 +1344,24 @@
                 }
             }
         },
+        "/api/count.index": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "count",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
         "/api/partner.index": {
             "get": {
                 "tags": [

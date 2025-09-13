@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Domaine\DomaineController;
 use App\Http\Controllers\Api\Event\EventController;
 use App\Http\Controllers\Api\Gallery\GalleryController;
+use App\Http\Controllers\Api\Home\IndexController;
 use App\Http\Controllers\Api\Partenaire\PartenaireController;
 use App\Http\Controllers\Api\Project\ProjectController;
 use App\Http\Controllers\Api\Slide\SlideController;
@@ -108,3 +109,5 @@ Route::controller(TemoignageController::class)->group(function () {
     Route::put('/temoignage.update/{id}', 'updateTemoignage');
     Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
 });
+
+Route::get('/count.index',[IndexController::class, 'count']);
