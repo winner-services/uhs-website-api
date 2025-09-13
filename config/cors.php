@@ -21,8 +21,8 @@ return [
 
     // 'allowed_origins' => ['*'],
     'allowed_origins' => [
-        'http://localhost:5173',   // ton front React en local
-        'http://127.0.0.1:5173'    // selon comment tu lances React
+        'http://localhost:5173',
+        'https://app.uhs-rdc.org',
     ],
 
     'allowed_origins_patterns' => [],
