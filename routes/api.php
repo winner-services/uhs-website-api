@@ -19,6 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')->get('/check-auth', function (Request $request) {
+    return response()->json(['authenticated' => true]);
+});
+
 Route::controller(UserController::class)->group(function () {
     Route::post('/user.store', 'storeUser');
     Route::put('/user.update/{id}', 'updateUser');
