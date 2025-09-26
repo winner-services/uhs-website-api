@@ -248,14 +248,8 @@
                                             <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
                                     @endif
-                                    <a href="{{ $item->linkedin }}" target="_blank"
-                                            style="background:#1c1b1b;color:#fff;width:32px;height:32px;
-                                      display:flex;align-items:center;justify-content:center;
-                                      border-radius:50%;font-size:14px;">
-                                            <i class="fa-brands fa-whatsapp"></i>
-                                        </a>
-                                    @if ($item->linkedin)
-                                        <a href="{{ $item->linkedin }}" target="_blank"
+                                    @if ($item->whatsapp)
+                                        <a href="{{ $item->whatsapp }}" target="_blank"
                                             style="background:#1c1b1b;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
@@ -264,7 +258,6 @@
                                     @endif
                                 </div>
                             </div>
-
                             <!-- Contenu -->
                             <div class="content" style="padding:20px;text-align:start;">
                                 <span style="display:block;font-size:14px;color:#888;">{{ $item->title }}</span>
