@@ -112,14 +112,11 @@
                     <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="cta">
                             <div class="">
-                                <div>
-                                        <h5>Chaque contribution compte.</h5>
-                                    </div>
+                                <div class="intro">
+                                    <h5>Chaque contribution compte.</h5>
+                                </div>
                                 <hr>
-                                <div class="checkout__form"> 
-                                    <div class="intro">
-                                        <h5>Détails Informations</h5>
-                                    </div>
+                                <div class="checkout__form">
                                     <form action="#" method="post">
                                         <div class="input-group">
                                             <div class="input-single">
