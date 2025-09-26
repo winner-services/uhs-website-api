@@ -242,10 +242,18 @@
                                     @endif
                                     @if ($item->linkedin)
                                         <a href="{{ $item->linkedin }}" target="_blank"
-                                            style="background:#516693;color:#fff;width:32px;height:32px;
+                                            style="background:#151515;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+                                    @endif
+                                    @if ($item->linkedin)
+                                        <a href="{{ $item->linkedin }}" target="_blank"
+                                            style="background:#516693;color:#fff;width:32px;height:32px;
+                                      display:flex;align-items:center;justify-content:center;
+                                      border-radius:50%;font-size:14px;">
+                                            <i class="fa-brands fa-whatsapp"></i>
                                         </a>
                                     @endif
                                 </div>
