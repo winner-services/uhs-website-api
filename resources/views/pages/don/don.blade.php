@@ -114,6 +114,9 @@
                             <div class="">
                                 <hr>
                                 <div class="checkout__form">
+                                    <div>
+                                        <h6>Chaque contribution compte.</h6>
+                                    </div>
                                     <div class="intro">
                                         <h5>Détails Informations</h5>
                                     </div>
