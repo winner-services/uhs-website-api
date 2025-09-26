@@ -206,34 +206,35 @@
                                             style="position:absolute;top:0;left:0;width:100%;height:100%;
                                         object-fit:cover;transition:transform 0.4s ease;">
                                     </a>
-                                </div>
 
-                                <!-- Réseaux sociaux alignés à droite -->
-                                <div class="social" style="position:absolute;bottom:12px;right:12px;display:flex;gap:8px;">
-                                    @if ($item->facebook)
-                                        <a href="{{ $item->facebook }}" target="_blank"
-                                            style="background:#3b5998;color:#fff;width:32px;height:32px;
-                                      display:flex;align-items:center;justify-content:center;
-                                      border-radius:50%;font-size:14px;">
-                                            <i class="fa-brands fa-facebook-f"></i>
-                                        </a>
-                                    @endif
-                                    @if ($item->twitter)
-                                        <a href="{{ $item->twitter }}" target="_blank"
-                                            style="background:#1da1f2;color:#fff;width:32px;height:32px;
-                                      display:flex;align-items:center;justify-content:center;
-                                      border-radius:50%;font-size:14px;">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                    @endif
-                                    @if ($item->linkedin)
-                                        <a href="{{ $item->linkedin }}" target="_blank"
-                                            style="background:#0077b5;color:#fff;width:32px;height:32px;
-                                      display:flex;align-items:center;justify-content:center;
-                                      border-radius:50%;font-size:14px;">
-                                            <i class="fa-brands fa-linkedin-in"></i>
-                                        </a>
-                                    @endif
+                                    <!-- Réseaux sociaux toujours visibles à droite -->
+                                    <div class="social"
+                                        style="position:absolute;bottom:12px;right:12px;display:flex;gap:8px;">
+                                        @if ($item->facebook)
+                                            <a href="{{ $item->facebook }}" target="_blank"
+                                                style="background:#3b5998;color:#fff;width:32px;height:32px;
+                                          display:flex;align-items:center;justify-content:center;
+                                          border-radius:50%;font-size:14px;">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                        @endif
+                                        @if ($item->twitter)
+                                            <a href="{{ $item->twitter }}" target="_blank"
+                                                style="background:#1da1f2;color:#fff;width:32px;height:32px;
+                                          display:flex;align-items:center;justify-content:center;
+                                          border-radius:50%;font-size:14px;">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </a>
+                                        @endif
+                                        @if ($item->linkedin)
+                                            <a href="{{ $item->linkedin }}" target="_blank"
+                                                style="background:#0077b5;color:#fff;width:32px;height:32px;
+                                          display:flex;align-items:center;justify-content:center;
+                                          border-radius:50%;font-size:14px;">
+                                                <i class="fa-brands fa-linkedin-in"></i>
+                                            </a>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
 
@@ -258,7 +259,7 @@
                 @endforeach
             </div>
 
-            <!-- Effet hover -->
+            <!-- Effet hover uniquement pour la carte et l'image -->
             <style>
                 .team__single:hover {
                     transform: translateY(-8px);
