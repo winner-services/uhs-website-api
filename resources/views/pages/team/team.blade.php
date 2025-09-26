@@ -222,7 +222,7 @@
 
                                 <!-- Réseaux sociaux en overlay -->
                                 <div class="social"
-                                    style="position:absolute;bottom:12px;left:0%;transform:translateX(-50%);
+                                    style="position:absolute;bottom:12px;left:10%;transform:translateX(-50%);
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank"
