@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="cm-details__content">
+                <div class="cm-details__content mt-3">
                     <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="cta">
                             <div class="community-donation">
