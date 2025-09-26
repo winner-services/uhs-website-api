@@ -108,6 +108,116 @@
                     </div>
                 </div>
 
+                <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="cm-group">
+                        <h3 class="title-animation">Help Children Rise out of Poverty</h3>
+                        <p>Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim
+                            Ipsum has been the industry's standard dummy
+                        </p>
+                    </div>
+                    <div class="cta">
+                        <div class="community-donation">
+                            <div class="community-donation__inner mt-60">
+                                <h5>Support Where It Counts.</h5>
+                                <div class="warning">
+                                    <div class="line"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                    <p><strong>Notice:</strong> Test mode is enabled. While in test mode no
+                                        live
+                                        donations are processed.
+                                    </p>
+                                </div>
+                                <div class="donation-form" data-aos-delay="300">
+                                    <div class="donation-form__single">
+                                        <h5>Your Donation:</h5>
+                                        <div class="input-group-icon">
+                                            <div class="thumb">
+                                                <i class="fa-solid fa-dollar-sign"></i>
+                                            </div>
+                                            <input type="text" name="donation-amount" id="donationAmount">
+                                        </div>
+                                        <div class="made-amount">
+                                            <span class="donation-amount">20</span>
+                                            <span class="donation-amount">50</span>
+                                            <span class="donation-amount active">100</span>
+                                            <span class="donation-amount">200</span>
+                                            <span class="donation-amount custom-amount">Custom</span>
+                                        </div>
+                                    </div>
+                                    <div class="donation-form__single">
+                                        <h5>Select Payment Method</h5>
+                                        <div class="radio-wrapper">
+                                            <div class="radio-single">
+                                                <input type="radio" id="testDonation" name="donation-payment" checked>
+                                                <label for="testDonation">Test Donation</label>
+                                            </div>
+                                            <div class="radio-single">
+                                                <input type="radio" id="offlineDonation" name="donation-payment"
+                                                    checked>
+                                                <label for="offlineDonation">Offline Donation</label>
+                                            </div>
+                                            <div class="radio-single">
+                                                <input type="radio" id="cardDonation" name="donation-payment" checked>
+                                                <label for="cardDonation">Credit Card</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cta">
+                                        <a href="donate-us.html" aria-label="donate us" title="donate us"
+                                            class="btn--secondary" data-text="Donate Now"><span>Donate
+                                                Now</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="checkout__form">
+                                <div class="intro">
+                                    <h5>Details Information</h5>
+                                </div>
+                                <form action="https://webnextpro.com/tf/charitia/index.html" method="post">
+                                    <div class="input-group">
+                                        <div class="input-single">
+                                            <input type="text" name="c-name" id="cName" placeholder="First Name"
+                                                required>
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="input-single">
+                                            <input type="text" name="c-lastname" id="clastName"
+                                                placeholder="Last Name" required>
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-single">
+                                            <input type="email" name="c-email" id="cEmail" placeholder="Your Email"
+                                                required>
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </div>
+                                        <div class="input-single">
+                                            <input type="text" name="c-phone" id="cPhone"
+                                                placeholder="Your Number" required>
+                                            <i class="fa-solid fa-phone"></i>
+                                        </div>
+                                    </div>
+                                    <div class="input-single">
+                                        <input type="text" name="c-address-two" id="cAddressTwo"
+                                            placeholder="Your Address" required>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="input-single alter-input">
+                                        <textarea name="contact-message" id="contactMessage" placeholder="your message..."></textarea>
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="form-cta">
+                                        <button type="submit" aria-label="submit message" title="submit message"
+                                            class="btn--secondary" data-text="Save Informations"><span>Save
+                                                Informations</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="spade">
