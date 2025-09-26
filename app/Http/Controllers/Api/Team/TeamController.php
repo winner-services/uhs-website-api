@@ -186,11 +186,11 @@ class TeamController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'sometimes|required|string|max:150',
             'title' => 'sometimes|required|string|max:150',
-            'phone' => 'nullable|string|max:50',
-            'email' => 'nullable|email|max:150',
-            'twitter' => 'nullable|string|max:150',
-            'facebook' => 'nullable|string|max:150',
-            'whatsapp' => 'nullable|string|max:50',
+            'phone' => 'nullable',
+            'email' => 'nullable',
+            'twitter' => 'nullable',
+            'facebook' => 'nullable',
+            'whatsapp' => 'nullable',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
