@@ -154,7 +154,7 @@
                                         <div class="form-cta">
                                             <button type="submit" aria-label="submit message" title="submit message"
                                                 class="btn--secondary" data-text="Confirmer"><span>Confirmer
-                                                    </span></button>
+                                                </span></button>
                                         </div>
                                     </form>
                                 </div>
@@ -162,6 +162,7 @@
                         </div>
                     </div>
                 </div>
+                @include('pages.gallery.gallery')
 
             </div>
         </div>
