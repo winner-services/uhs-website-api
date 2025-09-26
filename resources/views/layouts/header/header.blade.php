@@ -41,7 +41,7 @@
                             <div class="navbar__mobile-options ">
 
                                 <a href="#" class="btn--secondary d-none d-md-flex"
-                                    data-text="Contactez-nous"><span>Faire un don</span></a>
+                                    data-text="Faire un don"><span>Faire un don</span></a>
                             </div>
                             <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
                                 title="open offcanvas menu">
