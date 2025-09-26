@@ -4,6 +4,7 @@ use App\Http\Controllers\website\Event\EventController;
 use App\Http\Controllers\website\About\AboutController;
 use App\Http\Controllers\website\Contact\ContactController;
 use App\Http\Controllers\website\Domaine\DomaineController;
+use App\Http\Controllers\website\Donate\DonateController;
 use App\Http\Controllers\website\home\homeController;
 use App\Http\Controllers\website\Message\MessageController;
 use App\Http\Controllers\website\Project\ProjectController;
@@ -45,4 +46,8 @@ Route::controller(ProjectController::class)->group(function () {
 Route::controller(ContactController::class)->group(function () {
     Route::get('/contact-index', 'contactIndex')->name('contact.index');
     Route::post('/contact-store', 'contactStore')->name('contact.store');
+});
+
+Route::controller(DonateController::class)->group(function () {
+    Route::get('/donate-index', 'indexDonate')->name('donate.index');
 });
