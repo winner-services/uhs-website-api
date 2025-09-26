@@ -12888,6 +12888,23 @@ div {
 /* ====
  --------- (5.18) team section styles start ---------
  ==== */
+
+ .team__single .thumb {
+    position: relative;
+    width: 100%;
+    padding-top: 120%; /* ratio hauteur/largeur (ici ~ carrée) */
+    overflow: hidden;
+}
+
+.team__single .thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .team {
   position: relative;
   z-index: 1;

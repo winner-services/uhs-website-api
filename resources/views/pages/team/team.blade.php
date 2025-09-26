@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row gutter-40">
+            {{-- <div class="row gutter-40">
                 @foreach ($team as $item)
                     <div class="col-12 col-sm-6 col-xl-3">
                         <div class="team__single" data-aos="fade-up" data-aos-duration="1200">
@@ -78,6 +78,56 @@
                                     </a>
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div> --}}
+            <div class="row gutter-40">
+                @foreach ($team as $item)
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="team__single" data-aos="fade-up" data-aos-duration="1200">
+
+                            <!-- Image & Réseaux sociaux -->
+                            <div class="thumb-wrapper">
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+                                    </a>
+                                </div>
+
+                                <div class="social">
+                                    @if ($item->facebook)
+                                        <a href="{{ $item->facebook }}" target="_blank">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                    @endif
+                                    @if ($item->twitter)
+                                        <a href="{{ $item->twitter }}" target="_blank">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </a>
+                                    @endif
+                                    @if ($item->linkedin)
+                                        <a href="{{ $item->linkedin }}" target="_blank">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <!-- Informations -->
+                            <div class="content">
+                                <span>{{ $item->title }}</span>
+                                <h5>{{ $item->name }}</h5>
+
+                                @if ($item->phone)
+                                    <p>
+                                        <a href="tel:{{ $item->phone }}">
+                                            <i class="fa-solid fa-phone-volume"></i> {{ $item->phone }}
+                                        </a>
+                                    </p>
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                 @endforeach
