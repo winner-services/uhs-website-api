@@ -113,7 +113,7 @@
                         <div class="cta">
                             <div class="">
                                 <div>
-                                        <h6>Chaque contribution compte.</h6>
+                                        <h5>Chaque contribution compte.</h5>
                                     </div>
                                 <hr>
                                 <div class="checkout__form"> 
