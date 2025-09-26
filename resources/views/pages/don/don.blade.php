@@ -110,8 +110,8 @@
 
                 <div class="cm-details__content mt-3">
                     <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                        <div class="cta pt-3">
-                            <div class="community-donation">
+                        <div class="cta">
+                            <div class="">
                                 <hr>
                                 <div class="checkout__form">
                                     <div class="intro">
