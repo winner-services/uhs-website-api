@@ -113,42 +113,38 @@
                         <div class="cta">
                             <div class="">
                                 <div class="intro">
-                                    <h5>Chaque contribution compte.</h5>
+                                    <h5>Participez à notre mission et soutenez notre cause en faisant un don ! Chaque
+                                        contribution compte.</h5>
                                 </div>
                                 <hr>
                                 <div class="checkout__form">
                                     <form action="#" method="post">
                                         <div class="input-group">
                                             <div class="input-single">
-                                                <input type="text" name="c-name" id="cName" placeholder="First Name"
+                                                <input type="text" name="name" id="cName" placeholder="Votre nom"
                                                     required>
-                                                <i class="fa-solid fa-user"></i>
-                                            </div>
-                                            <div class="input-single">
-                                                <input type="text" name="c-lastname" id="clastName"
-                                                    placeholder="Last Name" required>
                                                 <i class="fa-solid fa-user"></i>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <div class="input-single">
-                                                <input type="email" name="c-email" id="cEmail"
-                                                    placeholder="Your Email" required>
+                                                <input type="email" name="email" id="cEmail"
+                                                    placeholder="Votre email" required>
                                                 <i class="fa-solid fa-envelope"></i>
                                             </div>
                                             <div class="input-single">
-                                                <input type="text" name="c-phone" id="cPhone"
-                                                    placeholder="Your Number" required>
+                                                <input type="text" name="phone" id="cPhone"
+                                                    placeholder="Votre numéro" required>
                                                 <i class="fa-solid fa-phone"></i>
                                             </div>
                                         </div>
                                         <div class="input-single">
-                                            <input type="text" name="c-address-two" id="cAddressTwo"
-                                                placeholder="Your Address" required>
+                                            <input type="text" name="address" id="cAddressTwo"
+                                                placeholder="Votre adresse" required>
                                             <i class="fa-solid fa-location-dot"></i>
                                         </div>
                                         <div class="input-single alter-input">
-                                            <textarea name="contact-message" id="contactMessage" placeholder="your message..."></textarea>
+                                            <textarea name="contact-message" id="contactMessage" placeholder="Un petit message..."></textarea>
                                             <i class="fa-solid fa-envelope"></i>
                                         </div>
                                         <div class="form-cta">
