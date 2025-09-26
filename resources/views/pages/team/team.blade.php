@@ -198,7 +198,7 @@
                             style="background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);
                         overflow:hidden;transition:transform 0.3s ease;">
 
-                            <!-- Image + Réseaux sociaux comme avant -->
+                            <!-- Image + Réseaux sociaux -->
                             <div class="thumb-wrapper" style="position:relative;">
                                 <div class="thumb" style="position:relative;width:100%;padding-top:120%;overflow:hidden;">
                                     <a href="#">
@@ -208,10 +208,8 @@
                                     </a>
                                 </div>
 
-                                <!-- Réseaux sociaux en overlay -->
-                                <div class="social"
-                                    style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
-                                display:flex;gap:10px;">
+                                <!-- Réseaux sociaux alignés à droite -->
+                                <div class="social" style="position:absolute;bottom:12px;right:12px;display:flex;gap:8px;">
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank"
                                             style="background:#3b5998;color:#fff;width:32px;height:32px;
