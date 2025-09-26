@@ -226,7 +226,7 @@
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank"
-                                            style="background:#516693;color:#fff;width:32px;height:32px;
+                                            style="color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-facebook-f"></i>
@@ -234,7 +234,7 @@
                                     @endif
                                     @if ($item->twitter)
                                         <a href="{{ $item->twitter }}" target="_blank"
-                                            style="background:#516693;color:#fff;width:32px;height:32px;
+                                            style="background:#131313;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-twitter"></i>
