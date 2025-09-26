@@ -89,9 +89,10 @@
 
                             <!-- Image & Réseaux sociaux -->
                             <div class="thumb-wrapper">
-                                <div class="thumb">
+                                <div class="thumb" style="position:relative;width:100%;padding-top:120%;overflow:hidden;">
                                     <a href="#">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
+                                            style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
                                     </a>
                                 </div>
 
@@ -132,6 +133,7 @@
                     </div>
                 @endforeach
             </div>
+
 
             {{-- Pagination --}}
             <div class="row">
