@@ -153,8 +153,8 @@
                                         </div>
                                         <div class="form-cta">
                                             <button type="submit" aria-label="submit message" title="submit message"
-                                                class="btn--secondary" data-text="Save Informations"><span>Save
-                                                    Informations</span></button>
+                                                class="btn--secondary" data-text="Confirmer"><span>Confirmer
+                                                    </span></button>
                                         </div>
                                     </form>
                                 </div>
