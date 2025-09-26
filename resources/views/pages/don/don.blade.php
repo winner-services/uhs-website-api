@@ -52,16 +52,17 @@
                             <h6 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What kind of recipes can I find on your website?
+                                    Comment puis-je faire un don ?
                                 </button>
                             </h6>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by
-                                        the readable the a content of a page when looking at its layout.
-                                        Many desktop publishing packages and web page editors.
+                                        Il vous suffit de remplir notre formulaire de don en indiquant votre nom, téléphone,
+                                        adresse, un petit message, ainsi que le montant que vous souhaitez donner.
+                                        Sélectionnez ensuite votre méthode de paiement et confirmez la date du don. Une fois
+                                        le formulaire soumis, votre contribution sera enregistrée en toute sécurité.
                                     </p>
                                 </div>
                             </div>
@@ -70,16 +71,17 @@
                             <h6 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Are the recipes suitable for beginners?
+                                    Quelles méthodes de paiement puis-je utiliser ?
                                 </button>
                             </h6>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by
-                                        the readable the a content of a page when looking at its layout.
-                                        Many desktop publishing packages and web page editors.
+                                        Nous acceptons plusieurs méthodes de paiement pour vous faciliter la contribution :
+                                        carte bancaire, virement bancaire ou paiement mobile. Choisissez simplement la
+                                        méthode qui vous convient le mieux dans le formulaire et suivez les instructions
+                                        fournies pour compléter votre don.
                                     </p>
                                 </div>
                             </div>
@@ -88,16 +90,17 @@
                             <h6 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Do you offer cooking tips and techniques?
+                                    Que se passe-t-il après que j’ai fait mon don ?
                                 </button>
                             </h6>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by
-                                        the readable the a content of a page when looking at its layout.
-                                        Many desktop publishing packages and web page editors.
+                                        Une fois votre formulaire soumis et votre paiement effectué, vous recevrez une
+                                        confirmation par e-mail ou téléphone selon vos informations fournies. Votre don sera
+                                        pris en compte immédiatement et vous recevrez également un reçu ou attestation si
+                                        nécessaire pour vos archives ou pour des déductions fiscales.
                                     </p>
                                 </div>
                             </div>
