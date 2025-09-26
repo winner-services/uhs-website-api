@@ -133,7 +133,7 @@
                     </div>
                 @endforeach
             </div> --}}
-            {{-- <div class="row gutter-40">
+            <div class="row gutter-40">
                 @foreach ($team as $item)
                     <div class="col-12 col-sm-6 col-xl-3">
                         <div class="team__single" data-aos="fade-up" data-aos-duration="1200"
@@ -190,86 +190,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div> --}}
-            <div class="row gutter-40">
-                @foreach ($team as $item)
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        <div class="team__single" data-aos="fade-up" data-aos-duration="1200"
-                            style="background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);
-                        overflow:hidden;transition:transform 0.3s ease;">
-
-                            <!-- Image + Réseaux sociaux -->
-                            <div class="thumb-wrapper" style="position:relative;">
-                                <div class="thumb" style="position:relative;width:100%;padding-top:120%;overflow:hidden;">
-                                    <a href="#">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
-                                            style="position:absolute;top:0;left:0;width:100%;height:100%;
-                                        object-fit:cover;transition:transform 0.4s ease;">
-                                    </a>
-
-                                    <!-- Réseaux sociaux toujours visibles à droite -->
-                                    <div class="social"
-                                        style="position:absolute;bottom:12px;right:12px;display:flex;gap:8px;">
-                                        @if ($item->facebook)
-                                            <a href="{{ $item->facebook }}" target="_blank"
-                                                style="background:#3b5998;color:#fff;width:32px;height:32px;
-                                          display:flex;align-items:center;justify-content:center;
-                                          border-radius:50%;font-size:14px;">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        @endif
-                                        @if ($item->twitter)
-                                            <a href="{{ $item->twitter }}" target="_blank"
-                                                style="background:#1da1f2;color:#fff;width:32px;height:32px;
-                                          display:flex;align-items:center;justify-content:center;
-                                          border-radius:50%;font-size:14px;">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        @endif
-                                        @if ($item->linkedin)
-                                            <a href="{{ $item->linkedin }}" target="_blank"
-                                                style="background:#0077b5;color:#fff;width:32px;height:32px;
-                                          display:flex;align-items:center;justify-content:center;
-                                          border-radius:50%;font-size:14px;">
-                                                <i class="fa-brands fa-linkedin-in"></i>
-                                            </a>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Contenu -->
-                            <div class="content" style="padding:20px;text-align:center;">
-                                <span style="display:block;font-size:14px;color:#888;">{{ $item->title }}</span>
-                                <h5 style="margin:8px 0;font-size:18px;font-weight:600;color:#333;">
-                                    {{ $item->name }}
-                                </h5>
-
-                                @if ($item->phone)
-                                    <p style="margin:8px 0;">
-                                        <a href="tel:{{ $item->phone }}"
-                                            style="color:#007bff;text-decoration:none;font-size:14px;">
-                                            <i class="fa-solid fa-phone-volume"></i> {{ $item->phone }}
-                                        </a>
-                                    </p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
             </div>
-
-            <!-- Effet hover uniquement pour la carte et l'image -->
-            <style>
-                .team__single:hover {
-                    transform: translateY(-8px);
-                }
-
-                .team__single:hover img {
-                    transform: scale(1.05);
-                }
-            </style>
-
 
             <!-- Animation au hover -->
             <style>
