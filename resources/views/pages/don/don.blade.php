@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 col-xl-5">
-                    <div class="section__header text-center mb-60" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="section__header text-start mb-60" data-aos="fade-up" data-aos-duration="1000">
                         <span>Soutenir notre cause ensemble</span>
                         <h2 class="title-animation">Faites un don aujourd'hui et aidez-nous à faire la différence !</h2>
                         <div class="icon-thumb justify-content-center">
