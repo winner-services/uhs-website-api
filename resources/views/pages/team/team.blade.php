@@ -277,7 +277,7 @@
                                     <p style="margin:8px 0;">
                                         <a href="tel:{{ $item->email }}"
                                             style="color:#516693;text-decoration:none;font-size:14px;">
-                                            <i class="fa-solid fa-email"></i> {{ $item->email }}
+                                            <i class="fa-solid fa-envelope"></i> {{ $item->email }}
                                         </a>
                                     </p>
                                 @endif
