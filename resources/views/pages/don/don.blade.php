@@ -45,7 +45,6 @@
                 </div>
             </div>
             <div class="row gutter-40">
-
                 <div class="faq__content-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                     <div class="accordion" id="accordion">
                         <div class="accordion-item">
@@ -82,43 +81,6 @@
                                         carte bancaire, virement bancaire ou paiement mobile. Choisissez simplement la
                                         méthode qui vous convient le mieux dans le formulaire et suivez les instructions
                                         fournies pour compléter votre don.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h6 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Que se passe-t-il après que j’ai fait mon don ?
-                                </button>
-                            </h6>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>
-                                        Une fois votre formulaire soumis et votre paiement effectué, vous recevrez une
-                                        confirmation par e-mail ou téléphone selon vos informations fournies. Votre don sera
-                                        pris en compte immédiatement et vous recevrez également un reçu ou attestation si
-                                        nécessaire pour vos archives ou pour des déductions fiscales.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h6 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    How frequently do you update your recipe collection?
-                                </button>
-                            </h6>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>
-                                        It is a long established fact that a reader will be distracted by
-                                        the readable the a content of a page when looking at its layout.
-                                        Many desktop publishing packages and web page editors.
                                     </p>
                                 </div>
                             </div>
