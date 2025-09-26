@@ -29,13 +29,19 @@
                                 <li class="navbar__item nav-fade">
                                     <a href="{{ route('team.index') }}">Notre Équipe</a>
                                 </li>
+                                <li class="navbar__item nav-fade">
+                                    <a href="#">Nos Offres</a>
+                                </li>
+                                <li class="navbar__item nav-fade">
+                                    <a href="{{ route('contact.index') }}">Contactez-nous</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="navbar__options">
                             <div class="navbar__mobile-options ">
 
-                                <a href="{{ route('contact.index') }}" class="btn--secondary d-none d-md-flex"
-                                    data-text="Contactez-nous"><span>Contactez-nous</span></a>
+                                <a href="#" class="btn--secondary d-none d-md-flex"
+                                    data-text="Contactez-nous"><span>Faire un don</span></a>
                             </div>
                             <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
                                 title="open offcanvas menu">
