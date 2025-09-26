@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DonateController extends Controller
 {
-    public function indexDonate(){
+    public function indexDonateData(){
         return view('pages.don.don');
     }
 }

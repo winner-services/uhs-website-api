@@ -40,7 +40,7 @@
                         <div class="navbar__options">
                             <div class="navbar__mobile-options ">
 
-                                <a href="{{ route('donate.index') }}" class="btn--secondary d-none d-md-flex"
+                                <a href="{{ route('donateData.index') }}" class="btn--secondary d-none d-md-flex"
                                     data-text="Faire un don"><span>Faire un don</span></a>
                             </div>
                             <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"

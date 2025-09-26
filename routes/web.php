@@ -10,7 +10,6 @@ use App\Http\Controllers\website\Message\MessageController;
 use App\Http\Controllers\website\Project\ProjectController;
 use App\Http\Controllers\website\Team\TeamController;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 Route::controller(homeController::class)->group(function () {
     Route::get('/', 'index');
@@ -49,5 +48,5 @@ Route::controller(ContactController::class)->group(function () {
 });
 
 Route::controller(DonateController::class)->group(function () {
-    Route::get('/donate-index', 'indexDonate')->name('donate.index');
+    Route::get('/donate-index','indexDonateData')->name('donateData.index');
 });
