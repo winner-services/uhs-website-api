@@ -226,7 +226,7 @@
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank"
-                                            style="background:#67789d;color:#fff;width:32px;height:32px;
+                                            style="background:#516693;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-facebook-f"></i>
@@ -234,7 +234,7 @@
                                     @endif
                                     @if ($item->twitter)
                                         <a href="{{ $item->twitter }}" target="_blank"
-                                            style="background:#67789d;color:#fff;width:32px;height:32px;
+                                            style="background:#516693;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-twitter"></i>
@@ -242,7 +242,7 @@
                                     @endif
                                     @if ($item->linkedin)
                                         <a href="{{ $item->linkedin }}" target="_blank"
-                                            style="background:#0077b5;color:#fff;width:32px;height:32px;
+                                            style="background:#516693;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-linkedin-in"></i>
@@ -252,7 +252,7 @@
                             </div>
 
                             <!-- Contenu -->
-                            <div class="content" style="padding:20px;text-align:center;">
+                            <div class="content" style="padding:20px;text-align:start;">
                                 <span style="display:block;font-size:14px;color:#888;">{{ $item->title }}</span>
                                 <h5 style="margin:8px 0;font-size:18px;font-weight:600;color:#333;">
                                     {{ $item->name }}
@@ -261,7 +261,7 @@
                                 @if ($item->phone)
                                     <p style="margin:8px 0;">
                                         <a href="tel:{{ $item->phone }}"
-                                            style="color:#007bff;text-decoration:none;font-size:14px;">
+                                            style="color:#516693;text-decoration:none;font-size:14px;">
                                             <i class="fa-solid fa-phone-volume"></i> {{ $item->phone }}
                                         </a>
                                     </p>
