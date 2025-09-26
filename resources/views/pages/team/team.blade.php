@@ -226,7 +226,7 @@
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank"
-                                            style="background:#131313;color:#fff;width:32px;height:32px;
+                                            style="background:#1c1b1b;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-facebook-f"></i>
@@ -234,7 +234,7 @@
                                     @endif
                                     @if ($item->twitter)
                                         <a href="{{ $item->twitter }}" target="_blank"
-                                            style="background:#131313;color:#fff;width:32px;height:32px;
+                                            style="background:#1c1b1b;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-twitter"></i>
@@ -242,15 +242,21 @@
                                     @endif
                                     @if ($item->linkedin)
                                         <a href="{{ $item->linkedin }}" target="_blank"
-                                            style="background:#131313;color:#fff;width:32px;height:32px;
+                                            style="background:#1c1b1b;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
                                     @endif
+                                    <a href="{{ $item->linkedin }}" target="_blank"
+                                            style="background:#1c1b1b;color:#fff;width:32px;height:32px;
+                                      display:flex;align-items:center;justify-content:center;
+                                      border-radius:50%;font-size:14px;">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
                                     @if ($item->linkedin)
                                         <a href="{{ $item->linkedin }}" target="_blank"
-                                            style="background:#131313;color:#fff;width:32px;height:32px;
+                                            style="background:#1c1b1b;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-whatsapp"></i>
