@@ -261,9 +261,9 @@
                             <!-- Contenu -->
                             <div class="content" style="padding:20px;text-align:start;">
                                 <span style="display:block;font-size:14px;color:#888;">{{ $item->title }}</span>
-                                <h5 style="margin:8px 0;font-size:18px;font-weight:600;color:#333;">
+                                <h6 style="margin:8px 0;font-size:18px;font-weight:600;color:#333;">
                                     {{ $item->name }}
-                                </h5>
+                                </h6>
 
                                 @if ($item->phone)
                                     <p style="margin:8px 0;">
