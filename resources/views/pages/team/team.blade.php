@@ -227,7 +227,8 @@
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank" aria-label="share us on facebook"
                                         title="facebook">
-                                            <i class="fa-brands fa-facebook-f"></i>
+                                            {{-- <i class="fa-brands fa-facebook-f"></i> --}}
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </a>
                                     @endif
                                     @if ($item->twitter)
