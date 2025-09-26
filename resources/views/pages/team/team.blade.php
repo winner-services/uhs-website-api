@@ -225,15 +225,16 @@
                                     style="position:absolute;bottom:12px;left:10%;transform:translateX(-50%);
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
-                                        <a href="{{ $item->facebook }}" target="_blank" aria-label="share us on facebook"
-                                        title="facebook">
-                                            {{-- <i class="fa-brands fa-facebook-f"></i> --}}
-                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        <a href="{{ $item->facebook }}" target="_blank"
+                                            style="background:#67789d;color:#fff;width:32px;height:32px;
+                                      display:flex;align-items:center;justify-content:center;
+                                      border-radius:50%;font-size:14px;">
+                                            <i class="fa-brands fa-facebook-f"></i>
                                         </a>
                                     @endif
                                     @if ($item->twitter)
                                         <a href="{{ $item->twitter }}" target="_blank"
-                                            style="background:#1da1f2;color:#fff;width:32px;height:32px;
+                                            style="background:#67789d;color:#fff;width:32px;height:32px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-twitter"></i>
