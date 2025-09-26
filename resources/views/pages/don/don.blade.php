@@ -109,9 +109,6 @@
                 </div>
 
                 <div class="cm-details__content">
-                    <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                        <img src="assets/images/event/poster-two.png" alt="Image">
-                    </div>
                     <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="cta">
                             <div class="community-donation">
@@ -120,7 +117,7 @@
                                     <div class="intro">
                                         <h5>Details Information</h5>
                                     </div>
-                                    <form action="https://webnextpro.com/tf/charitia/index.html" method="post">
+                                    <form action="#" method="post">
                                         <div class="input-group">
                                             <div class="input-single">
                                                 <input type="text" name="c-name" id="cName" placeholder="First Name"
