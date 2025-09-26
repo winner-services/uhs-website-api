@@ -115,7 +115,7 @@
                                 <hr>
                                 <div class="checkout__form">
                                     <div class="intro">
-                                        <h5>Details Information</h5>
+                                        <h5>Détails Informations</h5>
                                     </div>
                                     <form action="#" method="post">
                                         <div class="input-group">
