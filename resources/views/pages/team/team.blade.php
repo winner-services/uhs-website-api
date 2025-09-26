@@ -226,7 +226,7 @@
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
                                         <a href="{{ $item->facebook }}" target="_blank"
-                                            style="background:#566b97;color:#fff;width:32px;height:32px;
+                                            style="width:28px;height:28px;
                                       display:flex;align-items:center;justify-content:center;
                                       border-radius:50%;font-size:14px;">
                                             <i class="fa-brands fa-facebook-f"></i>
