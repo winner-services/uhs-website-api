@@ -225,10 +225,8 @@
                                     style="position:absolute;bottom:12px;left:10%;transform:translateX(-50%);
                                 display:flex;gap:10px;">
                                     @if ($item->facebook)
-                                        <a href="{{ $item->facebook }}" target="_blank"
-                                            style="width:28px;height:28px;
-                                      display:flex;align-items:center;justify-content:center;
-                                      border-radius:50%;font-size:14px;">
+                                        <a href="{{ $item->facebook }}" target="_blank" aria-label="share us on facebook"
+                                        title="facebook">
                                             <i class="fa-brands fa-facebook-f"></i>
                                         </a>
                                     @endif
