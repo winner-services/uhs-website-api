@@ -12,7 +12,7 @@
          </div>
          <div class="mobile-menu__list"></div>
          <div class="mobile-menu__cta nav-fade d-block d-md-none">
-             <a href="{{ route('contact.index') }}" class="btn--secondary" data-text="Contactez-nous"><span>Contactez-nous
+             <a href="{{ route('donateData.index') }}" class="btn--secondary" data-text="Faire un don"><span>Faire un don
                      </span></a>
          </div>
          <div class="mobile-menu__social social nav-fade">

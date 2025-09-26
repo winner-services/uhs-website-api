@@ -113,7 +113,7 @@
                         <div class="cta">
                             <div class="">
                                 <div class="intro">
-                                    <h5>Participez à notre mission et soutenez notre cause en faisant un don ! Chaque
+                                    <h5>Soutenez notre cause en faisant un don ! Chaque
                                         contribution compte.</h5>
                                 </div>
                                 <hr>
