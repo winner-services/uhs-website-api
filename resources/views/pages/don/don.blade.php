@@ -109,27 +109,26 @@
                     </div>
                 </div>
 
-                <div class="cm-details__content mt-3">
+                <div class="cm-details__content mt-0">
                     <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="cta">
                             <div class="">
                                 <div class="bank-card mt-5" data-aos="fade-up" data-aos-duration="1000"
-                                data-aos-delay="150">
-                                <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
-                                    <h5 class="mb-3"><i class="fa-solid fa-building-columns"></i> Coordonnées bancaires
-                                    </h5>
-                                    <hr>
-                                    <p><strong>Intitulé du compte :</strong> UHS-RDC ASBL</p>
-                                    <p><strong>Banque :</strong> Trust Merchant Bank S.A (TMB S.A)</p>
-                                    <p><strong>Numéro de compte :</strong> 00017281002820666000117 / USD</p>
-                                    <p><strong>Swift :</strong> TRMSCD3L</p>
-                                    <div class="alert alert-success mt-3" role="alert">
-                                        Merci de copier ces informations pour effectuer votre paiement directement par
-                                        virement
-                                        bancaire.
+                                    data-aos-delay="150">
+                                    <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
+                                        <h5 class="mb-3"><i class="fa-solid fa-building-columns"></i> Coordonnées
+                                            bancaires
+                                        </h5>
+                                        <hr>
+                                        <p><strong>Intitulé du compte :</strong> UHS-RDC ASBL</p>
+                                        <p><strong>Banque :</strong> Trust Merchant Bank S.A (TMB S.A)</p>
+                                        <p><strong>Numéro de compte :</strong> 00017281002820666000117 / USD</p>
+                                        <p><strong>Swift :</strong> TRMSCD3L</p>
+                                        <div class="alert alert-success mt-3" role="alert">
+                                            Merci de copier ces informations pour effectuer votre paiement.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="intro">
                                     <h5>Soutenez notre cause en faisant un don ! Chaque
                                         contribution compte.</h5>
@@ -173,7 +172,7 @@
                                     </form>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
