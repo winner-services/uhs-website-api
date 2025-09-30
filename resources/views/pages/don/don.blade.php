@@ -113,7 +113,7 @@
                     <div class="donate-inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="cta">
                             <div class="">
-                                <div class="bank-card mt-5" data-aos="fade-up" data-aos-duration="1000"
+                                <div class="bank-card mt-2" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-delay="150">
                                     <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
                                         <h5 class="mb-3"><i class="fa-solid fa-building-columns"></i> Coordonnées
@@ -124,8 +124,9 @@
                                         <p><strong>Banque :</strong> Trust Merchant Bank S.A (TMB S.A)</p>
                                         <p><strong>Numéro de compte :</strong> 00017281002820666000117 / USD</p>
                                         <p><strong>Swift :</strong> TRMSCD3L</p>
-                                        <div class="alert alert-success mt-3" role="alert">
-                                            Merci de copier ces informations pour effectuer votre paiement.
+                                        <div class="alert alert-success mt-3 text-center px-2 px-md-4" role="alert">
+                                            Merci de copier ces informations pour effectuer votre paiement directement par
+                                            virement bancaire.
                                         </div>
                                     </div>
                                 </div>
