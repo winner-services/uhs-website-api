@@ -61,7 +61,7 @@
                                     <p>
                                         Il vous suffit de remplir notre formulaire de don en indiquant votre nom, email,
                                         numéro téléphone,
-                                        adresse, un petit message, ainsi que le montant que vous souhaitez donner puis
+                                        et un petit message, ainsi que le montant que vous souhaitez donner puis
                                         clique sur le bouton confirmer pour soumettre le formulaire.
                                         Une fois le formulaire soumis, votre contribution sera enregistrée en toute
                                         sécurité.
@@ -162,9 +162,9 @@
                                             </div>
                                         </div>
                                         <div class="input-single">
-                                            <input type="text" name="address" id="cAddressTwo"
+                                            <input type="number" name="montant" 
                                                 placeholder="Votre adresse" required>
-                                            <i class="fa-solid fa-location-dot"></i>
+                                            <i class="fa-solid fa-money"></i>
                                         </div>
                                         <div class="input-single alter-input">
                                             <textarea name="contact-message" id="contactMessage" placeholder="Un petit message..."></textarea>
