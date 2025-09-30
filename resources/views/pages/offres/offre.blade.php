@@ -1,19 +1,18 @@
 @extends('home.master')
+
 @section('content')
     <section class="common-banner">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="common-banner__content text-center">
-                        <h2 class="title-animation">Nos Offres</h2>
-                    </div>
+                <div class="col-12 text-center">
+                    <h2 class="title-animation">Nos Offres</h2>
                 </div>
             </div>
         </div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{ '/' }}">Acceuil</a>
+                    <a href="{{ url('/') }}">Acceuil</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Consulter nos offres
@@ -22,54 +21,64 @@
         </nav>
         @include('pages.bannier.bannier')
     </section>
+
     <section class="offers-section py-5">
         <div class="container">
             <div class="row">
-                {{-- Données statiques --}}
                 @php
                     $offres = [
                         [
-                            'titre' => 'Offre Développeur Web',
-                            'description' =>
-                                'Rejoignez notre équipe en tant que développeur web pour des projets innovants.',
-                            'date' => '2025-09-01',
+                            'secteur' => 'Informatique',
+                            'titre' => 'Développement Web pour projet public',
+                            'numero' => 'OFF-001',
+                            'date_publication' => '2025-09-01',
+                            'date_limite' => '2025-10-01',
+                            'zones' => 'Kinshasa, Lubumbashi',
                             'pdf' => 'offre1.pdf',
                         ],
                         [
-                            'titre' => 'Offre Designer Graphique',
-                            'description' =>
-                                'Nous recherchons un designer créatif pour améliorer notre image de marque.',
-                            'date' => '2025-08-25',
+                            'secteur' => 'Design',
+                            'titre' => 'Création de supports visuels',
+                            'numero' => 'OFF-002',
+                            'date_publication' => '2025-08-25',
+                            'date_limite' => '2025-09-25',
+                            'zones' => 'Goma, Bukavu',
                             'pdf' => 'offre2.pdf',
                         ],
                         [
-                            'titre' => 'Offre Chargé Marketing',
-                            'description' => 'Participez au développement de notre stratégie marketing digitale.',
-                            'date' => '2025-09-10',
+                            'secteur' => 'Marketing',
+                            'titre' => 'Campagne de communication digitale',
+                            'numero' => 'OFF-003',
+                            'date_publication' => '2025-09-10',
+                            'date_limite' => '2025-10-10',
+                            'zones' => 'Kinshasa, Matadi',
                             'pdf' => 'offre3.pdf',
                         ],
                     ];
                 @endphp
 
                 @foreach ($offres as $offre)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100 shadow-sm border-0">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $offre['titre'] }}</h5>
-                                <p class="card-text">{{ $offre['description'] }}</p>
-                                <p class="mt-auto"><strong>Date de publication :</strong> {{ $offre['date'] }}</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li><strong>Secteur d’activité :</strong> {{ $offre['secteur'] }}</li>
+                                    <li><strong>Numéro de l'offre :</strong> {{ $offre['numero'] }}</li>
+                                    <li><strong>Date publication :</strong> {{ $offre['date_publication'] }}</li>
+                                    <li><strong>Date limite :</strong> {{ $offre['date_limite'] }}</li>
+                                    <li><strong>Zone(s) d’exécution :</strong> {{ $offre['zones'] }}</li>
+                                </ul>
                             </div>
                             <div class="card-footer bg-white d-flex justify-content-between">
-                                <a href="#" class="btn btn-sm btn-primary">
-                                    Consulter
-                                </a>
-                                <a href="{{ asset('pdf/' . $offre['pdf']) }}" download class="btn btn-sm btn-success">
-                                    Télécharger PDF
-                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">Consulter</a>
+                                <a href="{{ asset('pdf/' . $offre['pdf']) }}" download
+                                    class="btn btn-sm btn-success">Télécharger PDF</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
+
             </div>
         </div>
     </section>
@@ -85,14 +94,14 @@
         }
 
         .offers-section .card-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
+            margin-bottom: 0.75rem;
         }
 
-        .offers-section .card-text {
+        .offers-section ul {
             font-size: 0.95rem;
             color: #555;
         }
     </style>
 @endsection
-
