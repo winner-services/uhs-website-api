@@ -30,13 +30,15 @@ class OffreController extends Controller
      */
     public function indexOffres()
     {
-        $offres = Offre::latest()->get();
+        $page = request("paginate", 10);
+
+        $offres = Offre::latest()->paginate($page);
 
         return response()->json([
-            'message' => 'Liste des offres récupérée avec succès.',
+            'success' => true,
             'status' => 200,
-            'offres' => $offres
-        ], 200);
+            'data'    => $offres
+        ]);
     }
 
     /**

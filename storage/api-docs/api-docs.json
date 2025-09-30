@@ -1430,6 +1430,39 @@
                 }
             }
         },
+        "/api/offres.index": {
+            "get": {
+                "tags": [
+                    "Offres"
+                ],
+                "summary": "Lister toutes les offres",
+                "operationId": "84631ae7402902db8a704c1a50c296a8",
+                "responses": {
+                    "200": {
+                        "description": "Liste des offres",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Liste des offres récupérée avec succès."
+                                        },
+                                        "offres": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Offre"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/offres.store": {
             "post": {
                 "tags": [
