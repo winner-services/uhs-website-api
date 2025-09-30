@@ -11,6 +11,35 @@ use Illuminate\Support\Facades\Validator;
 class OffreController extends Controller
 {
     /**
+     * @OA\Get(
+     *   path="/api/offres.index",
+     *   summary="Lister toutes les offres",
+     *   tags={"Offres"},
+     *   @OA\Response(
+     *     response=200,
+     *     description="Liste des offres",
+     *     @OA\JsonContent(
+     *       type="object",
+     *       @OA\Property(property="message", type="string", example="Liste des offres récupérée avec succès."),
+     *       @OA\Property(property="offres", type="array",
+     *         @OA\Items(ref="#/components/schemas/Offre")
+     *       )
+     *     )
+     *   )
+     * )
+     */
+    public function indexOffres()
+    {
+        $offres = Offre::latest()->get();
+
+        return response()->json([
+            'message' => 'Liste des offres récupérée avec succès.',
+            'status' => 200,
+            'offres' => $offres
+        ], 200);
+    }
+
+    /**
      * @OA\Post(
      *     path="/api/offres.store",
      *     summary="Créer une nouvelle offre",

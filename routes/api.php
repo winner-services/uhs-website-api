@@ -121,6 +121,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::controller(OffreController::class)->group(function () {
+    Route::get('/offres.index','indexOffres');
     Route::post('/offres.store', 'storeOffre');
     Route::put('/offres.update/{id}', 'updateOffre');
     Route::delete('/offres.delete/{id}', 'destroyOffre');
