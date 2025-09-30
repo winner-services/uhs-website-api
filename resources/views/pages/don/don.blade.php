@@ -156,10 +156,7 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    ```html
-                    <div class="bank-card mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+                            <div class="bank-card mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
                         <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
                             <h5 class="mb-3"><i class="fa-solid fa-building-columns"></i> Coordonnées bancaires</h5>
                             <hr>
@@ -173,6 +170,9 @@
                             </div>
                         </div>
                     </div>
+                        </div>
+                    </div>
+                    
                 </div>
                 @include('pages.gallery.gallery')
 
