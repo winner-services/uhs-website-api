@@ -30,7 +30,7 @@
                                     <a href="{{ route('team.index') }}">Équipe</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="#">Offres</a>
+                                    <a href="{{ route('offre.index') }}">Offres</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
                                     <a href="{{ route('contact.index') }}">Contactez-nous</a>

@@ -7,6 +7,7 @@ use App\Http\Controllers\website\Domaine\DomaineController;
 use App\Http\Controllers\website\Donate\DonateController;
 use App\Http\Controllers\website\home\homeController;
 use App\Http\Controllers\website\Message\MessageController;
+use App\Http\Controllers\website\Offre\OffreController;
 use App\Http\Controllers\website\Project\ProjectController;
 use App\Http\Controllers\website\Team\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,10 @@ Route::controller(ContactController::class)->group(function () {
 });
 
 Route::controller(DonateController::class)->group(function () {
-    Route::get('/donate-index','indexDonateData')->name('donateData.index');
-    Route::post('/donate-store','store')->name('donate.store');
+    Route::get('/donate-index', 'indexDonateData')->name('donateData.index');
+    Route::post('/donate-store', 'store')->name('donate.store');
+});
+
+Route::controller(OffreController::class)->group(function () {
+    Route::get('/offre-index', 'indexOffreData')->name('offre.index');
 });
