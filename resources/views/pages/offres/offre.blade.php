@@ -22,33 +22,6 @@
         </nav>
         @include('pages.bannier.bannier')
     </section>
-
-    @extends('home.master')
-
-@section('content')
-    <section class="common-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="common-banner__content text-center">
-                        <h2 class="title-animation">Nos Offres</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="{{ url('/') }}">Acceuil</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    Consulter nos offres
-                </li>
-            </ol>
-        </nav>
-        @include('pages.bannier.bannier')
-    </section>
-
     <section class="offers-section py-5">
         <div class="container">
             <div class="row">
