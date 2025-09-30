@@ -131,6 +131,10 @@
                                                 class="d-block d-sm-none">
                                             directement par virement bancaire.
                                         </div>
+                                        <div class="intro">
+                                            <h5>Soutenez notre cause en faisant un don ! Chaque
+                                                contribution compte.</h5>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="intro">
