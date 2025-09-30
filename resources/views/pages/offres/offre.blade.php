@@ -25,55 +25,24 @@
     <section class="offers-section py-5">
         <div class="container">
             <div class="row">
-                @php
-                    $offres = [
-                        [
-                            'secteur' => 'Informatique',
-                            'titre' => 'Développement Web pour projet public',
-                            'numero' => 'OFF-001',
-                            'date_publication' => '2025-09-01',
-                            'date_limite' => '2025-10-01',
-                            'zones' => 'Kinshasa, Lubumbashi',
-                            'pdf' => 'offre1.pdf',
-                        ],
-                        [
-                            'secteur' => 'Design',
-                            'titre' => 'Création de supports visuels',
-                            'numero' => 'OFF-002',
-                            'date_publication' => '2025-08-25',
-                            'date_limite' => '2025-09-25',
-                            'zones' => 'Goma, Bukavu',
-                            'pdf' => 'offre2.pdf',
-                        ],
-                        [
-                            'secteur' => 'Marketing',
-                            'titre' => 'Campagne de communication digitale',
-                            'numero' => 'OFF-003',
-                            'date_publication' => '2025-09-10',
-                            'date_limite' => '2025-10-10',
-                            'zones' => 'Kinshasa, Matadi',
-                            'pdf' => 'offre3.pdf',
-                        ],
-                    ];
-                @endphp
-
                 @foreach ($offres as $offre)
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100 shadow-sm border-0">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">{{ $offre['titre'] }}</h5>
+                                <h5 class="card-title">{{ $offre->intitule }}</h5>
                                 <ul class="list-unstyled mb-3">
-                                    <li><strong>Secteur d’activité :</strong> {{ $offre['secteur'] }}</li>
-                                    <li><strong>Numéro de l'offre :</strong> {{ $offre['numero'] }}</li>
-                                    <li><strong>Date publication :</strong> {{ $offre['date_publication'] }}</li>
-                                    <li><strong>Date limite :</strong> {{ $offre['date_limite'] }}</li>
-                                    <li><strong>Zone(s) d’exécution :</strong> {{ $offre['zones'] }}</li>
+                                    <li><strong>Secteur d’activité :</strong> {{ $offre->secteur_activite }}</li>
+                                    <li><strong>Numéro de l'offre :</strong> {{ $offre->numero_offres }}</li>
+                                    <li><strong>Date publication :</strong> {{ $offre->date_publication }}</li>
+                                    <li><strong>Date limite :</strong> {{ $offre->date_limite }}</li>
+                                    <li><strong>Zone(s) d’exécution :</strong> {{ $offre->zone_execution }}</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-white d-flex justify-content-between">
                                 <a href="#" class="btn btn-sm btn-primary">Consulter</a>
-                                <a href="{{ asset('pdf/' . $offre['pdf']) }}" download
-                                    class="btn btn-sm btn-success">Télécharger PDF</a>
+                                <a href="{{ Storage::url($offre->fichier) }}" download class="btn btn-sm btn-success">
+                                    Télécharger PDF
+                                </a>
                             </div>
                         </div>
                     </div>
