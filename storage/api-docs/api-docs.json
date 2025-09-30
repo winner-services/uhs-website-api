@@ -1430,6 +1430,237 @@
                 }
             }
         },
+        "/api/offres.store": {
+            "post": {
+                "tags": [
+                    "Offres"
+                ],
+                "summary": "Créer une nouvelle offre",
+                "operationId": "94a0df9d2f4a0e2973a5137360df7dc9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "intitule",
+                                    "description",
+                                    "date_publication",
+                                    "date_limite"
+                                ],
+                                "properties": {
+                                    "intitule": {
+                                        "type": "string",
+                                        "example": "Développement Web"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Prestation de développement d’un site web"
+                                    },
+                                    "nature": {
+                                        "type": "string",
+                                        "example": "Consultation"
+                                    },
+                                    "numero_offres": {
+                                        "type": "string",
+                                        "example": "OFF-2025-001"
+                                    },
+                                    "secteur_activite": {
+                                        "type": "string",
+                                        "example": "Informatique"
+                                    },
+                                    "date_publication": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-09-01"
+                                    },
+                                    "date_limite": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-01"
+                                    },
+                                    "zone_execution": {
+                                        "type": "string",
+                                        "example": "Kinshasa"
+                                    },
+                                    "fichier": {
+                                        "description": "Fichier PDF de l’offre",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Offre créée avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Offre créée avec succès"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Offre"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                }
+            }
+        },
+        "/api/offres.update/{id}": {
+            "put": {
+                "tags": [
+                    "Offres"
+                ],
+                "summary": "Mettre à jour une offre",
+                "operationId": "f0caa74e4927a3cf568d2bb3db49a85e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de l’offre",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "intitule": {
+                                        "type": "string",
+                                        "example": "Développement Web modifié"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Description modifiée"
+                                    },
+                                    "nature": {
+                                        "type": "string",
+                                        "example": "Appel d’offre"
+                                    },
+                                    "numero_offres": {
+                                        "type": "string",
+                                        "example": "OFF-2025-002"
+                                    },
+                                    "secteur_activite": {
+                                        "type": "string",
+                                        "example": "Marketing"
+                                    },
+                                    "date_publication": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-09-05"
+                                    },
+                                    "date_limite": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-10-15"
+                                    },
+                                    "zone_execution": {
+                                        "type": "string",
+                                        "example": "Lubumbashi"
+                                    },
+                                    "fichier": {
+                                        "description": "Nouveau fichier PDF de l’offre",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Offre mise à jour avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Offre mise à jour avec succès"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Offre"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Offre non trouvée"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                }
+            }
+        },
+        "/api/offres.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Offres"
+                ],
+                "summary": "Supprimer une offre",
+                "operationId": "7e746ada8f4c9629e0cbb580d2f23a22",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de l’offre à supprimer",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Offre supprimée avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Offre supprimée avec succès"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Offre non trouvée"
+                    }
+                }
+            }
+        },
         "/api/partner.index": {
             "get": {
                 "tags": [
@@ -2664,6 +2895,66 @@
         }
     },
     "components": {
+        "schemas": {
+            "Offre": {
+                "title": "Offre",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "intitule": {
+                        "type": "string",
+                        "example": "Développement Web"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Appel d’offre pour création d’un site web"
+                    },
+                    "nature": {
+                        "type": "string",
+                        "example": "Consultation"
+                    },
+                    "numero_offres": {
+                        "type": "string",
+                        "example": "OFF-2025-001"
+                    },
+                    "secteur_activite": {
+                        "type": "string",
+                        "example": "Informatique"
+                    },
+                    "date_publication": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-09-01"
+                    },
+                    "date_limite": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-10-01"
+                    },
+                    "zone_execution": {
+                        "type": "string",
+                        "example": "Kinshasa"
+                    },
+                    "fichier": {
+                        "type": "string",
+                        "example": "storage/offres/offre1.pdf"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-09-30T12:00:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-09-30T12:00:00Z"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "securitySchemes": {
             "bearerAuth": {
                 "type": "http",
@@ -2714,6 +3005,10 @@
         {
             "name": "Dashboard",
             "description": "Dashboard"
+        },
+        {
+            "name": "Offres",
+            "description": "Offres"
         },
         {
             "name": "Partenaire",

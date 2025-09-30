@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\Donation\DonationControlleer;
 use App\Http\Controllers\Api\Event\EventController;
 use App\Http\Controllers\Api\Gallery\GalleryController;
 use App\Http\Controllers\Api\Home\IndexController;
+use App\Http\Controllers\Api\Offre\OffreController;
 use App\Http\Controllers\Api\Partenaire\PartenaireController;
 use App\Http\Controllers\Api\Project\ProjectController;
 use App\Http\Controllers\Api\Slide\SlideController;
@@ -113,9 +114,14 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::get('/count.index', [IndexController::class, 'count']);
+    Route::controller(DonationControlleer::class)->group(function () {
+        Route::get('/donation.index', 'indexDonation');
+        Route::delete('/donation.delete/{id}', 'destroyDonate');
+    });
 });
 
-Route::controller(DonationControlleer::class)->group(function () {
-    Route::get('/donation.index', 'indexDonation');
-    Route::delete('/donation.delete/{id}', 'destroyDonate');
+Route::controller(OffreController::class)->group(function () {
+    Route::post('/offres.store', 'storeOffre');
+    Route::put('/offres.update/{id}', 'updateOffre');
+    Route::delete('/offres.delete/{id}', 'destroyOffre');
 });
