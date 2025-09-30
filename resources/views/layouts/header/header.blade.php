@@ -18,19 +18,19 @@
                                     <a href="{{ route('about.index') }}">A Propos</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('domaine.index') }}">Nos domaines</a>
+                                    <a href="{{ route('domaine.index') }}">Domaines</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('project.index') }}">Nos projets</a>
+                                    <a href="{{ route('project.index') }}">Projets</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
                                     <a href="{{ route('event.index') }}">Événements</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('team.index') }}">Notre Équipe</a>
+                                    <a href="{{ route('team.index') }}">Équipe</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="#">Nos Offres</a>
+                                    <a href="#">Offres</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
                                     <a href="{{ route('contact.index') }}">Contactez-nous</a>
