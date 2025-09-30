@@ -168,7 +168,7 @@
                                             <i class="fa-solid fa-money-bill"></i>
                                         </div>
                                         <div class="input-single alter-input">
-                                            <textarea name="contact-message" id="contactMessage" placeholder="Un petit message..."></textarea>
+                                            <textarea name="message" id="contactMessage" placeholder="Un petit message..."></textarea>
                                             <i class="fa-solid fa-envelope"></i>
                                         </div>
                                         <div class="form-cta">
