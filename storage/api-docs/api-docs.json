@@ -944,6 +944,74 @@
                 }
             }
         },
+        "/api/donation.index": {
+            "get": {
+                "tags": [
+                    "Donation"
+                ],
+                "summary": "Get",
+                "description": "Returns list",
+                "operationId": "indexDonation",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/donation.delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Team"
+                ],
+                "summary": "Supprimer un membre de l'équipe",
+                "operationId": "destroyDonate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID du membre de l'équipe",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Membre supprimé avec succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Membre supprimé avec succès"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Membre introuvable"
+                    }
+                }
+            }
+        },
         "/api/event.index": {
             "get": {
                 "tags": [
@@ -2628,6 +2696,14 @@
             "description": "Domaine"
         },
         {
+            "name": "Donation",
+            "description": "Donation"
+        },
+        {
+            "name": "Team",
+            "description": "Team"
+        },
+        {
             "name": "Events",
             "description": "Events"
         },
@@ -2650,10 +2726,6 @@
         {
             "name": "Slide",
             "description": "Slide"
-        },
-        {
-            "name": "Team",
-            "description": "Team"
         },
         {
             "name": "Temoignage",
