@@ -141,7 +141,8 @@
                                     </div>
                                 </div>
                                 <div class="checkout__form">
-                                    <form action="#" method="post">
+                                    <form action="{{ route('donate.store') }}" method="post">
+                                        @csrf
                                         <div class="input-group">
                                             <div class="input-single">
                                                 <input type="text" name="name" id="cName" placeholder="Votre nom"
@@ -162,8 +163,8 @@
                                             </div>
                                         </div>
                                         <div class="input-single">
-                                            <input type="number" name="montant" 
-                                                placeholder="Montant à payer (USD)" required>
+                                            <input type="number" name="montant" placeholder="Montant à payer (USD)"
+                                                required>
                                             <i class="fa-solid fa-money-bill"></i>
                                         </div>
                                         <div class="input-single alter-input">
@@ -191,4 +192,24 @@
             <img src="{{ asset('assets/images/sprade-green.png') }}" alt="Image">
         </div>
     </section>
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Succès !',
+                text: '{{ session('success') }}',
+                timer: 3000 // La boîte se ferme après 3 secondes
+            });
+        </script>
+    @endif
+    @if (session('message'))
+        <script>
+            Swal.fire({
+                title: 'Erreur !',
+                text: "{{ session('message') }}",
+                icon: 'error',
+                timer: 3000
+            });
+        </script>
+    @endif
 @endsection

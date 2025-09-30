@@ -49,4 +49,5 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::controller(DonateController::class)->group(function () {
     Route::get('/donate-index','indexDonateData')->name('donateData.index');
+    Route::post('/donate-store','store')->name('donate.store');
 });

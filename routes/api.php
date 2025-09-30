@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\About\AboutController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Domaine\DomaineController;
+use App\Http\Controllers\Api\Donation\DonationControlleer;
 use App\Http\Controllers\Api\Event\EventController;
 use App\Http\Controllers\Api\Gallery\GalleryController;
 use App\Http\Controllers\Api\Home\IndexController;
@@ -112,4 +113,9 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::get('/count.index', [IndexController::class, 'count']);
+});
+
+Route::controller(DonationControlleer::class)->group(function () {
+    Route::get('/donation.index', 'indexDonation');
+    Route::delete('/donation.delete/{id}', 'destroyDonate');
 });
