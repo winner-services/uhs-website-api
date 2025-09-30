@@ -1917,11 +1917,11 @@ div {
 }
 .contact__form .alter-input i,
 .checkout__form .alter-input i {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .contact__form .input-group,
 .checkout__form .input-group {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 .contact__form .input-group .input-single,
 .checkout__form .input-group .input-single {
