@@ -63,11 +63,13 @@ class OffreController extends Controller
                 'errors' => $validator->errors()
             ], 422);
         }
+        $data = $validator->validated();
+
         if ($request->hasFile('fichier')) {
-            $validator['fichier'] = $request->file('fichier')->store('offres', 'public');
+            $data['fichier'] = $request->file('fichier')->store('offres', 'public');
         }
 
-        $offre = Offre::create($validator);
+        $offre = Offre::create($data);
 
         return response()->json([
             'message' => 'Offre créée avec succès',
