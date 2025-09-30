@@ -182,16 +182,14 @@
 
                         </div>
                     </div>
-
                 </div>
-                @include('pages.gallery.gallery')
-
             </div>
         </div>
         <div class="spade">
             <img src="{{ asset('assets/images/sprade-green.png') }}" alt="Image">
         </div>
     </section>
+    @include('pages.gallery.gallery')
     @if (session('success'))
         <script>
             Swal.fire({
