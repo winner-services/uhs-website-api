@@ -163,7 +163,7 @@
                                             </div>
                                         </div>
                                         <div class="input-single">
-                                            <input type="number" name="montant" placeholder="Montant à payer (USD)"
+                                            <input type="number" name="amount" placeholder="Montant à payer (USD)"
                                                 required>
                                             <i class="fa-solid fa-money-bill"></i>
                                         </div>
