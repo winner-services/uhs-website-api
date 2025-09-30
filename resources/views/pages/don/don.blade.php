@@ -124,11 +124,15 @@
                                         <p><strong>Banque :</strong> Trust Merchant Bank S.A (TMB S.A)</p>
                                         <p><strong>Numéro de compte :</strong> 00017281002820666000117 / USD</p>
                                         <p><strong>Swift :</strong> TRMSCD3L</p>
-                                        <div class="alert alert-success mt-3 text-center px-2 px-md-4" role="alert"
-                                            style="white-space: normal !important; word-break: break-word; overflow-wrap: break-word;">
-                                            Merci de copier ces informations pour effectuer votre paiement directement par
-                                            virement bancaire.
-                                        </div>
+
+                                        
+<div class="alert alert-success mt-3 text-center px-2 px-md-4" role="alert">
+    <p style="margin: 0; white-space: normal !important; word-break: break-word !important; overflow-wrap: break-word !important;">
+        Merci de copier ces informations pour effectuer votre paiement directement par virement bancaire.
+    </p>
+</div>
+
+
                                         <div class="intro">
                                             <h5>Soutenez notre cause en faisant un don ! Chaque
                                                 contribution compte.</h5>
