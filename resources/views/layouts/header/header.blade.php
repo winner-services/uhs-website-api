@@ -32,9 +32,9 @@
                                 <li class="navbar__item nav-fade">
                                     <a href="#">Offres</a>
                                 </li>
-                                <li class="navbar__item nav-fade">
+                                {{-- <li class="navbar__item nav-fade">
                                     <a href="{{ route('contact.index') }}">Contactez-nous</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         <div class="navbar__options">
