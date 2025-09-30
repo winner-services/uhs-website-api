@@ -163,8 +163,8 @@
                                         </div>
                                         <div class="input-single">
                                             <input type="number" name="montant" 
-                                                placeholder="Votre adresse" required>
-                                            <i class="fa-solid fa-money"></i>
+                                                placeholder="Montant à payer (USD)" required>
+                                            <i class="fa-solid fa-money-bill"></i>
                                         </div>
                                         <div class="input-single alter-input">
                                             <textarea name="contact-message" id="contactMessage" placeholder="Un petit message..."></textarea>
