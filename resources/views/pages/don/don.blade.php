@@ -59,10 +59,12 @@
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>
-                                        Il vous suffit de remplir notre formulaire de don en indiquant votre nom, téléphone,
-                                        adresse, un petit message, ainsi que le montant que vous souhaitez donner.
-                                        Sélectionnez ensuite votre méthode de paiement et confirmez la date du don. Une fois
-                                        le formulaire soumis, votre contribution sera enregistrée en toute sécurité.
+                                        Il vous suffit de remplir notre formulaire de don en indiquant votre nom, email,
+                                        numéro téléphone,
+                                        adresse, un petit message, ainsi que le montant que vous souhaitez donner puis
+                                        clique sur le bouton confirmer pour soumettre le formulaire.
+                                        Une fois le formulaire soumis, votre contribution sera enregistrée en toute
+                                        sécurité.
                                     </p>
                                 </div>
                             </div>
@@ -78,10 +80,9 @@
                                 data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>
-                                        Nous acceptons plusieurs méthodes de paiement pour vous faciliter la contribution :
-                                        carte bancaire, virement bancaire ou paiement mobile. Choisissez simplement la
-                                        méthode qui vous convient le mieux dans le formulaire et suivez les instructions
-                                        fournies pour compléter votre don.
+                                        Pour le moment, nous acceptons uniquement les dons via **compte bancaire**. Veuillez
+                                        récupérer le numéro de notre compte bancaire affiché en bas du formulaire et
+                                        effectuer votre paiement directement à ce compte.
                                     </p>
                                 </div>
                             </div>
@@ -154,6 +155,21 @@
                                         </div>
                                     </form>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    ```html
+                    <div class="bank-card mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+                        <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
+                            <h5 class="mb-3"><i class="fa-solid fa-building-columns"></i> Coordonnées bancaires</h5>
+                            <hr>
+                            <p><strong>Intitulé du compte :</strong> UHS-RDC ASBL</p>
+                            <p><strong>Banque :</strong> Trust Merchant Bank S.A (TMB S.A)</p>
+                            <p><strong>Numéro de compte :</strong> 00017281002820666000117 / USD</p>
+                            <p><strong>Swift :</strong> TRMSCD3L</p>
+                            <div class="alert alert-success mt-3" role="alert">
+                                Merci de copier ces informations pour effectuer votre paiement directement par virement
+                                bancaire.
                             </div>
                         </div>
                     </div>
