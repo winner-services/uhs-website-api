@@ -140,7 +140,7 @@
                                         <hr>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="checkout__form">
                                     <form action="#" method="post">
                                         <div class="input-group">
                                             <div class="input-single">
