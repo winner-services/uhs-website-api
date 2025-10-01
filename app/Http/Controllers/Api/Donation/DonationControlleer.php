@@ -41,8 +41,8 @@ class DonationControlleer extends Controller
      * @OA\Delete(
      *     path="/api/donation.delete/{id}",
      *     operationId="destroyDonate",
-     *     summary="Supprimer un membre de l'équipe",
-     *     tags={"Team"},
+     *     summary="Supprimer",
+     *     tags={"Donation"},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

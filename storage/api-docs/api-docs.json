@@ -965,9 +965,9 @@
         "/api/donation.delete/{id}": {
             "delete": {
                 "tags": [
-                    "Team"
+                    "Donation"
                 ],
-                "summary": "Supprimer un membre de l'équipe",
+                "summary": "Supprimer",
                 "operationId": "destroyDonate",
                 "parameters": [
                     {
@@ -3034,10 +3034,6 @@
             "description": "Donation"
         },
         {
-            "name": "Team",
-            "description": "Team"
-        },
-        {
             "name": "Events",
             "description": "Events"
         },
@@ -3064,6 +3060,10 @@
         {
             "name": "Slide",
             "description": "Slide"
+        },
+        {
+            "name": "Team",
+            "description": "Team"
         },
         {
             "name": "Temoignage",
