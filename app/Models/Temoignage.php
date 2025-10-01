@@ -12,6 +12,7 @@ class Temoignage extends Model
     protected $fillable = [
         'name',
         'function',
-        'description'
+        'description',
+        'lien_youtube'
     ];
 }

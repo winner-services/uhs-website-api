@@ -114,14 +114,17 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::get('/count.index', [IndexController::class, 'count']);
-    Route::controller(DonationControlleer::class)->group(function () {
-        Route::get('/donation.index', 'indexDonation');
-        Route::delete('/donation.delete/{id}', 'destroyDonate');
-    });
+    // Route::controller(DonationControlleer::class)->group(function () {
+    //     Route::get('/donation.index', 'indexDonation');
+    //     Route::delete('/donation.delete/{id}', 'destroyDonate');
+    // });
 });
-
+Route::controller(DonationControlleer::class)->group(function () {
+    Route::get('/donation.index', 'indexDonation');
+    Route::delete('/donation.delete/{id}', 'destroyDonate');
+});
 Route::controller(OffreController::class)->group(function () {
-    Route::get('/offres.index','indexOffres');
+    Route::get('/offres.index', 'indexOffres');
     Route::post('/offres.store', 'storeOffre');
     Route::put('/offres.update/{id}', 'updateOffre');
     Route::delete('/offres.delete/{id}', 'destroyOffre');

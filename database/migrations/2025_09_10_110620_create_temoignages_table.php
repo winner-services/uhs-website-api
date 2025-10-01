@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('function')->nullable();
             $table->text('description');
+            $table->text('lien_youtube')->nullable();
             $table->timestamps();
         });
     }
