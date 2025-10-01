@@ -53,6 +53,7 @@ class TemoignageController extends Controller
      *       required={"name","function","description"},
      *       @OA\Property(property="name", type="string", format="text",example="winner kambale"),
      *       @OA\Property(property="function", type="string", format="text",example="rdc"),
+     *       @OA\Property(property="lien_youtube", type="string", format="text",example="https://www.youtube.com/watch?v=RvreULjnzFo"),
      *       @OA\Property(property="description", type="string", format="text",example="2024-09-19")
      *    ),
      * ),
@@ -72,6 +73,7 @@ class TemoignageController extends Controller
             'name' => 'required',
             'function' => 'nullable',
             'description' => 'required',
+            'lien_youtube' => 'nullable'
         ]);
         if ($validator->fails()) {
             return response()->json([
@@ -109,6 +111,7 @@ class TemoignageController extends Controller
      *       required={"name","function","description"},
      *       @OA\Property(property="name", type="string", format="text",example="winner kambale"),
      *       @OA\Property(property="function", type="string", format="text",example="rdc"),
+     *       @OA\Property(property="lien_youtube", type="string", format="text",example="https://www.youtube.com/watch?v=RvreULjnzFo"),
      *       @OA\Property(property="description", type="string", format="text",example="2024-09-19")
      *    ),
      * ),
@@ -138,6 +141,7 @@ class TemoignageController extends Controller
             'name' => 'required',
             'function' => 'nullable',
             'description' => 'required',
+            'lien_youtube' => 'nullable'
         ]);
         if ($validator->fails()) {
             return response()->json([
@@ -148,7 +152,8 @@ class TemoignageController extends Controller
         $temoignage->update([
             'name' => $request->name,
             'function' => $request->function,
-            'description' => $request->description
+            'description' => $request->description,
+            'lien_youtube' => $request->lien_youtube
         ]);
 
         $result = [

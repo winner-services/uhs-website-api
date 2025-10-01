@@ -2604,6 +2604,11 @@
                                         "format": "text",
                                         "example": "rdc"
                                     },
+                                    "lien_youtube": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://www.youtube.com/watch?v=RvreULjnzFo"
+                                    },
                                     "description": {
                                         "type": "string",
                                         "format": "text",
@@ -2669,6 +2674,11 @@
                                         "type": "string",
                                         "format": "text",
                                         "example": "rdc"
+                                    },
+                                    "lien_youtube": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://www.youtube.com/watch?v=RvreULjnzFo"
                                     },
                                     "description": {
                                         "type": "string",

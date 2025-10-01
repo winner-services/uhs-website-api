@@ -106,18 +106,24 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/partner.delete/{id}', 'deletePartenaire');
     });
 
-    Route::controller(TemoignageController::class)->group(function () {
-        Route::get('/temoignage.index', 'getTemoignage');
-        Route::post('/temoignage.store', 'storeTemoignage');
-        Route::put('/temoignage.update/{id}', 'updateTemoignage');
-        Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
-    });
+    // Route::controller(TemoignageController::class)->group(function () {
+    //     Route::get('/temoignage.index', 'getTemoignage');
+    //     Route::post('/temoignage.store', 'storeTemoignage');
+    //     Route::put('/temoignage.update/{id}', 'updateTemoignage');
+    //     Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
+    // });
 
     Route::get('/count.index', [IndexController::class, 'count']);
     // Route::controller(DonationControlleer::class)->group(function () {
     //     Route::get('/donation.index', 'indexDonation');
     //     Route::delete('/donation.delete/{id}', 'destroyDonate');
     // });
+});
+Route::controller(TemoignageController::class)->group(function () {
+    Route::get('/temoignage.index', 'getTemoignage');
+    Route::post('/temoignage.store', 'storeTemoignage');
+    Route::put('/temoignage.update/{id}', 'updateTemoignage');
+    Route::delete('/temoignage.delete/{id}', 'deleteTemoignage');
 });
 Route::controller(DonationControlleer::class)->group(function () {
     Route::get('/donation.index', 'indexDonation');
