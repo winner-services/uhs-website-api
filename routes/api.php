@@ -119,16 +119,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/donation.index', 'indexDonation');
         Route::delete('/donation.delete/{id}', 'destroyDonate');
     });
-    // Route::controller(OffreController::class)->group(function () {
-    //     Route::get('/offres.index', 'indexOffres');
-    //     Route::post('/offres.store', 'storeOffre');
-    //     Route::post('/offres.update/{id}', 'updateOffre');
-    //     Route::delete('/offres.delete/{id}', 'destroyOffre');
-    // });
-});
-Route::controller(OffreController::class)->group(function () {
-    Route::get('/offres.index', 'indexOffres');
-    Route::post('/offres.store', 'storeOffre');
-    Route::post('/offres.update/{offre}', 'updateOffre');
-    Route::delete('/offres.delete/{offre}', 'destroyOffre');
+    Route::controller(OffreController::class)->group(function () {
+        Route::get('/offres.index', 'indexOffres');
+        Route::post('/offres.store', 'storeOffre');
+        Route::post('/offres.update/{offre}', 'updateOffre');
+        Route::delete('/offres.delete/{offre}', 'destroyOffre');
+    });
 });
