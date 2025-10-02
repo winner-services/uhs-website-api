@@ -130,5 +130,5 @@ Route::controller(OffreController::class)->group(function () {
     Route::get('/offres.index', 'indexOffres');
     Route::post('/offres.store', 'storeOffre');
     Route::post('/offres.update/{id}', 'updateOffre');
-    Route::delete('/offres.delete/{id}', 'destroyOffre');
+    Route::delete('/offres.delete/{offre}', 'destroyOffre');
 });
