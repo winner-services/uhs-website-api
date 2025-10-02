@@ -104,12 +104,13 @@ class OffreController extends Controller
 
         return response()->json([
             'message' => 'Offre créée avec succès',
+            'status' => 201,
             'data' => $offre
         ], 201);
     }
 
     /**
-     * @OA\Put(
+     * @OA\Post(
      *     path="/api/offres.update/{id}",
      *     summary="Mettre à jour une offre",
      *     tags={"Offres"},
@@ -174,8 +175,9 @@ class OffreController extends Controller
 
         return response()->json([
             'message' => 'Offre mise à jour avec succès',
+            'status' => 200,
             'data' => $offre
-        ], 200);
+        ]);
     }
 
     /**
@@ -209,7 +211,8 @@ class OffreController extends Controller
         $offre->delete();
 
         return response()->json([
-            'message' => 'Offre supprimée avec succès'
-        ], 200);
+            'message' => 'Offre supprimée avec succès',
+            'status' => 200,
+        ]);
     }
 }
