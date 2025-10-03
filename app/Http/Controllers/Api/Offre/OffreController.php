@@ -105,6 +105,7 @@ class OffreController extends Controller
         return response()->json([
             'message' => 'Offre créée avec succès',
             'status' => 201,
+            'success' => true,
             'data' => $offre
         ], 201);
     }
@@ -176,6 +177,7 @@ class OffreController extends Controller
         return response()->json([
             'message' => 'Offre mise à jour avec succès',
             'status' => 200,
+            'success' => true,
             'data' => $offre
         ]);
     }
@@ -213,6 +215,7 @@ class OffreController extends Controller
         return response()->json([
             'message' => 'Offre supprimée avec succès',
             'status' => 200,
+            'success' => true,
         ]);
     }
 }
