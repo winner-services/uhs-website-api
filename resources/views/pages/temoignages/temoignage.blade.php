@@ -121,7 +121,6 @@
     const videoIframe = document.getElementById('videoIframe');
     const videoThumbnails = document.querySelectorAll('.video-thumbnail');
 
-    // Quand on clique sur une miniature
     videoThumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', () => {
             const videoId = thumbnail.getAttribute('data-video-id');
@@ -129,12 +128,10 @@
         });
     });
 
-    // Quand le modal se ferme
     videoModal.addEventListener('hidden.bs.modal', function() {
-        videoIframe.src = ''; // stoppe la vidéo
+        videoIframe.src = '';
     });
 </script>
-
 <!-- Styles -->
 <style>
     .play-button {
