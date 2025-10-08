@@ -35,13 +35,12 @@
                                                 <!-- Vidéo YouTube intégrée -->
                                                 <div class="col-12 col-lg-3">
                                                     <div class="video-container ratio ratio-16x9">
-                                                        <iframe width="370" height="250" src="https://www.youtube.com/embed/Gh7NrEY4qE0" title="ISIG HACKATHON 2021" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                                        {{-- <iframe
-                                                            src="{{ $temoignages->lien_youtube }}"
+                                                        <iframe
+                                                            src="https://www.youtube.com/embed/{{ $temoignages->lien_youtube }}"
                                                             title="Vidéo témoignage" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             allowfullscreen>
-                                                        </iframe> --}}
+                                                        </iframe>
                                                     </div>
                                                 </div>
 
