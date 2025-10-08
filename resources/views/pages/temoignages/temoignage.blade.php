@@ -40,9 +40,9 @@
                                                         data-video-id="{{ $temoignages->lien_youtube }}">
 
                                                         <!-- Miniature YouTube -->
-                                                        <img src="https://img.youtube.com/vi/{{ $temoignages->lien_youtube }}/hqdefault.jpg"
+                                                        {{-- <img src="https://img.youtube.com/vi/{{ $temoignages->lien_youtube }}/hqdefault.jpg"
                                                             alt="Vidéo de {{ $temoignages->name }}"
-                                                            class="img-fluid rounded shadow">
+                                                            class="img-fluid rounded shadow"> --}}
 
                                                         <!-- Bouton Play -->
                                                         <div
