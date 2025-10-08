@@ -33,18 +33,11 @@
                                         <div class="testimonial__slider-single">
                                             <div class="row align-items-center gutter-40">
                                                 <!-- Vidéo YouTube -->
-                                                <div class="col-12 col-lg-6">
+                                                <div class="col-12 col-lg-3">
                                                     <div class="video-thumbnail position-relative"
                                                         style="cursor:pointer;" data-bs-toggle="modal"
                                                         data-bs-target="#videoModal"
                                                         data-video-id="{{ $temoignages->lien_youtube }}">
-
-                                                        <!-- Miniature YouTube -->
-                                                        {{-- <img src="https://img.youtube.com/vi/{{ $temoignages->lien_youtube }}/hqdefault.jpg"
-                                                            alt="Vidéo de {{ $temoignages->name }}"
-                                                            class="img-fluid rounded shadow"> --}}
-
-                                                        <!-- Bouton Play -->
                                                         <div
                                                             class="play-button position-absolute top-50 start-50 translate-middle">
                                                             <i class="fa-solid fa-play fa-3x text-white"></i>
@@ -53,7 +46,7 @@
                                                 </div>
 
                                                 <!-- Contenu du témoignage -->
-                                                <div class="col-12 col-lg-6">
+                                                <div class="col-12 col-lg-9">
                                                     <div class="testimonial__slider-content">
                                                         <div class="review">
                                                             <i class="fa-solid fa-star"></i>
