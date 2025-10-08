@@ -37,10 +37,10 @@
                                                     <div class="video-thumbnail position-relative"
                                                         style="cursor:pointer;" data-bs-toggle="modal"
                                                         data-bs-target="#videoModal"
-                                                        data-video-id="{{ $temoignages->video_id }}">
+                                                        data-video-id="{{ $temoignages->lien_youtube }}">
 
                                                         <!-- Miniature YouTube -->
-                                                        <img src="https://img.youtube.com/vi/{{ $temoignages->video_id }}/hqdefault.jpg"
+                                                        <img src="https://img.youtube.com/vi/{{ $temoignages->lien_youtube }}/hqdefault.jpg"
                                                             alt="Vidéo de {{ $temoignages->name }}"
                                                             class="img-fluid rounded shadow">
 
