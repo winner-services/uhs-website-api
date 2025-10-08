@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <!-- Témoignages avec vidéos -->
+        <!-- Témoignages avec lecteur YouTube -->
         <div class="row justify-content-center">
             <div class="col-12 col-xl-12">
                 <div class="testimonial__inner">
@@ -32,16 +32,15 @@
                                     <div class="swiper-slide">
                                         <div class="testimonial__slider-single">
                                             <div class="row align-items-center gutter-40">
-                                                <!-- Vidéo YouTube -->
+                                                <!-- Vidéo YouTube intégrée -->
                                                 <div class="col-12 col-lg-3">
-                                                    <div class="video-thumbnail position-relative"
-                                                        style="cursor:pointer;" data-bs-toggle="modal"
-                                                        data-bs-target="#videoModal"
-                                                        data-video-id="{{ $temoignages->lien_youtube }}">
-                                                        <div
-                                                            class="play-button position-absolute top-50 start-50 translate-middle">
-                                                            <i class="fa-solid fa-play fa-3x text-white"></i>
-                                                        </div>
+                                                    <div class="video-container ratio ratio-16x9">
+                                                        <iframe
+                                                            src="https://www.youtube.com/embed/{{ $temoignages->lien_youtube }}"
+                                                            title="Vidéo témoignage" frameborder="0"
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                            allowfullscreen>
+                                                        </iframe>
                                                     </div>
                                                 </div>
 
@@ -90,64 +89,24 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal vidéo global -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark">
-                <div class="modal-body p-0 position-relative">
-                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="ratio ratio-16x9">
-                        <iframe id="videoIframe" src="" title="YouTube video" allowfullscreen
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
-<!-- Script pour gérer les vidéos -->
-<script>
-    const videoModal = document.getElementById('videoModal');
-    const videoIframe = document.getElementById('videoIframe');
-    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
-
-    videoThumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-            const videoId = thumbnail.getAttribute('data-video-id');
-            videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        });
-    });
-
-    videoModal.addEventListener('hidden.bs.modal', function() {
-        videoIframe.src = '';
-    });
-</script>
 <!-- Styles -->
 <style>
-    .play-button {
-        background: rgba(0, 0, 0, 0.5);
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.3s ease;
+    .video-container iframe {
+        border-radius: 12px;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
     }
 
-    .play-button:hover {
-        background: rgba(0, 0, 0, 0.7);
-    }
-
-    .video-thumbnail img {
+    .video-container {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .video-thumbnail:hover img {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    .video-container:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
     }
 </style>
