@@ -16,9 +16,17 @@
                             <span></span>
                         </div>
                     </div>
-                    <!-- Bouton vidéo -->
+
+                    <!-- Bouton vidéo avec vignette -->
                     <div class="mt-4">
-                        <a href="#videoModal" class="btn btn-primary" data-bs-toggle="modal">Voir la vidéo</a>
+                        <div class="video-thumbnail position-relative" style="cursor:pointer;" data-bs-toggle="modal"
+                            data-bs-target="#videoModal">
+                            <img src="https://img.youtube.com/vi/TON_ID_VIDEO/hqdefault.jpg" alt="Vidéo ISIG"
+                                class="img-fluid rounded shadow">
+                            <div class="play-button position-absolute top-50 start-50 translate-middle">
+                                <i class="fa-solid fa-play fa-3x text-white"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,13 +89,13 @@
     <!-- Modal vidéo -->
     <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+            <div class="modal-content bg-dark">
+                <div class="modal-body p-0 position-relative">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="ratio ratio-16x9">
-                        <iframe id="videoIframe" src="https://www.youtube.com/embed/TON_ID_VIDEO" title="YouTube video"
-                            allowfullscreen allow="autoplay"></iframe>
+                        <iframe id="videoIframe" src="" title="YouTube video" allowfullscreen
+                            allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -95,12 +103,44 @@
     </div>
 </section>
 
-<!-- Script pour arrêter la vidéo quand on ferme le modal -->
+<!-- Script pour charger et arrêter la vidéo -->
 <script>
     const videoModal = document.getElementById('videoModal');
     const videoIframe = document.getElementById('videoIframe');
+    const videoThumbnail = document.querySelector('.video-thumbnail');
+
+    // ID de la vidéo YouTube
+    const videoId = 'TON_ID_VIDEO';
+
+    videoThumbnail.addEventListener('click', () => {
+        videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    });
 
     videoModal.addEventListener('hidden.bs.modal', function() {
-        videoIframe.src = videoIframe.src; // réinitialise la vidéo
+        videoIframe.src = '';
     });
 </script>
+
+<style>
+    .play-button {
+        background: rgba(0, 0, 0, 0.5);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .play-button i {
+        color: #fff;
+    }
+
+    .video-thumbnail img {
+        transition: transform 0.3s ease;
+    }
+
+    .video-thumbnail:hover img {
+        transform: scale(1.05);
+    }
+</style>
