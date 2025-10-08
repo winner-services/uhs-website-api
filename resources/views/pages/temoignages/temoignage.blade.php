@@ -1,5 +1,6 @@
 <section class="testimonial-area pt-120 pb-120">
     <div class="container">
+        <!-- En-tête -->
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10 col-xl-5">
                 <div class="section__header text-center mb-60" data-aos="fade-up" data-aos-duration="1000">
@@ -16,23 +17,11 @@
                             <span></span>
                         </div>
                     </div>
-
-                    <!-- Bouton vidéo avec vignette -->
-                    <div class="mt-4">
-                        <div class="video-thumbnail position-relative" style="cursor:pointer;" data-bs-toggle="modal"
-                            data-bs-target="#videoModal">
-                            <img src="https://img.youtube.com/vi/TON_ID_VIDEO/hqdefault.jpg" alt="Vidéo ISIG"
-                                class="img-fluid rounded shadow">
-                            <div class="play-button position-absolute top-50 start-50 translate-middle">
-                                <i class="fa-solid fa-play fa-3x text-white"></i>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Témoignages existants -->
+        <!-- Témoignages avec vidéos -->
         <div class="row justify-content-center">
             <div class="col-12 col-xl-12">
                 <div class="testimonial__inner">
@@ -43,7 +32,28 @@
                                     <div class="swiper-slide">
                                         <div class="testimonial__slider-single">
                                             <div class="row align-items-center gutter-40">
-                                                <div class="col-12 col-lg-10 col-xl-10">
+                                                <!-- Vidéo YouTube -->
+                                                <div class="col-12 col-lg-6">
+                                                    <div class="video-thumbnail position-relative"
+                                                        style="cursor:pointer;" data-bs-toggle="modal"
+                                                        data-bs-target="#videoModal"
+                                                        data-video-id="{{ $temoignages->video_id }}">
+
+                                                        <!-- Miniature YouTube -->
+                                                        <img src="https://img.youtube.com/vi/{{ $temoignages->video_id }}/hqdefault.jpg"
+                                                            alt="Vidéo de {{ $temoignages->name }}"
+                                                            class="img-fluid rounded shadow">
+
+                                                        <!-- Bouton Play -->
+                                                        <div
+                                                            class="play-button position-absolute top-50 start-50 translate-middle">
+                                                            <i class="fa-solid fa-play fa-3x text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Contenu du témoignage -->
+                                                <div class="col-12 col-lg-6">
                                                     <div class="testimonial__slider-content">
                                                         <div class="review">
                                                             <i class="fa-solid fa-star"></i>
@@ -71,6 +81,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Navigation du slider -->
                     <div class="slider-navigation">
                         <button type="button" aria-label="prev slide" title="prev slide"
                             class="prev-testimonial slider-btn">
@@ -86,7 +98,7 @@
         </div>
     </div>
 
-    <!-- Modal vidéo -->
+    <!-- Modal vidéo global -->
     <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-dark">
@@ -103,24 +115,27 @@
     </div>
 </section>
 
-<!-- Script pour charger et arrêter la vidéo -->
+<!-- Script pour gérer les vidéos -->
 <script>
     const videoModal = document.getElementById('videoModal');
     const videoIframe = document.getElementById('videoIframe');
-    const videoThumbnail = document.querySelector('.video-thumbnail');
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
 
-    // ID de la vidéo YouTube
-    const videoId = 'TON_ID_VIDEO';
-
-    videoThumbnail.addEventListener('click', () => {
-        videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    // Quand on clique sur une miniature
+    videoThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            const videoId = thumbnail.getAttribute('data-video-id');
+            videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        });
     });
 
+    // Quand le modal se ferme
     videoModal.addEventListener('hidden.bs.modal', function() {
-        videoIframe.src = '';
+        videoIframe.src = ''; // stoppe la vidéo
     });
 </script>
 
+<!-- Styles -->
 <style>
     .play-button {
         background: rgba(0, 0, 0, 0.5);
@@ -130,17 +145,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background 0.3s ease;
     }
 
-    .play-button i {
-        color: #fff;
+    .play-button:hover {
+        background: rgba(0, 0, 0, 0.7);
     }
 
     .video-thumbnail img {
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .video-thumbnail:hover img {
         transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 </style>
