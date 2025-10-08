@@ -36,7 +36,7 @@
                                                 <div class="col-12 col-lg-3">
                                                     <div class="video-container ratio ratio-16x9">
                                                         <iframe
-                                                            src="https://www.youtube.com/embed/{{ $temoignages->lien_youtube }}"
+                                                            src="{{ $temoignages->lien_youtube }}"
                                                             title="Vidéo témoignage" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             allowfullscreen>
