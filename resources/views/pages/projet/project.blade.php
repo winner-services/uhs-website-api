@@ -58,7 +58,9 @@
                                     <span>{{ $projects->date }}</span>
                                 </div>
                                 <div class="blog__single-title">
-                                    <h5><a href="#">{{ $projects->title }}</a>
+                                    <h5><a href="#">
+                                            {{ Str::limit($projects->title, 200) }}
+                                        </a>
                                     </h5>
                                 </div>
                                 <div class="tag">
