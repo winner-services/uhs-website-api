@@ -21,7 +21,7 @@ class ProjectController extends Controller
 
         public function projectDetails($id){
         $data = About::first();
-        $gallery = Gallery::latest()->paginate(4);
+        $gallery = Gallery::latest()->get();
         $twoEvents = Event::latest()->take(2)->get();
         return view('pages.projet.projet-details', compact('data','gallery','twoEvents'));
     }
