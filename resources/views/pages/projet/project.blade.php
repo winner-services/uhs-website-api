@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="blog__single-title">
                                     <h5><a href="#">
-                                            {{ Str::limit($projects->title, 200) }}
+                                            {{ Str::limit($projects->title, 20) }}
                                         </a>
                                     </h5>
                                 </div>
