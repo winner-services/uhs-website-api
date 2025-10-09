@@ -23,6 +23,6 @@ class ProjectController extends Controller
         $data = About::first();
         $gallery = Gallery::latest()->paginate(4);
         $twoEvents = Event::latest()->take(2)->get();
-        return view('pages.event.eventdetails', compact('data','gallery','twoEvents'));
+        return view('pages.projet.projet-details', compact('data','gallery','twoEvents'));
     }
 }
