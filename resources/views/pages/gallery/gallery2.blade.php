@@ -15,3 +15,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('.gallery__slider').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 5000, // 🔹 délai entre les slides (5 secondes)
+        autoplaySpeed: 1000, // 🔹 vitesse de transition
+        items: 3
+    });
+</script>
