@@ -59,13 +59,13 @@
                                 </div>
                                 <div class="blog__single-title">
                                     <h5><a href="#">
-                                            {{ Str::limit($projects->title, 20) }}
+                                            {{ Str::limit($projects->title, 24) }}
                                         </a>
                                     </h5>
                                 </div>
                                 <div class="tag">
                                     <a href="#">
-                                        {{ Str::limit($projects->description, 100) }}
+                                        {{ Str::limit($projects->description, 120) }}
                                     </a>
                                 </div>
                                 <div class="blog__single-cta">
