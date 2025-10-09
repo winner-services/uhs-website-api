@@ -28,5 +28,5 @@
 
         </div>
     </div>
-    @include('pages.gallery.gallery')
+    @include('pages.gallery.gallery2')
 @endsection
