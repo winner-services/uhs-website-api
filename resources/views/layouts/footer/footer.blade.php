@@ -89,7 +89,7 @@
                                 </a>
                             </div>
                             <div class="content">
-                                <h6><a href="{{ route('event.details', ['id' => $items->id]) }}">{{ $items->title }}</a>
+                                <h6><a href="{{ route('event.details', ['id' => $items->id]) }}">{{ Str::limit($items->title,50)}}</a>
                                 </h6>
                                 <p>{{ $items->date }}</p>
                             </div>
@@ -165,7 +165,7 @@
                                             <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
                                         <a href="{{ optional($data)->youtube}}" target="blank"
-                                            aria-label="share us on youtubetitle="outube
+                                            aria-label="share us on youtubetitle" title="youtube">
                                             <i class="fa-brands fa-youtube"></i>
                                         </a>
                                     </div>
