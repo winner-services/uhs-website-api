@@ -69,7 +69,8 @@
                                     </a>
                                 </div>
                                 <div class="blog__single-cta">
-                                    <a href="#">Lire la suite<i class="fa-solid fa-arrow-right-long"></i></a>
+                                    <a href="{{ route('project.details', ['id' => $projects->id]) }}">Lire la suite<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
                                 </div>
                             </div>
                         </div>

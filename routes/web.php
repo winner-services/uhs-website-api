@@ -41,6 +41,7 @@ Route::controller(EventController::class)->group(function () {
 
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/project-index', 'projectIndex')->name('project.index');
+    Route::get('/project-details/{id}', 'projectDetails')->name('project.details');
 });
 
 Route::controller(ContactController::class)->group(function () {
