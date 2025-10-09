@@ -1,4 +1,3 @@
-
 <footer class="footer footer-two pt-120">
     <div class="container">
         <div class="row align-items-center gutter-30">
@@ -36,7 +35,7 @@
                         </a>
                     </div>
                     <div class="footer__widget-content">
-                        <p>{{ Str::limit(optional($data)->description,150)}}
+                        <p>{{ Str::limit(optional($data)->description, 150) }}
                         </p>
                     </div>
                 </div>
@@ -53,7 +52,8 @@
                     </div>
                     <div class="footer__widget-content">
                         <ul class="footer__widget-list">
-                            <li><a href="{{ route('about.index') }}"><i class="fa-solid fa-angle-right"></i> A Propos de nous</a>
+                            <li><a href="{{ route('about.index') }}"><i class="fa-solid fa-angle-right"></i> A Propos de
+                                    nous</a>
                             </li>
                             <li><a href="{{ route('domaine.index') }}"><i class="fa-solid fa-angle-right"></i>
                                     Nos domaines</a>
@@ -64,7 +64,8 @@
                             <li><a href="{{ route('event.index') }}"><i class="fa-solid fa-angle-right"></i>
                                     Nos Evénnements</a>
                             </li>
-                            <li><a href="{{ route('team.index') }}"><i class="fa-solid fa-angle-right"></i>Notre Equipe</a>
+                            <li><a href="{{ route('team.index') }}"><i class="fa-solid fa-angle-right"></i>Notre
+                                    Equipe</a>
                             </li>
                         </ul>
                     </div>
@@ -83,17 +84,18 @@
                     <div class="footer__widget-content">
                         @foreach ($twoEvents as $items)
                             <div class="footer__blog-single">
-                            <div class="thumb">
-                                <a href="{{ route('event.details', ['id' => $items->id]) }}">
-                                    <img src="{{ asset('storage/' . $items->image) }}" alt="Image">
-                                </a>
+                                <div class="thumb">
+                                    <a href="{{ route('event.details', ['id' => $items->id]) }}">
+                                        <img src="{{ asset('storage/' . $items->image) }}" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h6><a
+                                            href="{{ route('event.details', ['id' => $items->id]) }}">{{ Str::limit($items->title, 50) }}</a>
+                                    </h6>
+                                    <p>{{ $items->date }}</p>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h6><a href="{{ route('event.details', ['id' => $items->id]) }}">{{ Str::limit($items->title,50)}}</a>
-                                </h6>
-                                <p>{{ $items->date }}</p>
-                            </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -110,16 +112,16 @@
                     </div>
                     <div class="footer__widget-content">
                         <ul class="footer__contact-list">
-                            <li><a href="https://www.google.com/maps?q=0.337907,29.748384"
-                                    target="_blank"><i class="fa-solid fa-location-dot"></i>
-                                    {{ optional($data)->address}}
+                            <li><a href="https://www.google.com/maps?q=0.337907,29.748384" target="_blank"><i
+                                        class="fa-solid fa-location-dot"></i>
+                                    {{ optional($data)->address }}
                                 </a>
                             </li>
-                            <li><a href="tel:{{ optional($data)->phone}}"><i class="fa-solid fa-phone-flip"></i>
-                                    {{ optional($data)->phone}}</a>
+                            <li><a href="tel:{{ optional($data)->phone }}"><i class="fa-solid fa-phone-flip"></i>
+                                    {{ optional($data)->phone }}</a>
                             </li>
-                            <li><a href="mailto:{{ optional($data)->email}}"><i
-                                        class="fa-regular fa-envelope"></i>{{ optional($data)->email}}</a></li>
+                            <li><a href="mailto:{{ optional($data)->email }}"><i
+                                        class="fa-regular fa-envelope"></i>{{ optional($data)->email }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -135,7 +137,7 @@
                             <div class="col-12 col-lg-7">
                                 <div class="footer__bottom-left">
                                     <ul class="footer__bottom-list justify-content-center justify-content-lg-start">
-                                        <li><a href="contact-us.html">By winner's tech</a></li>
+                                        <li><a href="{{ '/' }}">By winner's tech</a></li>
                                         <li><span></span></li>
                                     </ul>
                                     <p class="text-center text-lg-start">Copyright &copy; <span
@@ -152,19 +154,19 @@
                                             aria-label="share us on facebook" title="facebook">
                                             <i class="fa-brands fa-facebook-f"></i>
                                         </a>
-                                        <a href="{{ optional($data)->instagram }}" target="_blank" aria-label="share us on vimeo"
-                                            title="vimeo">
+                                        <a href="{{ optional($data)->instagram }}" target="_blank"
+                                            aria-label="share us on vimeo" title="vimeo">
                                             <i class="fa-brands fa-instagram"></i>
                                         </a>
-                                        <a href="{{ optional($data)->twitter }}" target="_blank" aria-label="share us on twitter"
-                                            title="twitter">
+                                        <a href="{{ optional($data)->twitter }}" target="_blank"
+                                            aria-label="share us on twitter" title="twitter">
                                             <i class="fa-brands fa-twitter"></i>
                                         </a>
                                         <a href="{{ optional($data)->linkedin }}" target="_blank"
                                             aria-label="share us on linkedin" title="linkedin">
                                             <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
-                                        <a href="{{ optional($data)->youtube}}" target="blank"
+                                        <a href="{{ optional($data)->youtube }}" target="blank"
                                             aria-label="share us on youtubetitle" title="youtube">
                                             <i class="fa-brands fa-youtube"></i>
                                         </a>
@@ -187,4 +189,3 @@
         <img src="{{ asset('assets/images/mask/footer-right.png') }}" alt="Image">
     </div>
 </footer>
-

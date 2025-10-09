@@ -61,8 +61,10 @@
                                     <h5><a href="#">{{ $projects->title }}</a>
                                     </h5>
                                 </div>
-                                 <div class="tag">
-                                    <a href="#">{{ $projects->description }}</a>
+                                <div class="tag">
+                                    <a href="#">
+                                        {{ Str::limit($projects->description, 100) }}
+                                    </a>
                                 </div>
                                 <div class="blog__single-cta">
                                     <a href="#">Lire la suite<i class="fa-solid fa-arrow-right-long"></i></a>
