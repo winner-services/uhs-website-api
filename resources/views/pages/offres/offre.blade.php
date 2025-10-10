@@ -25,7 +25,7 @@
     <section class="offers-section py-5">
         <div class="container">
             <div class="row">
-                @foreach ($offres as $offre)
+                @forelse ($offres as $offre)
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100 shadow-sm border-0">
                             <div class="card-body d-flex flex-column">
@@ -46,7 +46,11 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12 text-center py-5">
+                        <h5 class="text-muted">Aucune offre publiée pour le moment.</h5>
+                    </div>
+                @endforelse
 
             </div>
         </div>
