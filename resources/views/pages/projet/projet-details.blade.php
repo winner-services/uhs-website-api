@@ -23,7 +23,7 @@
         @include('pages.bannier.bannier')
     </section>
 
-    <div class="cm-details pt-120 pb-120">
+    <section class="team-details pt-120 pb-120">
         <div class="container">
             <div class="row gutter-30 align-items-center">
                 <div class="col-12 col-lg-6 col-xl-5">
@@ -108,6 +108,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     @include('pages.gallery.gallery2')
 @endsection
