@@ -35,8 +35,7 @@
                     <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="team-details__meta">
                             <div class="team-details__intro">
-                                <h4 class="title-animation">Jason Farmer</h4>
-                                <p class="designation">Volunteer</p>
+                                <h4 class="title-animation">UHS Asbl</h4>
                             </div>
                             <div class="social">
                                 <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
@@ -55,26 +54,28 @@
                                 </a>
                             </div>
                         </div>
-                       
+
                         <div class="team-details__list">
                             <ul>
-                                <li><i class="icon-circle-check"></i>Best Quality Services</li>
-                                <li><i class="icon-circle-check"></i>Time Saving</li>
-                                <li><i class="icon-circle-check"></i>Meet the Deadlines</li>
-                                <li><i class="icon-circle-check"></i>24/7 Customer Support</li>
+                                <li><i class="icon-circle-check"></i>L’Unités: l’aide humanitaire est ouvert à tous et UHS
+                                    étend ses actions dans la totalité du territoire.</li>
+                                <li><i class="icon-circle-check"></i>L’Honnêteté : UHS est intègre et digne de confiance
+                                    ainsi responsable de ses comportement, actes et résultats.</li>
+                                <li><i class="icon-circle-check"></i>Le Service : UHS est responsable envers les personnes à
+                                    qui il offre ses services.</li>
                             </ul>
                         </div>
                         <div class="team-details__cta cta mt-40">
-                            <a href="donate-us.html" aria-label="make a donation" title="make a donation"
-                                class="btn--secondary" data-text="Donate With Me"> <span>Donate With Me</span>
+                            <a href="{{ route('domaine.index') }}" aria-label="make a donation" title="make a donation"
+                                class="btn--secondary" data-text="Faire un don"> <span>Faire un don</span>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="about-me" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                        <h4 class="title-animation">{{$project->title}}</h4>
-                        <p>{{$project->description}}</p>
+                        <h4 class="title-animation">{{ $project->title }}</h4>
+                        <p>{{ $project->description }}</p>
                     </div>
                 </div>
             </div>
