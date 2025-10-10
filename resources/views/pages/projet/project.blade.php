@@ -48,7 +48,7 @@
                     <div class="col-12 col-md-6 col-xl-4">
                         <div class="blog__single" data-aos="fade-up" data-aos-duration="1000">
                             <div class="blog__single-thumb">
-                                <a href="#">
+                                <a href="{{ route('project.details', ['id' => $projects->id]) }}">
                                     <img src="{{ asset('storage/' . $projects->image) }}" alt="Image">
                                 </a>
                             </div>
@@ -58,13 +58,13 @@
                                     <span>{{ $projects->date }}</span>
                                 </div>
                                 <div class="blog__single-title">
-                                    <h5><a href="#">
+                                    <h5><a href="{{ route('project.details', ['id' => $projects->id]) }}">
                                             {{ Str::limit($projects->title, 24) }}
                                         </a>
                                     </h5>
                                 </div>
                                 <div class="tag">
-                                    <a href="#">
+                                    <a href="{{ route('project.details', ['id' => $projects->id]) }}">
                                         {{ Str::limit($projects->description, 120) }}
                                     </a>
                                 </div>

@@ -475,17 +475,19 @@
                     <div class="col-12 col-md-6 col-xl-4">
                         <div class="blog__single" data-aos="fade-up" data-aos-duration="1000">
                             <div class="blog__single-thumb">
-                                <a href="#">
+                                <a href="{{ route('project.details', ['id' => $project->id]) }}">
                                     <img src="{{ asset('storage/' . $project->image) }}" alt="Image">
                                 </a>
                             </div>
                             <div class="blog__single-content" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-delay="200">
                                 <div class="tag">
-                                    <a href="#">{{ $project->date }}</a>
+                                    <a
+                                        href="{{ route('project.details', ['id' => $project->id]) }}">{{ $project->date }}</a>
                                 </div>
                                 <div class="blog__single-title">
-                                    <h5><a href="#">{{ $project->title }}</a>
+                                    <h5><a
+                                            href="{{ route('project.details', ['id' => $project->id]) }}">{{ $project->title }}</a>
                                     </h5>
                                 </div>
                             </div>
