@@ -25,7 +25,88 @@
 
     <div class="cm-details pt-120 pb-120">
         <div class="container">
-
+            <div class="row gutter-30 align-items-center">
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                        <img src="assets/images/team/thumb.png" alt="Image">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="team-details__meta">
+                            <div class="team-details__intro">
+                                <h4 class="title-animation">Jason Farmer</h4>
+                                <p class="designation">Volunteer</p>
+                            </div>
+                            <div class="social">
+                                <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
+                                    title="facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
+                                    <i class="fa-brands fa-vimeo-v"></i>
+                                </a>
+                                <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
+                                    title="linkedin">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="progress-wrapper">
+                            <div class="cause__progress progress-bar-single">
+                                <div class="cause-progress__bar">
+                                    <p>Donation Collect</p>
+                                    <div class="progress-bar-wrapper" data-percent="70%">
+                                        <div class="progress-bar">
+                                            <div class="progress-bar-percent"><span class="percent-value"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cause__progress progress-bar-single">
+                                <div class="cause-progress__bar">
+                                    <p>Successful Events</p>
+                                    <div class="progress-bar-wrapper" data-percent="85%">
+                                        <div class="progress-bar">
+                                            <div class="progress-bar-percent"><span class="percent-value"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-details__list">
+                            <ul>
+                                <li><i class="icon-circle-check"></i>Best Quality Services</li>
+                                <li><i class="icon-circle-check"></i>Time Saving</li>
+                                <li><i class="icon-circle-check"></i>Meet the Deadlines</li>
+                                <li><i class="icon-circle-check"></i>24/7 Customer Support</li>
+                            </ul>
+                        </div>
+                        <div class="team-details__cta cta mt-40">
+                            <a href="donate-us.html" aria-label="make a donation" title="make a donation"
+                                class="btn--secondary" data-text="Donate With Me"> <span>Donate With Me</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="about-me" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <h4 class="title-animation">About Me</h4>
+                        <p>This category focuses on the design construction of buildings and the This a category
+                            focuses on the design and construction of buildings This category a focuses on the
+                            design construction of buildings and the This a category of thfocuses on the design This
+                            category focuses on the design construction of buildings and the This a category focuses
+                            on the design and construction of buildings This category a focuses on the design
+                            construction of buildings and the This a category of thfocuses on the design
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     @include('pages.gallery.gallery2')
