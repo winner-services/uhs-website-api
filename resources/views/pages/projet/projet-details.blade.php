@@ -73,14 +73,8 @@
                 </div>
                 <div class="col-12">
                     <div class="about-me" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                        <h4 class="title-animation">About Me</h4>
-                        <p>This category focuses on the design construction of buildings and the This a category
-                            focuses on the design and construction of buildings This category a focuses on the
-                            design construction of buildings and the This a category of thfocuses on the design This
-                            category focuses on the design construction of buildings and the This a category focuses
-                            on the design and construction of buildings This category a focuses on the design
-                            construction of buildings and the This a category of thfocuses on the design
-                        </p>
+                        <h4 class="title-animation">{{$project->title}}</h4>
+                        <p>{{$project->description}}</p>
                     </div>
                 </div>
             </div>
