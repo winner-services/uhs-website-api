@@ -16,13 +16,15 @@ class ProjectController extends Controller
         $data = About::first();
         $twoEvents = Event::latest()->take(2)->get();
         $project = Project::latest()->get();
-        return view('pages.projet.project', compact('data', 'twoEvents','project'));
+        return view('pages.projet.project', compact('data', 'twoEvents', 'project'));
     }
 
-        public function projectDetails($id){
+    public function projectDetails($id)
+    {
         $data = About::first();
         $gallery = Gallery::latest()->get();
         $twoEvents = Event::latest()->take(2)->get();
-        return view('pages.projet.projet-details', compact('data','gallery','twoEvents'));
+        $project = Project::find($id);
+        return view('pages.projet.projet-details', compact('data', 'gallery', 'twoEvents', 'project'));
     }
 }

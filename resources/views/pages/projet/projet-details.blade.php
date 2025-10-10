@@ -28,7 +28,7 @@
             <div class="row gutter-30 align-items-center">
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
-                        <img src="assets/images/team/thumb.png" alt="Image">
+                        <img src="{{ asset('storage/' . optional($project)->image) }}" alt="Image">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
@@ -55,30 +55,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="progress-wrapper">
-                            <div class="cause__progress progress-bar-single">
-                                <div class="cause-progress__bar">
-                                    <p>Donation Collect</p>
-                                    <div class="progress-bar-wrapper" data-percent="70%">
-                                        <div class="progress-bar">
-                                            <div class="progress-bar-percent"><span class="percent-value"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cause__progress progress-bar-single">
-                                <div class="cause-progress__bar">
-                                    <p>Successful Events</p>
-                                    <div class="progress-bar-wrapper" data-percent="85%">
-                                        <div class="progress-bar">
-                                            <div class="progress-bar-percent"><span class="percent-value"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="team-details__list">
                             <ul>
                                 <li><i class="icon-circle-check"></i>Best Quality Services</li>
