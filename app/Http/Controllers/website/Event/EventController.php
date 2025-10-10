@@ -20,7 +20,7 @@ class EventController extends Controller
         $data = About::first();
         $event = Event::find($id);
         $allEvents = Event::latest()->take(3)->get();
-        $gallery = Gallery::latest()->paginate(4);
+        $gallery = Gallery::latest()->get();
         $twoEvents = Event::latest()->take(2)->get();
         return view('pages.event.eventdetails', compact('data','event','allEvents','gallery','twoEvents'));
     }
