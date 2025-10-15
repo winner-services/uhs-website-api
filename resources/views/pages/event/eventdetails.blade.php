@@ -33,7 +33,7 @@
                         </div>
                         <div class="cm-details-meta">
                             <p><i class="fa-solid fa-calendar-days"></i>{{ $event->date }}</p>
-                            <p><i class="fa-solid fa-location-dot"></i>{{ $event->title }}</p>
+                            {{-- <p><i class="fa-solid fa-location-dot"></i>{{ $event->title }}</p> --}}
                         </div>
                         <div class="cm-group mt-55">
                             <h3 class="title-animation">{{ $event->title }}</h3>
@@ -59,7 +59,7 @@
                                         <div class="content">
                                             <p><i class="fa-solid fa-calendar-days"></i> <span>{{ $events->date }}</span>
                                             </p>
-                                            <p><a href="{{ route('event.details', ['id' => $events->id]) }}">{{ $events->title }}</a>
+                                            <p><a href="{{ route('event.details', ['id' => $events->id]) }}">{{ Str::limit($events->title, 55) }}</a>
                                             </p>
                                         </div>
                                     </div>
