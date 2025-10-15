@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="common-banner__content text-center">
-                        <h2 class="title-animation">Événements</h2>
+                        <h2 class="title-animation">Actualités</h2>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="col-12 col-lg-10 col-xl-5">
                     <div class="section__header text-center mb-55" data-aos="fade-up" data-aos-duration="1000">
                         <span>Rejoignez-nous pour des expériences passionnantes</span>
-                        <h2 class="title-animation">Événements et activités</h2>
+                        <h2 class="title-animation">Événements et Actualités</h2>
                         <div class="icon-thumb justify-content-center">
                             <div class="icon-thumb-single">
                                 <span></span>
@@ -59,7 +59,7 @@
                                 </a>
                                 <div class="content">
                                     <p>{{ $item->date }}</p>
-                                    <h5><a href="{{ route('event.details', ['id' => $item->id]) }}">{{ $item->title }}</a>
+                                    <h5><a href="{{ route('event.details', ['id' => $item->id]) }}">{{ Str::limit($item->title, 50) }}</a>
                                     </h5>
                                 </div>
                             </div>
