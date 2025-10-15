@@ -59,7 +59,7 @@
                                 </a>
                                 <div class="content">
                                     <p>{{ $item->date }}</p>
-                                    <h5><a href="{{ route('event.details', ['id' => $item->id]) }}">{{ Str::limit($item->title, 50) }}</a>
+                                    <h5><a href="{{ route('event.details', ['id' => $item->id]) }}">{{ Str::limit($item->title, 55) }}</a>
                                     </h5>
                                 </div>
                             </div>
