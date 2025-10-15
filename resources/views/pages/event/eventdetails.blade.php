@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="common-banner__content text-center">
-                        <h2 class="title-animation">Detail de l'événement</h2>
+                        <h2 class="title-animation">Detail de l'actualité</h2>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                     <a href="{{ '/' }}">Acceuil</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    Detail de l'événement et activité
+                    Detail de l'événement et Actualité
                 </li>
             </ol>
         </nav>
@@ -46,7 +46,7 @@
                     <div class="cm-details__sidebar">
                         <div class="cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                             <div class="intro">
-                                <h5>Articles récents</h5>
+                                <h5>Actualités récentes</h5>
                             </div>
                             <div class="cm-sidebar-post">
                                 @foreach ($allEvents as $events)
