@@ -24,7 +24,7 @@
                                     <a href="{{ route('project.index') }}">Projets</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
-                                    <a href="{{ route('event.index') }}">Événements</a>
+                                    <a href="{{ route('event.index') }}">Actualités</a>
                                 </li>
                                 <li class="navbar__item nav-fade">
                                     <a href="{{ route('team.index') }}">Équipe</a>
